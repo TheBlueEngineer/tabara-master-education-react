@@ -8,6 +8,7 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    returnNull: false,
     fallbackLng: 'ro',
     debug: true,
     ns: ['common', 'home', 'camps', 'contact', 'sign-in', 'sign-up', 'team'],

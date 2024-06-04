@@ -1,5 +1,6 @@
 /* import { useTranslation } from 'react-i18next';
- */ import * as SC from './home-page.styles';
+ */ import HeroImageIconCards from '@components/view-components/hero-image-icon-cards/hero-image-icon-cards.component';
+import * as SC from './home-page.styles';
 
 const HomePage = () => {
   /* const { t } = useTranslation('home'); */
@@ -13,6 +14,7 @@ const HomePage = () => {
         </SC.Subtitle>
         <SC.CTAButton>Contact Us</SC.CTAButton>
       </SC.HeroImageContainer>
+      <HeroImageIconCards />
     </SC.HomePageContainer>
   );
 };

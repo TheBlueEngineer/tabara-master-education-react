@@ -1,12 +1,5 @@
 import styled from 'styled-components';
 
-/* export const IconCardContainer = styled.section`
-  display: grid;
-  background-color: cyan;
-  width: 85%;
-  transform: translateY(-50%);
-`; */
-
 export const IconCardContainer = styled.div`
   display: flex;
   flex-direction: column;
