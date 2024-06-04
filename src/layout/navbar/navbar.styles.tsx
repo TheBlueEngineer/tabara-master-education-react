@@ -14,4 +14,7 @@ export const NavLink = styled(Link)`
   &:hover {
     text-decoration: underline;
   }
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 900;
 `;

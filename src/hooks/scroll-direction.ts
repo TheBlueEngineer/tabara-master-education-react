@@ -4,24 +4,49 @@ const useScrollDirection = () => {
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down' | null>(
     null
   );
-  const [lastScrollY, setLastScrollY] = useState<number>(0);
+  let previousScrollY: number = 0;
+  let currentScrollY: number = 0;
+
+  const throttle = (callbackFn: callbackFunction, limit: number) => {
+    let wait = false;
+    return () => {
+      if (!wait) {
+        callbackFn.call(null);
+        wait = true;
+        setTimeout(function () {
+          wait = false;
+        }, limit);
+      }
+    };
+  };
+
+  const updateScrollDirection = () => {
+    currentScrollY = window.scrollY;
+
+    currentScrollY > previousScrollY
+      ? setScrollDirection('down')
+      : setScrollDirection('up');
+
+    console.log(
+      'current scrolly',
+      currentScrollY,
+      ' last scrollY',
+      previousScrollY
+    );
+
+    setTimeout(() => (previousScrollY = currentScrollY), 100);
+  };
 
   useEffect(() => {
-    const updateScrollDirection = () => {
-      const scrollY = window.scrollY;
+    window.addEventListener('scroll', throttle(updateScrollDirection, 100), {
+      passive: true,
+    });
 
-      if (scrollY > lastScrollY) {
-        setScrollDirection('down');
-      }
-      if (scrollY < lastScrollY) {
-        setScrollDirection('up');
-      }
-      setLastScrollY(scrollY > 0 ? scrollY : 0);
-    };
-
-    window.addEventListener('scroll', updateScrollDirection);
     return () => {
-      window.removeEventListener('scroll', updateScrollDirection);
+      window.removeEventListener(
+        'scroll',
+        throttle(updateScrollDirection, 100)
+      );
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

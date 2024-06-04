@@ -2,19 +2,19 @@ import { FC } from 'react';
 import * as SC from './icon-card.styles';
 
 type IconCardProps = {
-  iconUrl: string;
+  iconComponent: React.ReactNode;
   title: string;
   description: string;
 };
 
 export const IconCard: FC<IconCardProps> = ({
-  iconUrl,
+  iconComponent,
   title,
   description,
 }) => {
   return (
     <SC.IconCardContainer>
-      <SC.Icon>{iconUrl}</SC.Icon>
+      {iconComponent}
       <SC.Title>{title}</SC.Title>
       <SC.Description>{description}</SC.Description>
     </SC.IconCardContainer>

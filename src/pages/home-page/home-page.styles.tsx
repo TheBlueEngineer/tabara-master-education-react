@@ -16,7 +16,7 @@ export const HeroImageContainer = styled.section`
   min-height: 15rem;
   display: flex;
   flex-direction: column;
-  padding: 5rem 0rem;
+  padding: 10rem 0rem 15rem 0rem;
   row-gap: 2rem;
   justify-content: center;
   align-items: center;
