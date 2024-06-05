@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+type callbackFunction = () => void;
+
 const useScrollDirection = () => {
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down' | null>(
     null

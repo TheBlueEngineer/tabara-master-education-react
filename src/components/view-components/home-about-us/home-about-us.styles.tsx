@@ -7,6 +7,7 @@ export const HomeAboutUsContainer = styled.section`
   flex-direction: row;
   row-gap: 1rem;
   column-gap: 2rem;
+  background-color: ${(props) => props.theme.background};
 `;
 
 export const InformationContainer = styled.div`

@@ -23,3 +23,8 @@ export const Logo = styled(Link)`
 export const SearchBar = styled.div`
   display: flex;
 `;
+
+export const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+`;

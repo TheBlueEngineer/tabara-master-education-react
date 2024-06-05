@@ -1,9 +1,9 @@
 import { FC, ReactNode, createContext, useContext, useState } from 'react';
-import { darkTheme, lightTheme } from 'src/consts/themes';
+import { ThemeType, darkTheme, lightTheme } from 'src/consts/themes';
 import { ThemeProvider } from 'styled-components';
 
 type ThemeContextProps = {
-  theme: typeof lightTheme;
+  theme: ThemeType;
   toggleTheme: () => void;
 };
 
@@ -34,7 +34,7 @@ export const ThemeContextProvider: FC<ThemeContextProviderProps> = ({
   );
 };
 
-export const useTheme = () => {
+export const useTheme = (): ThemeContextProps => {
   const context = useContext(ThemeContext);
   if (!context) {
     throw new Error(
