@@ -9,9 +9,9 @@ export const sizes = {
 
 export const devices = {
   mobileSm: `(max-width: ${sizes.mobileSm})`,
-  mobileLg: `(max-width: ${sizes.mobileLg})`,
-  tablet: `(max-width: ${sizes.tablet})`,
-  laptop: `(max-width: ${sizes.laptop})`,
-  laptopLg: `(max-width: ${sizes.laptopLg})`,
-  desktop: `(max-width: ${sizes.desktop})`,
+  mobileLg: `(min-width: ${sizes.mobileLg})`,
+  tablet: `(min-width: ${sizes.tablet})`,
+  laptop: `(min-width: ${sizes.laptop})`,
+  laptopLg: `(min-width: ${sizes.laptopLg})`,
+  desktop: `(min-width: ${sizes.desktop})`,
 };

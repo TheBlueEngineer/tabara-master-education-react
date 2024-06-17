@@ -1,12 +1,18 @@
 import styled, { css } from 'styled-components';
 import { ButtonProps } from './button.component';
+import {
+  borderRadius,
+  elevation,
+  fontSize,
+  spacing,
+} from 'src/consts/template.const';
 
 const variantStyles = {
   primary: css`
-    background-color: blue;
+    background-color: ${({ theme }) => theme.colors.green['700']};
     color: white;
     &:hover {
-      background-color: darkblue;
+      background-color: ${({ theme }) => theme.colors.green['900']};
     }
   `,
   secondary: css`
@@ -27,23 +33,29 @@ const variantStyles = {
 
 const sizeStyles = {
   small: css`
-    padding: 0.25rem 0.5rem;
-    font-size: 0.875rem;
+    padding-left: ${spacing['0.5rem']};
+    padding-right: ${spacing['0.5rem']};
+    padding-top: ${spacing['0.25rem']};
+    padding-bottom: ${spacing['0.25rem']};
+    font-size: ${fontSize['1.125rem']};
   `,
   medium: css`
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
+    padding-left: ${spacing['1.5rem']};
+    padding-right: ${spacing['1.5rem']};
+    padding-top: ${spacing['0.75rem']};
+    padding-bottom: ${spacing['0.75rem']};
+    font-size: ${fontSize['1.5rem']};
   `,
   large: css`
     padding: 0.75rem 1.5rem;
-    font-size: 1.125rem;
+    font-size: ${fontSize['2rem']};
   `,
 };
 
 const shapeStyle = {
   default: css``,
   rounded: css`
-    border-radius: 1rem;
+    border-radius: ${borderRadius['1rem']};
   `,
   leaf: css`
     border-radius: 2rem 0rem 2rem 0rem;
@@ -51,8 +63,10 @@ const shapeStyle = {
 };
 
 export const StyledButton = styled.button<ButtonProps>`
-  border: none;
-  border-radius: 4px;
+  box-shadow:
+    ${elevation.far},
+    0px ${spacing['0.25rem']} 0px inset hsla(0, 0%, 100%, 0.2);
+  transition: background-color 400ms;
   cursor: pointer;
   ${(props) => variantStyles[props.variant || 'primary']};
   ${(props) => sizeStyles[props.size || 'medium']};

@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
    :root {
         font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
         line-height: 1.5;
@@ -30,17 +32,12 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
+        font-family: 'Roboto', sans-serif;
         margin: 0;
         display: flex;
         font-size: 1rem;
 
     }
-
-    @font-face {
-        font-family: 'KnightFont';
-        src: local('KnightFont'), url('./assets/fonts/knight-font.ttf') format('ttf');
-    }
-
 
     html, body, div, span, applet, object, iframe,
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,

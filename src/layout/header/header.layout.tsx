@@ -11,12 +11,11 @@ const Header: FC = () => {
 
   return (
     <SC.HeaderContainer $isHidden={isHidden}>
-      <SC.Column>
+      <SC.Row>
         <ThemeSelector />
         <LanguageSelector />
-      </SC.Column>
+      </SC.Row>
       <SC.Logo to="/">Logo</SC.Logo>
-      <SC.SearchBar>The search bar</SC.SearchBar>
       <NavigationBar />
     </SC.HeaderContainer>
   );

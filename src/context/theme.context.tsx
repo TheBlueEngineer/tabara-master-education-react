@@ -1,5 +1,5 @@
 import { FC, ReactNode, createContext, useContext, useState } from 'react';
-import { ThemeType, darkTheme, lightTheme } from 'src/consts/themes';
+import { ThemeType, darkTheme, lightTheme } from 'src/consts/themes.const';
 import { ThemeProvider } from 'styled-components';
 
 type ThemeContextProps = {
@@ -16,7 +16,7 @@ const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 export const ThemeContextProvider: FC<ThemeContextProviderProps> = ({
   children,
 }) => {
-  const [theme, setTheme] = useState(lightTheme);
+  const [theme, setTheme] = useState<ThemeType>(lightTheme);
 
   const toggleTheme = () => {
     setTheme(theme === lightTheme ? darkTheme : lightTheme);
@@ -34,6 +34,7 @@ export const ThemeContextProvider: FC<ThemeContextProviderProps> = ({
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useTheme = (): ThemeContextProps => {
   const context = useContext(ThemeContext);
   if (!context) {

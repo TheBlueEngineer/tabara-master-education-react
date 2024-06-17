@@ -1,7 +1,27 @@
-import * as SC from './home-about-us.styles';
+import Icon from '@components/shared-components/icons/icon.component';
+import * as SC from './about-us.styles';
 import { FaBeer } from 'react-icons/fa';
 
-const HomeAboutUs = () => {
+const list = [
+  {
+    icon: FaBeer,
+    text: 'We are truly one of the best camps in the world. Like no questions asked.',
+  },
+  {
+    icon: FaBeer,
+    text: 'We are truly one of the best camps in the world. Like no questions asked.',
+  },
+  {
+    icon: FaBeer,
+    text: 'We are truly one of the best camps in the world. Like no questions asked.',
+  },
+  {
+    icon: FaBeer,
+    text: 'We are truly one of the best camps in the world. Like no questions asked.',
+  },
+];
+
+const AboutUs = () => {
   return (
     <SC.HomeAboutUsContainer>
       <SC.ImagesContainer>
@@ -32,7 +52,7 @@ const HomeAboutUs = () => {
 
       <SC.InformationContainer>
         <SC.Row>
-          <FaBeer size={25} />
+          <Icon IconComponent={FaBeer} size="large" />
           <SC.Title>About us</SC.Title>
         </SC.Row>
         <SC.Subtitle>Experience Nature Together With Us</SC.Subtitle>
@@ -45,9 +65,18 @@ const HomeAboutUs = () => {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </SC.Description>
+        <SC.List>
+          {list &&
+            list.map((item) => (
+              <SC.ListItem>
+                <Icon IconComponent={item.icon} size="medium" />
+                <SC.Text>{item.text}</SC.Text>
+              </SC.ListItem>
+            ))}
+        </SC.List>
       </SC.InformationContainer>
     </SC.HomeAboutUsContainer>
   );
 };
 
-export default HomeAboutUs;
+export default AboutUs;

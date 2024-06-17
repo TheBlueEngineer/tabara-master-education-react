@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom';
+import { elevation, spacing } from 'src/consts/template.const';
 import styled from 'styled-components';
 
-export const HeaderContainer = styled.header<{ $isHidden: boolean }>`
+type HeaderContainerProps = {
+  $isHidden: boolean;
+};
+
+export const HeaderContainer = styled.header<HeaderContainerProps>`
+  background-color: ${({ theme }) => theme.colors.gray['100']};
   display: flex;
   flex-direction: row;
   position: fixed;
@@ -9,11 +15,11 @@ export const HeaderContainer = styled.header<{ $isHidden: boolean }>`
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1rem;
+  padding-left: ${spacing['0.5rem']};
+  padding-right: ${spacing['0.5rem']};
   z-index: 10;
-  box-shadow: ${(props) =>
-    props.$isHidden ? '0 3px 6px 0 rgba(0, 0, 0, 0.5)' : '0'};
   transition: top 500ms;
+  box-shadow: ${elevation.far};
 `;
 
 export const Logo = styled(Link)`
@@ -27,4 +33,9 @@ export const SearchBar = styled.div`
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+export const Row = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
