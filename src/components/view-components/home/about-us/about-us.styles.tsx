@@ -1,4 +1,3 @@
-import { fontSize, spacing, textShadow } from 'src/consts/template.const';
 import styled from 'styled-components';
 
 export const HomeAboutUsContainer = styled.section`
@@ -37,8 +36,7 @@ export const InformationContainer = styled.div`
 `;
 
 export const ImageBoxLeft = styled.div`
-  margin-bottom: ${spacing['1rem']};
-  margin-top: -${spacing['1rem']};
+  margin: ${({ theme }) => theme.spacing['16px']} 0;
   flex: 1 1 15rem;
 `;
 
@@ -62,8 +60,8 @@ export const Title = styled.h1`
 export const Subtitle = styled.h2`
   font-size: 2.5rem;
   text-align: left;
-  margin-bottom: ${spacing['1rem']};
-  text-shadow: ${textShadow.light};
+  margin-bottom: ${({ theme }) => theme.spacing['16px']};
+  ${({ theme }) => theme.shadows.font.light};
   text-align: center;
   @media (min-width: 1024px) {
     text-align: left;
@@ -71,23 +69,23 @@ export const Subtitle = styled.h2`
 `;
 
 export const Description = styled.p`
-  font-size: ${fontSize['1rem']};
+  ${({ theme }) => theme.typography.size.base};
   text-align: left;
   max-width: 50em;
-  margin-bottom: ${spacing['1.5rem']};
+  margin-bottom: ${({ theme }) => theme.spacing['24px']};
 `;
 
 export const List = styled.ul`
   display: flex;
   flex-direction: column;
-  row-gap: ${spacing['0.75rem']};
+  row-gap: ${({ theme }) => theme.spacing['12px']};
 `;
 
 export const ListItem = styled.li`
   display: flex;
   flex-direction: row;
   align-items: center;
-  column-gap: ${spacing['0.25rem']};
+  column-gap: ${({ theme }) => theme.spacing['4px']};
 `;
 
 export const Image = styled.img`
@@ -100,5 +98,5 @@ export const Image = styled.img`
 `;
 
 export const Text = styled.p`
-  font-size: ${fontSize['1rem']};
+  ${({ theme }) => theme.typography.size.base};
 `;

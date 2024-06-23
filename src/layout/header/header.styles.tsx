@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { elevation, spacing } from 'src/consts/template.const';
 import styled from 'styled-components';
 
 type HeaderContainerProps = {
@@ -15,11 +14,10 @@ export const HeaderContainer = styled.header<HeaderContainerProps>`
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding-left: ${spacing['0.5rem']};
-  padding-right: ${spacing['0.5rem']};
+  padding: 0 ${({ theme }) => theme.spacing['16px']};
   z-index: 10;
   transition: top 500ms;
-  box-shadow: ${elevation.far};
+  ${({ theme }) => theme.elevation.sm};
 `;
 
 export const Logo = styled(Link)`

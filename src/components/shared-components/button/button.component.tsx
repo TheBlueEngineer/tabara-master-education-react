@@ -1,30 +1,41 @@
 import { ButtonHTMLAttributes, FC } from 'react';
 import * as SC from './button.styles';
+import { IconType } from 'react-icons';
+import Icon from '../icons/icon.component';
 
 export type ButtonProps = {
-  variant?: 'primary' | 'secondary' | 'tertiary';
+  variant?: 'default' | 'primary' | 'contained' | 'outlined' | 'disabled';
   size?: 'small' | 'medium' | 'large';
-  shape?: 'default' | 'rounded' | 'leaf';
+  disabled?: boolean;
+  fullWidth?: boolean;
+  startIcon: null | IconType;
+  endIcon: null | IconType;
   onClick: () => void;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button: FC<ButtonProps> = ({
   variant = 'primary',
   size = 'medium',
-  shape = 'default',
   children,
+  startIcon = null,
+  endIcon = null,
+  fullWidth = false,
+  disabled = false,
   onClick,
   ...otherProps
 }) => {
   return (
     <SC.StyledButton
+      fullWidth={fullWidth}
+      disabled={disabled}
       variant={variant}
       size={size}
-      shape={shape}
       onClick={onClick}
       {...otherProps}
     >
+      {startIcon && <Icon IconComponent={startIcon} />}
       {children}
+      {endIcon && <Icon IconComponent={endIcon} />}
     </SC.StyledButton>
   );
 };

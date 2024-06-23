@@ -1,30 +1,33 @@
 import styled, { css } from 'styled-components';
-import { fontSize } from 'src/consts/template.const';
 import { IconProps } from './icon.component';
+import { ThemeType } from '../../../consts/themes.const';
 
 type IconWrapperProps = Omit<IconProps, 'IconComponent'>;
 
-const size = {
-  smallest: css`
-    font-size: ${fontSize['1rem']};
-  `,
-  small: css`
-    font-size: ${fontSize['1.25rem']};
-  `,
-  medium: css`
-    font-size: ${fontSize['1.5rem']};
-  `,
-  large: css`
-    font-size: ${fontSize['2rem']};
-  `,
-  largest: css`
-    font-size: ${fontSize['3rem']};
-  `,
+const iconSize = (theme: ThemeType, size: string) => {
+  switch (size) {
+    case 'small':
+      return css`
+        font-size: ${theme.typography.font.size.sm};
+      `;
+    case 'medium':
+      return css`
+        font-size: ${theme.typography.font.size.md};
+      `;
+    case 'large':
+      return css`
+        font-size: ${theme.typography.font.size.lg};
+      `;
+  }
 };
 
 export const IconWrapper = styled.div<IconWrapperProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  ${(props) => size[props.size || 'small']};
+  ${({ theme, size }) => iconSize(theme, size || 'medium')}
 `;
+
+IconWrapper.defaultProps = {
+  size: 'medium',
+};

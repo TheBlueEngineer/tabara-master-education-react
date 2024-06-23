@@ -1,10 +1,5 @@
 import { NavLink as NavigationLink } from 'react-router-dom';
-import {
-  fontSize,
-  fontWeight,
-  opacity,
-  spacing,
-} from 'src/consts/template.const';
+import { border, opacity, typography } from 'src/consts/template.const';
 import styled from 'styled-components';
 
 export const Navbar = styled.nav`
@@ -21,24 +16,22 @@ export const NavLink = styled(NavigationLink)`
 
   text-decoration: none;
   height: 100%;
-  padding: ${spacing['1rem']};
+  padding: ${({ theme }) => theme.spacing['16px']};
 
-  color: ${({ theme }) => theme.colors.gray['700']};
-  font-weight: ${fontWeight[700]};
+  ${({ theme }) => theme.typography.size.md};
 
   &.active {
-    color: ${({ theme }) => theme.colors.green['900']};
-    border-bottom-width: ${spacing['0.25rem']};
-    border-bottom-style: solid;
-    border-bottom-color: ${({ theme }) => theme.colors.green['700']};
-    font-weight: ${fontWeight['900']};
+    color: ${({ theme }) => theme.colors.tertiary};
+    border-bottom: ${border.width.sm}
+      ${({ theme }) => theme.colors.background.secondary} solid;
+    ${typography.weight.bolder};
   }
 
   &:hover {
-    opacity: ${opacity['0.7']};
+    opacity: ${opacity['0.8']};
   }
 `;
 
 export const Text = styled.span`
-  font-size: ${fontSize['1.25rem']};
+  ${({ theme }) => theme.typography.size.md};
 `;

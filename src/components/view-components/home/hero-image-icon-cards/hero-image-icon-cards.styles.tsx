@@ -1,4 +1,3 @@
-import { borderRadius, elevation, spacing } from 'src/consts/template.const';
 import styled from 'styled-components';
 
 export const HeroImageIconCards = styled.div`
@@ -9,11 +8,8 @@ export const HeroImageIconCards = styled.div`
   row-gap: 2rem;
   column-gap: 2rem;
   padding: 2rem;
-  border-radius: ${borderRadius['2rem']};
+  ${({ theme }) => theme.border.radius.sm};
   transform: translateY(-50%);
-  box-shadow:
-    ${elevation.floating},
-    inset 0px ${spacing['0.25rem']} 0px
-      ${({ theme }) => theme.colors.green['100']};
+  ${({ theme }) => theme.shadows.elevation.xl2};
   z-index: 1;
 `;
