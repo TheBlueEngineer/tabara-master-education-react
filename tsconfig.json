@@ -33,6 +33,13 @@
     }
   },
 
-  "include": ["src", "**/*.ts", "**/*.tsx", "**/**/*.ts", "**/**/*.tsx"],
+  "include": [
+    "src",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/**/*.ts",
+    "**/**/*.tsx",
+    "/src/fonts.d.ts"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

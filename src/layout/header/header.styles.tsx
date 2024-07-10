@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { shadows, spacing } from 'src/consts/template.const';
 import styled from 'styled-components';
 
 type HeaderContainerProps = {
@@ -6,18 +7,18 @@ type HeaderContainerProps = {
 };
 
 export const HeaderContainer = styled.header<HeaderContainerProps>`
-  background-color: ${({ theme }) => theme.colors.gray['100']};
+  background-color: ${({ theme }) => theme.colors.gray50};
   display: flex;
   flex-direction: row;
   position: fixed;
-  top: ${(props) => (props.$isHidden ? '-12%' : 0)};
+  top: ${({ $isHidden }) => ($isHidden ? '-12%' : 0)};
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 0 ${({ theme }) => theme.spacing['16px']};
+  padding: 0 ${spacing['16px']};
   z-index: 10;
   transition: top 500ms;
-  ${({ theme }) => theme.elevation.sm};
+  box-shadow: ${shadows.elevation.md};
 `;
 
 export const Logo = styled(Link)`

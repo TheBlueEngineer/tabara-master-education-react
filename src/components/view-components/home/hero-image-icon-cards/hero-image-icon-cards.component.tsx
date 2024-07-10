@@ -36,17 +36,19 @@ const IconCardsArray = [
 
 const HeroImageIconCards: FC = () => {
   return (
-    <SC.HeroImageIconCards>
-      {IconCardsArray &&
-        IconCardsArray.map((iconCard) => (
-          <IconCard
-            key={iconCard.id}
-            iconComponent={iconCard.iconComponent}
-            title={iconCard.title}
-            description={iconCard.description}
-          />
-        ))}
-    </SC.HeroImageIconCards>
+    <SC.Wrapper>
+      <SC.HeroImageIconCards>
+        {IconCardsArray &&
+          IconCardsArray.map((iconCard) => (
+            <IconCard
+              key={iconCard.id}
+              iconComponent={iconCard.iconComponent}
+              title={iconCard.title}
+              description={iconCard.description}
+            />
+          ))}
+      </SC.HeroImageIconCards>
+    </SC.Wrapper>
   );
 };
 

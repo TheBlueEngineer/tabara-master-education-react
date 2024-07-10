@@ -20,7 +20,6 @@ const HeroImage: FC = () => {
         <SC.CTAButton
           variant="primary"
           size="medium"
-          shape="rounded"
           onClick={handleOnClickContact}
         >
           Contact Us

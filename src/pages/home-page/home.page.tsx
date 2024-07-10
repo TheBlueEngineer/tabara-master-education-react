@@ -4,6 +4,8 @@ import * as SC from './home-page.styles';
 import HomeAboutUs from '@components/view-components/home/about-us/about-us.component';
 import HeroImage from '@components/view-components/home/hero-image/hero-image.component';
 import AchievementIcons from '@components/view-components/home/achievement-icons/achievements-icons.component';
+import OurCamps from '@components/view-components/home/our-camps/our-camps.component';
+import CampActivities from '@components/view-components/home/camp-activities/camp-activities.component';
 
 const HomePage = () => {
   /* const { t } = useTranslation('home'); */
@@ -15,6 +17,8 @@ const HomePage = () => {
         <HeroImageIconCards />
         <HomeAboutUs />
         <AchievementIcons />
+        <OurCamps />
+        <CampActivities />
       </SC.HomePageContainer>
     </SC.Wrapper>
   );

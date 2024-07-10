@@ -4,18 +4,22 @@ import { FaBeer } from 'react-icons/fa';
 
 const list = [
   {
+    id: 1,
     icon: FaBeer,
     text: 'We are truly one of the best camps in the world. Like no questions asked.',
   },
   {
+    id: 2,
     icon: FaBeer,
     text: 'We are truly one of the best camps in the world. Like no questions asked.',
   },
   {
+    id: 3,
     icon: FaBeer,
     text: 'We are truly one of the best camps in the world. Like no questions asked.',
   },
   {
+    id: 4,
     icon: FaBeer,
     text: 'We are truly one of the best camps in the world. Like no questions asked.',
   },
@@ -68,7 +72,7 @@ const AboutUs = () => {
         <SC.List>
           {list &&
             list.map((item) => (
-              <SC.ListItem>
+              <SC.ListItem key={item.id}>
                 <Icon IconComponent={item.icon} size="medium" />
                 <SC.Text>{item.text}</SC.Text>
               </SC.ListItem>

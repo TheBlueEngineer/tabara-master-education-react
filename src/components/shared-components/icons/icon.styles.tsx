@@ -1,22 +1,24 @@
 import styled, { css } from 'styled-components';
-import { IconProps } from './icon.component';
-import { ThemeType } from '../../../consts/themes.const';
+import { typography } from 'src/consts/template.const';
 
-type IconWrapperProps = Omit<IconProps, 'IconComponent'>;
+type IconWrapperProps = {
+  $size?: 'small' | 'medium' | 'large';
+  $variant?: 'primary' | 'framed';
+};
 
-const iconSize = (theme: ThemeType, size: string) => {
+const iconSize = (size: string) => {
   switch (size) {
     case 'small':
       return css`
-        font-size: ${theme.typography.font.size.sm};
+        ${typography.size.sm};
       `;
     case 'medium':
       return css`
-        font-size: ${theme.typography.font.size.md};
+        ${typography.size.md};
       `;
     case 'large':
       return css`
-        font-size: ${theme.typography.font.size.lg};
+        ${typography.size.lg};
       `;
   }
 };
@@ -25,9 +27,9 @@ export const IconWrapper = styled.div<IconWrapperProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  ${({ theme, size }) => iconSize(theme, size || 'medium')}
+  ${({ $size }) => iconSize($size || 'medium')}
 `;
 
 IconWrapper.defaultProps = {
-  size: 'medium',
+  $size: 'medium',
 };

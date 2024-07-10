@@ -1,15 +1,17 @@
 import styled from 'styled-components';
-import { spacing, textShadow } from 'src/consts/template.const';
+import { shadows, spacing } from 'src/consts/template.const';
 import Button from '@components/shared-components/button/button.component';
+
 export const HeroContainer = styled.section`
   display: flex;
   width: 100%;
   min-height: 5rem;
-  padding-top: ${spacing['12rem']};
-  padding-bottom: ${spacing['12rem']};
+  padding-top: ${spacing['192px']};
+  padding-bottom: ${spacing['192px']};
   position: relative;
   background-image: url('/src/assets/images/home/home_bg.webp');
-  background-position: 50%;
+  background-position: center;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   justify-content: center;
@@ -32,7 +34,7 @@ export const Content = styled.div`
   position: relative;
   justify-content: center;
   align-items: center;
-  row-gap: ${spacing['2rem']};
+  row-gap: ${spacing['32px']};
   z-index: 2;
 `;
 
@@ -42,7 +44,7 @@ export const Title = styled.h1`
   font-size: 4rem;
   text-align: center;
   color: white;
-  text-shadow: ${textShadow.heavy};
+  text-shadow: ${shadows.font.heavy};
 `;
 
 export const Subtitle = styled.h2`
@@ -52,7 +54,7 @@ export const Subtitle = styled.h2`
   text-align: center;
   color: #e0e0e0;
   width: 50%;
-  text-shadow: ${textShadow.heavy};
+  text-shadow: ${shadows.font.heavy};
 `;
 
 export const CTAButton = styled(Button)``;

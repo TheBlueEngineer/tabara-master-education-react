@@ -1,15 +1,22 @@
 import styled, { css } from 'styled-components';
-import { ButtonProps } from './button.component';
 import { ThemeType } from 'src/consts/themes.const';
+import { opacity, spacing, typography } from 'src/consts/template.const';
+import { ButtonHTMLAttributes } from 'react';
 
-type StyledButtonProps = Omit<ButtonProps, 'startIcon' | 'endIcon'>;
+type StyledButtonProps = {
+  $variant?: 'default' | 'primary' | 'contained' | 'outlined' | 'disabled';
+  $size?: 'small' | 'medium' | 'large';
+  disabled?: boolean;
+  $fullWidth?: boolean;
+  onClick: () => void;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const buttonVariants = (theme: ThemeType, variant: string) => {
   switch (variant) {
     case 'primary':
       return css`
-        background-color: ${theme.colors.background.primary};
-        color: ${theme.colors.typography.primary};
+        background-color: ${theme.colors.green700};
+        color: ${theme.colors.gray50};
       `;
     case 'secondary':
       return css``;
@@ -25,22 +32,22 @@ const buttonVariants = (theme: ThemeType, variant: string) => {
   }
 };
 
-const buttonSizes = (theme: ThemeType, size: string) => {
+const buttonSizes = (size: string) => {
   switch (size) {
     case 'small':
       return css`
-        padding: ${theme.spacing['4px']}, ${theme.spacing['8px']};
-        font-size: ${theme.typography.size.base};
+        padding: ${spacing['4px']} ${spacing['8px']};
+        ${typography.size.base};
       `;
     case 'medium':
       return css`
-        padding: ${theme.spacing['8px']}, ${theme.spacing['12px']};
-        font-size: ${theme.typography.size.base};
+        padding: ${spacing['8px']} ${spacing['12px']};
+        ${typography.size.base};
       `;
     case 'large':
       return css`
-        padding: ${theme.spacing['12px']}, ${theme.spacing['16px']};
-        font-size: ${theme.typography.size.base};
+        padding: ${spacing['12px']} ${spacing['16px']};
+        ${typography.size.base};
       `;
   }
 };
@@ -48,18 +55,18 @@ const buttonSizes = (theme: ThemeType, size: string) => {
 export const StyledButton = styled.button<StyledButtonProps>`
   transition: background-color 400ms;
   cursor: pointer;
-  ${({ theme, variant }) => buttonVariants(theme, variant || 'default')};
-  ${({ theme, size }) => buttonSizes(theme, size || 'medium')};
-  ${({ fullWidth }) => fullWidth && 'width: 100%'};
+  ${({ theme, $variant }) => buttonVariants(theme, $variant || 'default')};
+  ${({ $size }) => buttonSizes($size || 'medium')};
+  ${({ $fullWidth }) => $fullWidth && 'width: 100%'};
 
   &:hover {
-    opacity: ${({ theme }) => theme.opacity[0.8]};
+    opacity: ${opacity[0.8]};
   }
 `;
 
 StyledButton.defaultProps = {
-  variant: 'default',
-  size: 'medium',
+  $variant: 'default',
+  $size: 'medium',
   disabled: false,
-  fullWidth: false,
+  $fullWidth: false,
 };

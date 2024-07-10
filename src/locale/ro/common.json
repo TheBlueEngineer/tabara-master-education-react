@@ -1,10 +1,10 @@
 {
   "navigationBar": {
-    "home": "Acasa",
-    "camps": "Tabere",
-    "team": "Echipa",
-    "contact": "Contact",
-    "sign-in": "Logare",
-    "sign-up": "Inregistrare"
+    "home": "ACASA",
+    "camps": "TABERE",
+    "team": "ECHIPA",
+    "contact": "CONTACT",
+    "sign-in": "LOGARE",
+    "sign-up": "INREGISTRARE"
   }
 }

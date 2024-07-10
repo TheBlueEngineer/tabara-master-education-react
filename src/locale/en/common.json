@@ -1,10 +1,10 @@
 {
   "navigationBar": {
-    "home": "Home",
-    "camps": "Camps",
-    "team": "Team",
-    "contact": "Contact",
-    "sign-in": "Log-in",
-    "sign-up": "Sign-up"
+    "home": "HOME",
+    "camps": "CAMPS",
+    "team": "TEAM",
+    "contact": "CONTACT",
+    "sign-in": "LOGIN",
+    "sign-up": "SIGN-UP"
   }
 }

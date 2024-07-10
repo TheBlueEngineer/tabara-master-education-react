@@ -8,8 +8,8 @@ export type ButtonProps = {
   size?: 'small' | 'medium' | 'large';
   disabled?: boolean;
   fullWidth?: boolean;
-  startIcon: null | IconType;
-  endIcon: null | IconType;
+  startIcon?: null | IconType;
+  endIcon?: null | IconType;
   onClick: () => void;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -26,10 +26,10 @@ const Button: FC<ButtonProps> = ({
 }) => {
   return (
     <SC.StyledButton
-      fullWidth={fullWidth}
+      $fullWidth={fullWidth}
       disabled={disabled}
-      variant={variant}
-      size={size}
+      $variant={variant}
+      $size={size}
       onClick={onClick}
       {...otherProps}
     >

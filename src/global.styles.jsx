@@ -2,14 +2,10 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
    :root {
-        font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+        font-family: 'Roboto', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
         line-height: 1.5;
         font-weight: 400;
         font-size: 16px;
-        font-synthesis: none;
-        text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
     }
 
     #root{
@@ -29,11 +25,9 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        font-family: 'Roboto', sans-serif;
         margin: 0;
         display: flex;
         font-size: 1rem;
-
     }
 
     html, body, div, span, applet, object, iframe,

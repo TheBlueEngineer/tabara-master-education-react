@@ -1,5 +1,10 @@
 import { NavLink as NavigationLink } from 'react-router-dom';
-import { border, opacity, typography } from 'src/consts/template.const';
+import {
+  border,
+  opacity,
+  spacing,
+  typography,
+} from 'src/consts/template.const';
 import styled from 'styled-components';
 
 export const Navbar = styled.nav`
@@ -12,18 +17,20 @@ export const Navbar = styled.nav`
 export const NavLink = styled(NavigationLink)`
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-
+  align-items: baseline;
+  color: ${({ theme }) => theme.colors.green800};
   text-decoration: none;
   height: 100%;
-  padding: ${({ theme }) => theme.spacing['16px']};
-
-  ${({ theme }) => theme.typography.size.md};
+  padding: ${spacing['16px']};
+  ${typography.weight.bold};
+  ${typography.size.md};
+  column-gap: ${spacing['4px']};
 
   &.active {
-    color: ${({ theme }) => theme.colors.tertiary};
-    border-bottom: ${border.width.sm}
-      ${({ theme }) => theme.colors.background.secondary} solid;
+    color: ${({ theme }) => theme.colors.green900};
+    border-bottom: ${border.width.sm};
+    border-bottom-color: ${({ theme }) => theme.colors.green900};
+    border-bottom-style: solid;
     ${typography.weight.bolder};
   }
 
@@ -33,5 +40,5 @@ export const NavLink = styled(NavigationLink)`
 `;
 
 export const Text = styled.span`
-  ${({ theme }) => theme.typography.size.md};
+  ${typography.size.md};
 `;

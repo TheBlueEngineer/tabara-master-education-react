@@ -1,42 +1,46 @@
-export const colors = {
+export const colorsLight = {
   black: 'hsl(0, 0%, 0%)',
   white: 'hsl(0, 0, 100)',
-  green: {
-    50: 'hsl(131, 80%, 94%)',
-    100: 'hsl(131, 80%, 90%)',
-    200: 'hsl(131, 80%, 86%)',
-    300: 'hsl(131, 80%, 77%)',
-    400: 'hsl(131, 80%, 68%)',
-    500: 'hsl(131, 80%, 59%)',
-    600: 'hsl(131, 80%, 50%)',
-    700: 'hsl(131, 80%, 41%)',
-    800: 'hsl(131, 80%, 32%)',
-    900: 'hsl(131, 80%, 23%)',
-  },
-  gray: {
-    50: 'hsl(0, 0%, 94%)',
-    100: 'hsl(0, 0%, 90%)',
-    200: 'hsl(0, 0%, 86%)',
-    300: 'hsl(0, 0%, 77%)',
-    400: 'hsl(0, 0%, 68%)',
-    500: 'hsl(0, 0%, 59%)',
-    600: 'hsl(0, 0%, 50%)',
-    700: 'hsl(0, 0%, 41%)',
-    800: 'hsl(0, 0%, 32%)',
-    900: 'hsl(0, 0%, 23%)',
-  },
-  red: {
-    50: 'hsl(0, 80%, 94%)',
-    100: 'hsl(0, 80%, 90%)',
-    200: 'hsl(0, 80%, 86%)',
-    300: 'hsl(0, 80%, 77%)',
-    400: 'hsl(0, 80%, 68%)',
-    500: 'hsl(0, 80%, 59%)',
-    600: 'hsl(0, 80%, 50%)',
-    700: 'hsl(0, 80%, 41%)',
-    800: 'hsl(0, 80%, 32%)',
-    900: 'hsl(0, 80%, 23%)',
-  },
+  green50: 'hsl(131, 80%, 94%)',
+  green100: 'hsl(131, 80%, 90%)',
+  green200: 'hsl(131, 80%, 86%)',
+  green300: 'hsl(131, 80%, 77%)',
+  green400: 'hsl(131, 80%, 68%)',
+  green500: 'hsl(131, 80%, 59%)',
+  green600: 'hsl(131, 80%, 50%)',
+  green700: 'hsl(131, 80%, 41%)',
+  green800: 'hsl(131, 80%, 32%)',
+  green900: 'hsl(131, 80%, 23%)',
+  gray50: 'hsl(0, 0%, 94%)',
+  gray100: 'hsl(0, 0%, 90%)',
+  gray200: 'hsl(0, 0%, 86%)',
+  gray300: 'hsl(0, 0%, 77%)',
+  gray400: 'hsl(0, 0%, 68%)',
+  gray500: 'hsl(0, 0%, 59%)',
+  gray600: 'hsl(0, 0%, 50%)',
+  gray700: 'hsl(0, 0%, 41%)',
+  gray800: 'hsl(0, 0%, 32%)',
+  gray900: 'hsl(0, 0%, 23%)',
+  red50: 'hsl(0, 80%, 94%)',
+  red100: 'hsl(0, 80%, 90%)',
+  red200: 'hsl(0, 80%, 86%)',
+  red300: 'hsl(0, 80%, 77%)',
+  red400: 'hsl(0, 80%, 68%)',
+  red500: 'hsl(0, 80%, 59%)',
+  red600: 'hsl(0, 80%, 50%)',
+  red700: 'hsl(0, 80%, 41%)',
+  red800: 'hsl(0, 80%, 32%)',
+  red900: 'hsl(0, 80%, 23%)',
+  blue50: `hsl(208, 80%, 94%);`,
+  blue100: `hsl(208, 80%, 90%)`,
+  blue200: `hsl(208, 80%, 86%)`,
+  blue300: `hsl(208, 80%, 77%)`,
+  blue400: `hsl(208, 80%, 68%)`,
+  blue500: `hsl(208, 80%, 59%)`,
+  blue600: `hsl(208, 80%, 50%)`,
+  blue700: `hsl(208, 80%, 41%)`,
+  blue800: `hsl(208, 80%, 32%)`,
+  blue900: `hsl(208, 80%, 23%)`,
 };
 
 export const typography = {
@@ -89,27 +93,27 @@ export const border = {
 
 export const shadows = {
   font: {
-    lighter: 'text-shadow: 0px 1px 0.5rem rgba(0, 0, 0, 0.3)',
-    light: 'text-shadow: 0px 1px 1rem hsla(0, 0%, 0%, 0.35)',
-    medium: 'text-shadow: 0px 2px 2rem rgba(0, 0, 0, 0.4)',
-    heavy: 'text-shadow: 0px 3px 3rem hsla(0, 0%, 0%, 0.45)',
+    lighter: '0px 1px 0.5rem rgba(0, 0, 0, 0.3)',
+    light: ' 0px 1px 1rem hsla(0, 0%, 0%, 0.35)',
+    medium: '0px 2px 2rem rgba(0, 0, 0, 0.4)',
+    heavy: '0px 3px 3rem hsla(0, 0%, 0%, 0.45)',
   },
   elevation: {
     default: `0 0px 0px hsla(0, 0, 0)`,
     sm: `
-      0 1px 3px hsla(0%, 0%, 0.12),
-      0 1px 2px hsla(0%, 0%, 0.24)`,
+      0 1px 3px hsla(0, 0%, 0%, 0.12),
+      0 1px 2px hsla(0, 0%, 0%, 0.24)`,
     md: `
-      box-shadow: 0 3px 6px hsla(0%, 0%, 0.15),
-      0 2px 4px hsla(0%, 0%, 0.12)`,
+      0 3px 6px hsla(0, 0%, 0%, 0.15),
+      0 2px 4px hsla(0, 0%, 0%, 0.12)`,
     lg: `
-      box-shadow: 0 10px 20px hsla(0%, 0%, 0.15),
-      0 3px 6px hsla(0%, 0%, 0.1)`,
+      0 10px 20px hsla(0, 0%, 0%, 0.15),
+      0 3px 6px hsla(0, 0%, 0%, 0.1)`,
     xl: `
-      box-shadow: 0 15px 25px hsla(0, 0%, 0%, 0.15),
+      0 15px 25px hsla(0, 0%, 0%, 0.15),
       0 5px 10px hsla(0, 0%, 0%, 0.5)`,
     xl2: `
-    box-shadow: 0 20px 40px hsla(0, 0%, 0%, 0.2)
+    0 20px 40px hsla(0, 0%, 0%, 0.2)
   `,
   },
 };
@@ -123,6 +127,7 @@ export const opacity = {
 };
 
 export const spacing = {
+  '2px': '0.125rem',
   '4px': `0.25rem`,
   '8px': '0.5rem',
   '12px': '0.75rem',

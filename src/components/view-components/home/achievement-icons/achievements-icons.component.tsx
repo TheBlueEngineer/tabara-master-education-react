@@ -3,33 +3,23 @@ import * as SC from './achievements-icons.styles';
 import { BiWalk } from 'react-icons/bi';
 const list = [
   {
+    id: 1,
     icon: BiWalk,
     title: '200+',
     subtitle: 'Hiking trails',
   },
-  {
-    icon: BiWalk,
-    title: '200+',
-    subtitle: 'Hiking trails',
-  },
-  {
-    icon: BiWalk,
-    title: '200+',
-    subtitle: 'Hiking trails',
-  },
-  {
-    icon: BiWalk,
-    title: '200+',
-    subtitle: 'Hiking trails',
-  },
+  { id: 2, icon: BiWalk, title: '200+', subtitle: 'Hiking trails' },
+  { id: 3, icon: BiWalk, title: '200+', subtitle: 'Hiking trails' },
+  { id: 4, icon: BiWalk, title: '200+', subtitle: 'Hiking trails' },
 ];
 
 const AchievementIcons = () => {
   return (
     <SC.Container>
+      <SC.Overlay />
       {list &&
         list.map((item) => (
-          <SC.IconCard>
+          <SC.IconCard key={item.id}>
             <SC.IconWrapper>
               <Icon IconComponent={item.icon} size={'large'} />
             </SC.IconWrapper>

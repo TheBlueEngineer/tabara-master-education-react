@@ -14,7 +14,7 @@ const Icon: FC<IconProps> = ({
   variant = 'primary',
 }) => {
   return (
-    <SC.IconWrapper size={size} variant={variant}>
+    <SC.IconWrapper $size={size} $variant={variant}>
       <IconComponent />
     </SC.IconWrapper>
   );
