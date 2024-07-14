@@ -1,12 +1,48 @@
-import { spacing } from 'src/consts/template.const';
+import { spacing, typography } from 'src/consts/template.const';
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  padding: ${spacing['64px']} 7.5%;
-  background-color: ${({ theme }) => theme.colors.gray100};
-  row-gap: ${spacing['32px']};
-  column-gap: ${spacing['32px']};
+  background: linear-gradient(
+    ${({ theme }) => theme.colors.gray50},
+    ${({ theme }) => theme.colors.blue50}
+  );
+  padding: ${spacing['96px']} 7.5%;
+`;
+
+export const ListContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  width: 100%;
+
+  row-gap: ${spacing['96px']};
+  column-gap: ${spacing['48px']};
+`;
+
+export const Title = styled.h1`
+  display: flex;
+  position: relative;
+  ${typography.size.xl4};
+  ${typography.weight.bolder};
+  color: ${({ theme }) => theme.colors.green800};
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    bottom: 0;
+    left: 25%;
+    border: 1px solid ${({ theme }) => theme.colors.green900};
+  }
+`;
+
+export const Subtitle = styled.h2`
+  ${typography.size.xl3};
+  ${typography.weight.bold};
+  color: ${({ theme }) => theme.colors.blue600};
+  margin-bottom: ${spacing['128px']};
 `;

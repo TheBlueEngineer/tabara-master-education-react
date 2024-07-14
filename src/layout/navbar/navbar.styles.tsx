@@ -25,6 +25,7 @@ export const NavLink = styled(NavigationLink)`
   ${typography.weight.bold};
   ${typography.size.md};
   column-gap: ${spacing['4px']};
+  transition: opacity 300ms;
 
   &.active {
     color: ${({ theme }) => theme.colors.green900};

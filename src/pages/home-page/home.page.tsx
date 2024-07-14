@@ -6,6 +6,8 @@ import HeroImage from '@components/view-components/home/hero-image/hero-image.co
 import AchievementIcons from '@components/view-components/home/achievement-icons/achievements-icons.component';
 import OurCamps from '@components/view-components/home/our-camps/our-camps.component';
 import CampActivities from '@components/view-components/home/camp-activities/camp-activities.component';
+import WhyChooseUs from '@components/view-components/home/why-choose-us/why-choose-us.component';
+import OurDestinations from '@components/view-components/home/our-destinations/our-destinations.component';
 
 const HomePage = () => {
   /* const { t } = useTranslation('home'); */
@@ -19,6 +21,8 @@ const HomePage = () => {
         <AchievementIcons />
         <OurCamps />
         <CampActivities />
+        <WhyChooseUs />
+        <OurDestinations />
       </SC.HomePageContainer>
     </SC.Wrapper>
   );

@@ -17,6 +17,7 @@ export const Container = styled.div`
   border-width: ${border.width.xs};
   border-color: ${({ theme }) => theme.colors.gray100};
   padding-bottom: ${spacing['16px']};
+  background-color: white;
 `;
 
 export const Image = styled.div<{ $src: string }>`
@@ -56,8 +57,8 @@ export const Price = styled.p`
   padding: ${spacing['4px']} ${spacing['16px']};
   background: linear-gradient(
     90deg,
-    ${({ theme }) => theme.colors.green700},
-    ${({ theme }) => theme.colors.green800}
+    ${({ theme }) => theme.colors.blue500},
+    ${({ theme }) => theme.colors.blue600}
   );
   color: ${({ theme }) => theme.colors.gray100};
   ${typography.weight.bold};
@@ -106,9 +107,9 @@ export const Cell = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: baseline;
+  vertical-align: center;
   column-gap: ${spacing['8px']};
-  color: ${({ theme }) => theme.colors.green900};
+  color: ${({ theme }) => theme.colors.green800};
   ${typography.size.base};
   ${typography.weight.bold};
 `;

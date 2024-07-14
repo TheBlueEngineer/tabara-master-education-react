@@ -1,20 +1,18 @@
 import { FC } from 'react';
 import * as SC from './icon-card.styles';
+import { IconType } from 'react-icons';
+import Icon from '@components/shared-components/icons/icon.component';
 
 type IconCardProps = {
-  iconComponent: React.ReactNode;
+  icon: IconType;
   title: string;
   description: string;
 };
 
-export const IconCard: FC<IconCardProps> = ({
-  iconComponent,
-  title,
-  description,
-}) => {
+export const IconCard: FC<IconCardProps> = ({ icon, title, description }) => {
   return (
     <SC.IconCardContainer>
-      {iconComponent}
+      <Icon IconComponent={icon} size={48} />
       <SC.Title>{title}</SC.Title>
       <SC.Description>{description}</SC.Description>
     </SC.IconCardContainer>

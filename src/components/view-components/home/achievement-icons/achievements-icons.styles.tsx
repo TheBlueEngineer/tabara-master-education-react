@@ -33,13 +33,14 @@ export const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: hsla(0, 0%, 0%, 0.35);
+  background-color: hsla(0, 0%, 0%, 0.4);
   z-index: 1;
 `;
 
 export const IconCard = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   z-index: 2;
 `;
 
@@ -51,6 +52,7 @@ export const IconWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.green700};
   border-right: ${spacing['4px']};
   border-radius: ${border.radius.xs};
+  margin-bottom: ${spacing['8px']};
 `;
 
 export const Title = styled.h2`
@@ -61,7 +63,7 @@ export const Title = styled.h2`
 `;
 
 export const Subtitle = styled.p`
-  ${typography.size.md};
+  ${typography.size.lg};
   ${typography.weight.bold};
   color: ${({ theme }) => theme.colors.green100};
   ${shadows.font.medium};

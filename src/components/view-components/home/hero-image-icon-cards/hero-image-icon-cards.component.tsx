@@ -6,28 +6,28 @@ import { FaBeer } from 'react-icons/fa';
 const IconCardsArray = [
   {
     id: 1,
-    iconComponent: <FaBeer size={30} />,
+    iconComponent: FaBeer,
     title: 'Icon Title #1',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
   },
   {
     id: 2,
-    iconComponent: <FaBeer size={30} />,
+    iconComponent: FaBeer,
     title: 'Icon Title #1',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
   },
   {
     id: 3,
-    iconComponent: <FaBeer size={30} />,
+    iconComponent: FaBeer,
     title: 'Icon Title #1',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
   },
   {
     id: 4,
-    iconComponent: <FaBeer size={30} />,
+    iconComponent: FaBeer,
     title: 'Icon Title #1',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
@@ -42,7 +42,7 @@ const HeroImageIconCards: FC = () => {
           IconCardsArray.map((iconCard) => (
             <IconCard
               key={iconCard.id}
-              iconComponent={iconCard.iconComponent}
+              icon={iconCard.iconComponent}
               title={iconCard.title}
               description={iconCard.description}
             />

@@ -56,10 +56,12 @@ const AboutUs = () => {
 
       <SC.InformationContainer>
         <SC.Row>
-          <Icon IconComponent={FaBeer} size="large" />
+          <Icon IconComponent={FaBeer} size={32} />
           <SC.Title>About us</SC.Title>
         </SC.Row>
-        <SC.Subtitle>Experience Nature Together With Us</SC.Subtitle>
+        <SC.Subtitle>
+          Experience <SC.Span>Nature</SC.Span> Together With Us
+        </SC.Subtitle>
         <SC.Description>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -73,7 +75,7 @@ const AboutUs = () => {
           {list &&
             list.map((item) => (
               <SC.ListItem key={item.id}>
-                <Icon IconComponent={item.icon} size="medium" />
+                <Icon IconComponent={item.icon} size={24} />
                 <SC.Text>{item.text}</SC.Text>
               </SC.ListItem>
             ))}

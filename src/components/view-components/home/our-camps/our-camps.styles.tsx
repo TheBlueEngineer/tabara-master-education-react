@@ -1,4 +1,4 @@
-import { shadows, spacing, typography } from 'src/consts/template.const';
+import { spacing, typography } from 'src/consts/template.const';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -25,8 +25,7 @@ export const Title = styled.h2`
   position: relative;
   ${typography.size.xl4};
   ${typography.weight.bolder};
-  text-shadow: ${shadows.font.light};
-
+  color: ${({ theme }) => theme.colors.green800};
   &:after {
     content: '';
     position: absolute;
@@ -34,13 +33,13 @@ export const Title = styled.h2`
     height: 1px;
     bottom: 0;
     left: 45%;
-    border: 1px solid ${({ theme }) => theme.colors.green900};
+    border: 1px solid ${({ theme }) => theme.colors.green700};
   }
 `;
 
 export const Subtitle = styled.h3`
-  text-shadow: ${shadows.font.lighter};
-  color: ${({ theme }) => theme.colors.green700};
+  color: ${({ theme }) => theme.colors.blue600};
+  ${typography.size.xl2};
 `;
 
 export const Row = styled.div`

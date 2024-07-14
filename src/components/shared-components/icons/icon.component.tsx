@@ -4,17 +4,13 @@ import { IconType } from 'react-icons';
 
 export type IconProps = {
   IconComponent: IconType;
-  size?: 'small' | 'medium' | 'large';
-  variant?: 'primary' | 'framed';
+  size?: number;
+  color?: string | null;
 };
 
-const Icon: FC<IconProps> = ({
-  IconComponent,
-  size = 'small',
-  variant = 'primary',
-}) => {
+const Icon: FC<IconProps> = ({ IconComponent, size = 16, color = null }) => {
   return (
-    <SC.IconWrapper $size={size} $variant={variant}>
+    <SC.IconWrapper $color={color} $size={size}>
       <IconComponent />
     </SC.IconWrapper>
   );

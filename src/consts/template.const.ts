@@ -1,6 +1,7 @@
 export const colorsLight = {
   black: 'hsl(0, 0%, 0%)',
-  white: 'hsl(0, 0, 100)',
+  white: 'hsl(0, 0%, 100%)',
+  // Primary green color
   green50: 'hsl(131, 80%, 94%)',
   green100: 'hsl(131, 80%, 90%)',
   green200: 'hsl(131, 80%, 86%)',
@@ -11,6 +12,19 @@ export const colorsLight = {
   green700: 'hsl(131, 80%, 41%)',
   green800: 'hsl(131, 80%, 32%)',
   green900: 'hsl(131, 80%, 23%)',
+  green950: 'hsl(131, 80%, 18%)',
+  // Secondary color
+  blue50: `hsl(208, 80%, 95%)`,
+  blue100: `hsl(208, 80%, 90%)`,
+  blue200: `hsl(208, 80%, 86%)`,
+  blue300: `hsl(208, 80%, 77%)`,
+  blue400: `hsl(208, 80%, 68%)`,
+  blue500: `hsl(208, 80%, 59%)`,
+  blue600: `hsl(208, 80%, 50%)`,
+  blue700: `hsl(208, 80%, 41%)`,
+  blue800: `hsl(208, 80%, 32%)`,
+  blue900: `hsl(208, 80%, 23%)`,
+  // Gray for negative spaces
   gray50: 'hsl(0, 0%, 94%)',
   gray100: 'hsl(0, 0%, 90%)',
   gray200: 'hsl(0, 0%, 86%)',
@@ -21,6 +35,31 @@ export const colorsLight = {
   gray700: 'hsl(0, 0%, 41%)',
   gray800: 'hsl(0, 0%, 32%)',
   gray900: 'hsl(0, 0%, 23%)',
+  // Green Gray
+  greenGray50: 'hsl(120, 14%, 96%)',
+  greenGray100: 'hsl(111, 14%, 90%)',
+  greenGray200: 'hsl(120, 12%, 80%)',
+  greenGray300: 'hsl(123, 11%, 67%)',
+  greenGray400: 'hsl(127, 10%, 50%)',
+  greenGray500: 'hsl(130, 12%, 39%)',
+  greenGray600: 'hsl(130, 15%, 30%)',
+  greenGray700: 'hsl(133, 15%, 24%)',
+  greenGray800: 'hsl(129, 13%, 20%)',
+  greenGray900: 'hsl(138, 12%, 16%)',
+  greenGray950: 'hsl(140, 13%, 9%)',
+  // Blue Gray
+  blueGray50: 'hsl(210, 17%, 98%)', // #f9fafb
+  blueGray100: 'hsl(200, 12%, 96%)', // #f2f5f5
+  blueGray200: 'hsl(195, 18%, 92%)', // #e7ebed
+  blueGray300: 'hsl(200, 16%, 87%)', // #d4dbde
+  blueGray400: 'hsl(200, 14%, 76%)', // #b8c3c8
+  blueGray500: 'hsl(200, 12%, 65%)', // #9babb1
+  blueGray600: 'hsl(200, 11%, 57%)', // #82939b
+  blueGray700: 'hsl(200, 10%, 51%)', // #73848c
+  blueGray800: 'hsl(200, 11%, 39%)', // #5b686e
+  blueGray900: 'hsl(200, 11%, 32%)', // #4a5459
+  blueGray950: 'hsl(200, 13%, 21%)', // #2f383c
+  // Red for errors
   red50: 'hsl(0, 80%, 94%)',
   red100: 'hsl(0, 80%, 90%)',
   red200: 'hsl(0, 80%, 86%)',
@@ -31,16 +70,6 @@ export const colorsLight = {
   red700: 'hsl(0, 80%, 41%)',
   red800: 'hsl(0, 80%, 32%)',
   red900: 'hsl(0, 80%, 23%)',
-  blue50: `hsl(208, 80%, 94%);`,
-  blue100: `hsl(208, 80%, 90%)`,
-  blue200: `hsl(208, 80%, 86%)`,
-  blue300: `hsl(208, 80%, 77%)`,
-  blue400: `hsl(208, 80%, 68%)`,
-  blue500: `hsl(208, 80%, 59%)`,
-  blue600: `hsl(208, 80%, 50%)`,
-  blue700: `hsl(208, 80%, 41%)`,
-  blue800: `hsl(208, 80%, 32%)`,
-  blue900: `hsl(208, 80%, 23%)`,
 };
 
 export const typography = {

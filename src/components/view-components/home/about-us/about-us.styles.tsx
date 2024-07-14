@@ -1,9 +1,4 @@
-import {
-  border,
-  shadows,
-  spacing,
-  typography,
-} from 'src/consts/template.const';
+import { border, spacing, typography } from 'src/consts/template.const';
 import styled from 'styled-components';
 
 export const HomeAboutUsContainer = styled.section`
@@ -57,17 +52,22 @@ export const Row = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  color: ${({ theme }) => theme.colors.green800};
 `;
 
 export const Title = styled.h1`
-  font-size: 2rem;
+  ${typography.size.xl};
+  ${typography.weight.bold};
+  ${typography.lineHeight.sm};
+
+  color: ${({ theme }) => theme.colors.green800};
 `;
 
 export const Subtitle = styled.h2`
-  font-size: 2.5rem;
+  ${typography.size.xl2};
+  ${typography.weight.bolder};
   text-align: left;
   margin-bottom: ${spacing['16px']};
-  text-shadow: ${shadows.font.light};
   text-align: center;
   @media (min-width: 1024px) {
     text-align: left;
@@ -79,6 +79,10 @@ export const Description = styled.p`
   text-align: left;
   max-width: 50em;
   margin-bottom: ${spacing['24px']};
+`;
+
+export const Span = styled.span`
+  color: ${({ theme }) => theme.colors.green950};
 `;
 
 export const List = styled.ul`

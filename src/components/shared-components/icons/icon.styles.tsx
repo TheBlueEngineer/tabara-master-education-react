@@ -1,35 +1,16 @@
-import styled, { css } from 'styled-components';
-import { typography } from 'src/consts/template.const';
+import styled from 'styled-components';
 
 type IconWrapperProps = {
-  $size?: 'small' | 'medium' | 'large';
-  $variant?: 'primary' | 'framed';
+  $color: string | null;
+  $size: number;
 };
 
-const iconSize = (size: string) => {
-  switch (size) {
-    case 'small':
-      return css`
-        ${typography.size.sm};
-      `;
-    case 'medium':
-      return css`
-        ${typography.size.md};
-      `;
-    case 'large':
-      return css`
-        ${typography.size.lg};
-      `;
-  }
-};
+const pxToRem = (px: number): string => `${px / 16}rem`;
 
 export const IconWrapper = styled.div<IconWrapperProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  ${({ $size }) => iconSize($size || 'medium')}
+  font-size: ${({ $size }) => ($size ? pxToRem($size) : '1rem')};
+  color: ${({ $color }) => $color || null};
 `;
-
-IconWrapper.defaultProps = {
-  $size: 'medium',
-};

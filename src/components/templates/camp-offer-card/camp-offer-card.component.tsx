@@ -32,11 +32,11 @@ const CampOfferCard: FC<CampOfferCardProps> = ({
       <SC.Description>{description}</SC.Description>
       <SC.DateAndLocation>
         <SC.Cell>
-          <Icon IconComponent={BiCalendar} />
+          <Icon IconComponent={BiCalendar} size={16} />
           <span>Aug 27</span>
         </SC.Cell>
         <SC.Cell>
-          <Icon IconComponent={FaClock} />
+          <Icon IconComponent={FaClock} size={16} />
           <span>4 days</span>
         </SC.Cell>
       </SC.DateAndLocation>

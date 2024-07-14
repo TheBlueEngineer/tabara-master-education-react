@@ -21,7 +21,7 @@ const AchievementIcons = () => {
         list.map((item) => (
           <SC.IconCard key={item.id}>
             <SC.IconWrapper>
-              <Icon IconComponent={item.icon} size={'large'} />
+              <Icon IconComponent={item.icon} size={32} />
             </SC.IconWrapper>
             <SC.Title>{item.title}</SC.Title>
             <SC.Subtitle>{item.subtitle}</SC.Subtitle>
