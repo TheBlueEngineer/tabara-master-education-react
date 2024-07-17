@@ -167,6 +167,7 @@ export const spacing = {
   '64px': '4rem',
   '96px': '6rem',
   '128px': '8rem',
+  '160px': '10rem',
   '192px': '12rem',
   '256px': '16rem',
   '384px': '24rem',

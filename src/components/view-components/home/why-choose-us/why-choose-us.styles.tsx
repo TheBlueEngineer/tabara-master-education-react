@@ -31,6 +31,7 @@ export const Title = styled.h1`
   ${typography.size.xl};
   ${typography.weight.bold};
   color: ${({ theme }) => theme.colors.blue400};
+  font-family: 'Roboto Condensed', sans-serif;
 `;
 
 export const Subtitle = styled.h2`

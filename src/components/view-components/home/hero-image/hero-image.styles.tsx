@@ -45,6 +45,7 @@ export const Title = styled.h1`
   text-align: center;
   color: white;
   text-shadow: ${shadows.font.heavy};
+  font-family: 'Roboto Condensed', sans-serif;
 `;
 
 export const Subtitle = styled.h2`

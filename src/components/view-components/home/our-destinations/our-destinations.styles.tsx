@@ -1,4 +1,9 @@
-import { border, spacing, typography } from 'src/consts/template.const';
+import {
+  border,
+  shadows,
+  spacing,
+  typography,
+} from 'src/consts/template.const';
 import styled from 'styled-components';
 
 export const Container = styled.section`
@@ -11,9 +16,14 @@ export const Container = styled.section`
     ${({ theme }) => theme.colors.gray50}
   );
   padding: ${spacing['96px']} 7.5%;
+  background: linear-gradient(
+    ${({ theme }) => theme.colors.blue50},
+    ${({ theme }) => theme.colors.green50}
+  );
 `;
 
-export const Title = styled.h2`
+export const Title = styled.h1`
+  font-family: 'Roboto Condensed', sans-serif;
   position: relative;
   ${typography.size.xl4};
   ${typography.weight.bolder};
@@ -31,9 +41,10 @@ export const Title = styled.h2`
   }
 `;
 
-export const Subtitle = styled.h3`
+export const Subtitle = styled.h2`
   color: ${({ theme }) => theme.colors.blue500};
   ${typography.size.xl2};
+  margin-bottom: ${spacing['64px']};
 `;
 
 export const List = styled.div`
@@ -41,20 +52,25 @@ export const List = styled.div`
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  row-gap: ${spacing['24px']};
-  column-gap: ${spacing['24px']};
+  row-gap: ${spacing['32px']};
+  column-gap: ${spacing['32px']};
 `;
 
 export const Destination = styled.div<{ $src: string; $colSpan: number }>`
   display: flex;
   position: relative;
   width: 100%;
-  height: 100%;
+  height: ${spacing['384px']};
   padding: ${spacing['16px']};
   border-radius: ${border.radius.md} 0 ${border.radius.md} 0;
   background-image: url(${({ $src }) => $src});
-  height: ${spacing['384px']};
   grid-column: ${({ $colSpan }) => `span ${$colSpan}` || `span: 1`};
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow:
+    ${shadows.elevation.md},
+    inset 4px 6px 22px 0px hsla(0, 0%, 100%, 0.5);
 `;
 
 export const ImageTitle = styled.h4`
@@ -72,18 +88,21 @@ export const ImageTitle = styled.h4`
 export const ToursCount = styled.p`
   display: flex;
   position: absolute;
-  padding: ${spacing['8px']} ${spacing['8px']};
-  border-radius: ${border.radius.sm} 0 ${border.radius.sm} 0;
-  border-bottom: ${border.radius.xs} solid
-    ${({ theme }) => theme.colors.green400};
-  border-right: ${border.radius.xs} solid
-    ${({ theme }) => theme.colors.green400};
-  color: ${({ theme }) => theme.colors.green50};
-  background-color: ${({ theme }) => theme.colors.green700};
   top: 0;
   right: 0;
   ${typography.size.md};
   ${typography.weight.bold};
+  padding: ${spacing['8px']} ${spacing['24px']};
   margin-top: ${spacing['8px']};
   margin-right: ${spacing['16px']};
+  border-radius: ${border.radius.sm} 0 ${border.radius.sm} 0;
+  border-bottom: ${border.width.sm} solid
+    ${({ theme }) => theme.colors.green900};
+  border-right: ${border.width.sm} solid ${({ theme }) => theme.colors.green900};
+  color: ${({ theme }) => theme.colors.green50};
+  background: linear-gradient(
+    ${({ theme }) => theme.colors.green700},
+    ${({ theme }) => theme.colors.green800}
+  );
+  box-shadow: ${shadows.elevation.md};
 `;

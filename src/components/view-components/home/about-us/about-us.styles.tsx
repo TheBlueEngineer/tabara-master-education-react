@@ -56,6 +56,7 @@ export const Row = styled.div`
 `;
 
 export const Title = styled.h1`
+  font-family: 'Roboto Condensed', sans-serif;
   ${typography.size.xl};
   ${typography.weight.bold};
   ${typography.lineHeight.sm};

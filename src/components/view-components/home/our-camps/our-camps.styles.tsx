@@ -15,13 +15,14 @@ export const Offers = styled.div`
   flex-wrap: wrap;
   width: 100%;
   justify-content: center;
-  column-gap: ${spacing['64px']};
+  column-gap: ${spacing['96px']};
   row-gap: ${spacing['32px']};
   padding-top: ${spacing['64px']};
   padding-bottom: ${spacing['64px']};
 `;
 
-export const Title = styled.h2`
+export const Title = styled.h1`
+  font-family: 'Roboto Condensed', sans-serif;
   position: relative;
   ${typography.size.xl4};
   ${typography.weight.bolder};
@@ -37,7 +38,7 @@ export const Title = styled.h2`
   }
 `;
 
-export const Subtitle = styled.h3`
+export const Subtitle = styled.h2`
   color: ${({ theme }) => theme.colors.blue600};
   ${typography.size.xl2};
 `;

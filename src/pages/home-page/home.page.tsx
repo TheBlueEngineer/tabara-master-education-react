@@ -8,6 +8,7 @@ import OurCamps from '@components/view-components/home/our-camps/our-camps.compo
 import CampActivities from '@components/view-components/home/camp-activities/camp-activities.component';
 import WhyChooseUs from '@components/view-components/home/why-choose-us/why-choose-us.component';
 import OurDestinations from '@components/view-components/home/our-destinations/our-destinations.component';
+import OurTeam from '@components/view-components/home/our-team/our-team.component';
 
 const HomePage = () => {
   /* const { t } = useTranslation('home'); */
@@ -23,6 +24,7 @@ const HomePage = () => {
         <CampActivities />
         <WhyChooseUs />
         <OurDestinations />
+        <OurTeam />
       </SC.HomePageContainer>
     </SC.Wrapper>
   );

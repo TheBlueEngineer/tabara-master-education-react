@@ -5,14 +5,14 @@ const destinationsList = [
   {
     id: 1,
     title: 'Castelul Bran',
-    imageUrl: '/src/assets/images/home/b_munti3.webp',
+    imageUrl: '/src/assets/images/home/hero_image.jpg',
     toursCount: 5,
     colSpan: 1,
   },
   {
     id: 2,
     title: 'Castelul Bran',
-    imageUrl: '/src/assets/images/home/b_munti3.webp',
+    imageUrl: '/src/assets/images/home/hero_image.jpg',
     toursCount: 5,
     colSpan: 1,
   },
@@ -22,6 +22,27 @@ const destinationsList = [
     imageUrl: '/src/assets/images/home/b_munti3.webp',
     toursCount: 5,
     colSpan: 2,
+  },
+  {
+    id: 4,
+    title: 'Castelul Bran',
+    imageUrl: '/src/assets/images/home/b_munti3.webp',
+    toursCount: 5,
+    colSpan: 2,
+  },
+  {
+    id: 5,
+    title: 'Castelul Bran',
+    imageUrl: '/src/assets/images/home/hero_image.jpg',
+    toursCount: 5,
+    colSpan: 1,
+  },
+  {
+    id: 6,
+    title: 'Castelul Bran',
+    imageUrl: '/src/assets/images/home/hero_image.jpg',
+    toursCount: 5,
+    colSpan: 1,
   },
 ];
 
@@ -40,7 +61,7 @@ const OurDestinations: FC = () => {
             key={destination.id}
           >
             <SC.ImageTitle>{destination.title}</SC.ImageTitle>
-            <SC.ToursCount>{destination.toursCount}</SC.ToursCount>
+            <SC.ToursCount>{destination.toursCount} + Tours</SC.ToursCount>
           </SC.Destination>
         ))}
       </SC.List>
