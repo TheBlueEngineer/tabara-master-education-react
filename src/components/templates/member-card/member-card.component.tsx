@@ -36,7 +36,7 @@ const MemberCard: FC<MemberCardProps> = ({
         {links.length > 0 && (
           <SC.Links>
             {links.map((link) => (
-              <SC.LinkButton>
+              <SC.LinkButton key={link.id}>
                 <Icon IconComponent={link.icon} size={20} />
               </SC.LinkButton>
             ))}

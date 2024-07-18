@@ -70,6 +70,7 @@ export const Subtitle = styled.h2`
   text-align: left;
   margin-bottom: ${spacing['16px']};
   text-align: center;
+
   @media (min-width: 1024px) {
     text-align: left;
   }
@@ -83,7 +84,7 @@ export const Description = styled.p`
 `;
 
 export const Span = styled.span`
-  color: ${({ theme }) => theme.colors.green950};
+  color: ${({ theme }) => theme.colors.green900};
 `;
 
 export const List = styled.ul`

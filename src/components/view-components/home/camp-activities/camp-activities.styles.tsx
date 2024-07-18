@@ -19,7 +19,7 @@ export const ListContainer = styled.div`
   width: 100%;
 
   row-gap: ${spacing['128px']};
-  column-gap: ${spacing['64px']};
+  column-gap: ${spacing['96px']};
 `;
 
 export const Title = styled.h1`

@@ -1,11 +1,17 @@
 import styled, { css } from 'styled-components';
 import { ThemeType } from 'src/consts/themes.const';
-import { opacity, spacing, typography } from 'src/consts/template.const';
+import {
+  border,
+  opacity,
+  spacing,
+  typography,
+} from 'src/consts/template.const';
 import { ButtonHTMLAttributes } from 'react';
 
 type StyledButtonProps = {
   $variant?: 'default' | 'primary' | 'contained' | 'outlined' | 'disabled';
   $size?: 'small' | 'medium' | 'large';
+  $shape: 'leaf' | 'rounded' | 'rectangular';
   disabled?: boolean;
   $fullWidth?: boolean;
   onClick: () => void;
@@ -22,13 +28,29 @@ const buttonVariants = (theme: ThemeType, variant: string) => {
       return css``;
     case 'tertiary:':
       return css``;
-    case 'default':
+    default:
       return css`
         background-color: white;
         border: 2px solid black;
         color: black;
         border-radius: 1rem;
       `;
+  }
+};
+
+const buttonShape = (variant: string) => {
+  switch (variant) {
+    case 'rounded':
+      return css`
+        border-radius: ${border.radius.md};
+      `;
+    case 'leaf':
+      return css`
+        border-top-left-radius: ${border.radius.sm};
+        border-bottom-right-radius: ${border.radius.sm};
+      `;
+    case 'rectangular':
+      break;
   }
 };
 
@@ -41,23 +63,27 @@ const buttonSizes = (size: string) => {
       `;
     case 'medium':
       return css`
-        padding: ${spacing['8px']} ${spacing['12px']};
-        ${typography.size.base};
+        padding: ${spacing['8px']} ${spacing['16px']};
+        ${typography.size.md};
       `;
     case 'large':
       return css`
-        padding: ${spacing['12px']} ${spacing['16px']};
-        ${typography.size.base};
+        padding: ${spacing['16px']} ${spacing['32px']};
+        ${typography.size.lg};
       `;
   }
 };
 
 export const StyledButton = styled.button<StyledButtonProps>`
   transition: background-color 400ms;
+  ${typography.weight.bold};
+  font-family: 'Roboto Condensed', sans-serif;
   cursor: pointer;
   ${({ theme, $variant }) => buttonVariants(theme, $variant || 'default')};
   ${({ $size }) => buttonSizes($size || 'medium')};
   ${({ $fullWidth }) => $fullWidth && 'width: 100%'};
+  ${({ $shape }) => buttonShape($shape || 'rectangular')};
+  z-index: 1;
 
   &:hover {
     opacity: ${opacity[0.8]};

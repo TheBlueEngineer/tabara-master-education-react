@@ -6,6 +6,7 @@ import Icon from '../icons/icon.component';
 export type ButtonProps = {
   variant?: 'default' | 'primary' | 'contained' | 'outlined' | 'disabled';
   size?: 'small' | 'medium' | 'large';
+  shape?: 'rounded' | 'leaf' | 'rectangular';
   disabled?: boolean;
   fullWidth?: boolean;
   startIcon?: null | IconType;
@@ -16,6 +17,7 @@ export type ButtonProps = {
 const Button: FC<ButtonProps> = ({
   variant = 'primary',
   size = 'medium',
+  shape = 'rectangular',
   children,
   startIcon = null,
   endIcon = null,
@@ -30,6 +32,7 @@ const Button: FC<ButtonProps> = ({
       disabled={disabled}
       $variant={variant}
       $size={size}
+      $shape={shape}
       onClick={onClick}
       {...otherProps}
     >

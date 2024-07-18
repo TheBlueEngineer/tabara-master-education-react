@@ -80,7 +80,7 @@ export const Name = styled.p`
 export const Profession = styled.p`
   ${typography.size.lg};
   ${typography.weight.bolder};
-  color: ${({ theme }) => theme.colors.greenGray400};
+  color: ${({ theme }) => theme.colors.blue500};
 `;
 
 export const Description = styled.p`

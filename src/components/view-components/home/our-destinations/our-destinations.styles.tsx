@@ -42,7 +42,7 @@ export const Title = styled.h1`
 `;
 
 export const Subtitle = styled.h2`
-  color: ${({ theme }) => theme.colors.blue500};
+  color: ${({ theme }) => theme.colors.blue600};
   ${typography.size.xl2};
   margin-bottom: ${spacing['64px']};
 `;

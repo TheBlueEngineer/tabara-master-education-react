@@ -33,7 +33,7 @@ export const Title = styled.h1`
 `;
 
 export const Subtitle = styled.h2`
-  color: ${({ theme }) => theme.colors.blue500};
+  color: ${({ theme }) => theme.colors.blue600};
   ${typography.size.xl2};
   margin-bottom: ${spacing['64px']};
 `;
@@ -44,5 +44,5 @@ export const List = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(1, 1fr);
   row-gap: ${spacing['96px']};
-  column-gap: ${spacing['64px']};
+  column-gap: ${spacing['96px']};
 `;
