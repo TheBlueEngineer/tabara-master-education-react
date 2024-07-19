@@ -56,16 +56,25 @@ export const Row = styled.div`
 `;
 
 export const Title = styled.h1`
+  position: relative;
   font-family: 'Roboto Condensed', sans-serif;
-  ${typography.size.xl};
+  ${typography.size.xl2};
   ${typography.weight.bold};
-  ${typography.lineHeight.sm};
-
   color: ${({ theme }) => theme.colors.green800};
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 75%;
+    height: 1px;
+    border: 1px solid ${({ theme }) => theme.colors.green900};
+  }
 `;
 
 export const Subtitle = styled.h2`
-  ${typography.size.xl2};
+  ${typography.size.xl3};
   ${typography.weight.bolder};
   text-align: left;
   margin-bottom: ${spacing['16px']};
@@ -78,13 +87,14 @@ export const Subtitle = styled.h2`
 
 export const Description = styled.p`
   ${typography.size.base};
+  color: ${({ theme }) => theme.colors.gray900};
   text-align: left;
   max-width: 50em;
   margin-bottom: ${spacing['24px']};
 `;
 
 export const Span = styled.span`
-  color: ${({ theme }) => theme.colors.green900};
+  color: ${({ theme }) => theme.colors.green800};
 `;
 
 export const List = styled.ul`

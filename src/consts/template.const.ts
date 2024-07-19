@@ -124,6 +124,7 @@ export const typography = {
 
 export const border = {
   radius: {
+    xs2: '0.5rem',
     xs: '1rem',
     sm: '2rem',
     md: '3rem',

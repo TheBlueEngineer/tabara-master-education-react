@@ -10,6 +10,7 @@ import WhyChooseUs from '@components/view-components/home/why-choose-us/why-choo
 import OurDestinations from '@components/view-components/home/our-destinations/our-destinations.component';
 import OurTeam from '@components/view-components/home/our-team/our-team.component';
 import LatestCampOffer from '@components/view-components/home/latest-camp-offer/latest-camp-offer.component';
+import ContactUs from '@components/view-components/home/contact-us/contact-us.component';
 
 const HomePage = () => {
   /* const { t } = useTranslation('home'); */
@@ -27,6 +28,7 @@ const HomePage = () => {
         <OurDestinations />
         <LatestCampOffer />
         <OurTeam />
+        <ContactUs />
       </SC.HomePageContainer>
     </SC.Wrapper>
   );

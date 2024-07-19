@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import NavigationBar from '../navbar/navbar.component';
 import * as SC from './header.styles';
-import useScrollDirection from 'src/hooks/scroll-direction';
+import useScrollDirection from 'src/hooks/scroll-direction.hook';
 import LanguageSelector from '@components/smart-components/language-selector/language-selector.component';
 import ThemeSelector from '@components/smart-components/theme-selector/theme-selector.component';
 

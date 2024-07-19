@@ -7,7 +7,7 @@ export const Container = styled.section`
   align-items: center;
   width: 100%;
   background: linear-gradient(
-    ${({ theme }) => theme.colors.gray50},
+    ${({ theme }) => theme.colors.gray100},
     ${({ theme }) => theme.colors.blue50}
   );
   padding: ${spacing['96px']} 7.5%;

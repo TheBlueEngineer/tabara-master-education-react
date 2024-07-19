@@ -55,10 +55,7 @@ const AboutUs = () => {
       </SC.ImagesContainer>
 
       <SC.InformationContainer>
-        <SC.Row>
-          <Icon IconComponent={FaBeer} size={32} />
-          <SC.Title>About us</SC.Title>
-        </SC.Row>
+        <SC.Title>About us</SC.Title>
         <SC.Subtitle>
           Experience <SC.Span>Nature</SC.Span> Together With Us
         </SC.Subtitle>

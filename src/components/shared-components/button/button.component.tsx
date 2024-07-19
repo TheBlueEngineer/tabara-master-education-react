@@ -7,6 +7,7 @@ export type ButtonProps = {
   variant?: 'default' | 'primary' | 'contained' | 'outlined' | 'disabled';
   size?: 'small' | 'medium' | 'large';
   shape?: 'rounded' | 'leaf' | 'rectangular';
+  onHoverStyle?: 'glow' | 'opaque' | 'default';
   disabled?: boolean;
   fullWidth?: boolean;
   startIcon?: null | IconType;
@@ -23,6 +24,7 @@ const Button: FC<ButtonProps> = ({
   endIcon = null,
   fullWidth = false,
   disabled = false,
+  onHoverStyle = 'default',
   onClick,
   ...otherProps
 }) => {
@@ -33,6 +35,7 @@ const Button: FC<ButtonProps> = ({
       $variant={variant}
       $size={size}
       $shape={shape}
+      $onHoverStyle={onHoverStyle}
       onClick={onClick}
       {...otherProps}
     >

@@ -4,7 +4,6 @@ import {
   spacing,
   shadows,
   typography,
-  opacity,
 } from 'src/consts/template.const';
 
 export const Container = styled.div`
@@ -26,15 +25,6 @@ export const Container = styled.div`
   border-bottom-right-radius: ${border.radius.sm};
   background: ${({ theme }) =>
     `linear-gradient(180deg,${theme.colors.green800} 50%, ${theme.colors.green800} 50%)`};
-`;
-
-export const GreenBackground = styled.div`
-  display: flex;
-  width: 100%;
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
-
-  box-shadow: inset 4px 4px 16px 0px hsla(0, 0%, 100%, 0.3);
 `;
 
 export const Frame = styled.div<{ $src: string }>`
@@ -72,9 +62,21 @@ export const Content = styled.div`
 `;
 
 export const Name = styled.p`
+  position: relative;
   ${typography.size.xl};
   ${typography.weight.bolder};
   color: ${({ theme }) => theme.colors.green950};
+  margin-bottom: ${spacing['4px']};
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 1px;
+    bottom: 0;
+    left: 20%;
+    border: 1px solid ${({ theme }) => theme.colors.green800};
+  }
 `;
 
 export const Profession = styled.p`
@@ -108,12 +110,15 @@ export const LinkButton = styled.button`
   border: solid ${border.width.xs};
   border-color: ${({ theme }) => theme.colors.blue500};
   color: ${({ theme }) => theme.colors.blue600};
-  transform: translateY(-50%);
   background-color: ${({ theme }) => theme.colors.white};
+  transform: translateY(-50%);
   cursor: pointer;
-  transition: opacity 200ms;
+  transition:
+    color 300ms,
+    border-color 300ms;
 
   &:hover {
-    opacity: ${opacity['0.8']};
+    color: ${({ theme }) => theme.colors.blue400};
+    border-color: ${({ theme }) => theme.colors.blue400};
   }
 `;

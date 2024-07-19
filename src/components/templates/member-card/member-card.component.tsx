@@ -27,7 +27,6 @@ const MemberCard: FC<MemberCardProps> = ({
 }) => {
   return (
     <SC.Container>
-      <SC.GreenBackground />
       <SC.Content>
         <SC.Frame $src={imageUrl} />
         <SC.Name>{name}</SC.Name>

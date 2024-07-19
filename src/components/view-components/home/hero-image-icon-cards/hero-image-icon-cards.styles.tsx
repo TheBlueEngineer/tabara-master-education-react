@@ -10,12 +10,12 @@ export const Wrapper = styled.section`
 
 export const HeroImageIconCards = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   background: linear-gradient(
     ${({ theme }) => theme.colors.green700},
     ${({ theme }) => theme.colors.green800}
   );
-  width: 85%;
+  width: 80%;
   row-gap: 2rem;
   column-gap: 2rem;
   padding: 2rem;

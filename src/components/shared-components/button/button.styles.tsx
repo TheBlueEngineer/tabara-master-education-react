@@ -3,6 +3,7 @@ import { ThemeType } from 'src/consts/themes.const';
 import {
   border,
   opacity,
+  shadows,
   spacing,
   typography,
 } from 'src/consts/template.const';
@@ -12,6 +13,7 @@ type StyledButtonProps = {
   $variant?: 'default' | 'primary' | 'contained' | 'outlined' | 'disabled';
   $size?: 'small' | 'medium' | 'large';
   $shape: 'leaf' | 'rounded' | 'rectangular';
+  $onHoverStyle: 'glow' | 'opaque' | 'default';
   disabled?: boolean;
   $fullWidth?: boolean;
   onClick: () => void;
@@ -21,7 +23,11 @@ const buttonVariants = (theme: ThemeType, variant: string) => {
   switch (variant) {
     case 'primary':
       return css`
-        background-color: ${theme.colors.green700};
+        background: linear-gradient(
+          180deg,
+          ${theme.colors.green700},
+          ${theme.colors.green800}
+        );
         color: ${theme.colors.gray50};
       `;
     case 'secondary':
@@ -54,6 +60,48 @@ const buttonShape = (variant: string) => {
   }
 };
 
+const buttonHover = (variant: string) => {
+  switch (variant) {
+    case 'opaque':
+      return css`
+        opacity: ${opacity['0.8']};
+        transition: opacity 300ms;
+      `;
+    case 'glow':
+      return css`
+        position: relative;
+        transition: box-shadow 300ms;
+
+        &:hover {
+          box-shadow: ${shadows.elevation.lg};
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          border-radius: inherit;
+          background-color: ${({ theme }) => theme.colors.white};
+          opacity: 0;
+          mix-blend-mode: add;
+          z-index: 1;
+          transition:
+            opacity 300ms,
+            box-shadow 300ms;
+        }
+
+        &:hover::after {
+          opacity: 0.1;
+        }
+      `;
+    case 'default':
+      break;
+  }
+};
+
 const buttonSizes = (size: string) => {
   switch (size) {
     case 'small':
@@ -75,24 +123,15 @@ const buttonSizes = (size: string) => {
 };
 
 export const StyledButton = styled.button<StyledButtonProps>`
-  transition: background-color 400ms;
   ${typography.weight.bold};
   font-family: 'Roboto Condensed', sans-serif;
-  cursor: pointer;
-  ${({ theme, $variant }) => buttonVariants(theme, $variant || 'default')};
-  ${({ $size }) => buttonSizes($size || 'medium')};
+
+  ${({ theme, $variant = 'default' }) => buttonVariants(theme, $variant)};
+  ${({ $size = 'medium' }) => buttonSizes($size)};
   ${({ $fullWidth }) => $fullWidth && 'width: 100%'};
-  ${({ $shape }) => buttonShape($shape || 'rectangular')};
+  ${({ $shape = 'rectangular' }) => buttonShape($shape)};
+  ${({ $onHoverStyle = 'default' }) => buttonHover($onHoverStyle)}
+  box-shadow: ${shadows.elevation.md};
+  cursor: pointer;
   z-index: 1;
-
-  &:hover {
-    opacity: ${opacity[0.8]};
-  }
 `;
-
-StyledButton.defaultProps = {
-  $variant: 'default',
-  $size: 'medium',
-  disabled: false,
-  $fullWidth: false,
-};

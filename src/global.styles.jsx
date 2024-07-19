@@ -82,6 +82,10 @@ export const GlobalStyle = createGlobalStyle`
         border: 0;
     }
 
+    input:focus, textarea:focus{
+        outline: none;
+    }
+
     select, option, input{
         padding: 0.1rem;
     }
