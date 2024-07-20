@@ -64,7 +64,7 @@ export const Content = styled.div`
 export const Name = styled.p`
   position: relative;
   ${typography.size.xl};
-  ${typography.weight.bolder};
+  ${typography.weight.bold};
   color: ${({ theme }) => theme.colors.green950};
   margin-bottom: ${spacing['4px']};
 
@@ -81,7 +81,7 @@ export const Name = styled.p`
 
 export const Profession = styled.p`
   ${typography.size.lg};
-  ${typography.weight.bolder};
+  ${typography.weight.bold};
   color: ${({ theme }) => theme.colors.blue500};
 `;
 

@@ -107,10 +107,14 @@ export const typography = {
     xl4: 'font-size: 4rem', //64px
   },
   weight: {
+    thin: 'font-weight: 100',
     lighter: 'font-weight: 300',
-    light: 'font-weight: 400',
+    default: 'font-weight: 400',
+    medium: 'font-weight: 500',
+    semibold: 'font-weight: 600',
     bold: 'font-weight: 700',
-    bolder: 'font-weight: 900',
+    extrabold: 'font-weight: 800',
+    black: 'font-weight: 900',
   },
   lineHeight: {
     xs: 'line-height: 0.75rem',

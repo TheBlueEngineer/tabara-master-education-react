@@ -115,5 +115,5 @@ export const ValidationIconWrapper = styled.div<{ $isValid: boolean }>`
 
 export const Span = styled.span`
   color: ${({ theme }) => theme.colors.green500};
-  ${typography.weight.bolder};
+  ${typography.weight.bold};
 `;

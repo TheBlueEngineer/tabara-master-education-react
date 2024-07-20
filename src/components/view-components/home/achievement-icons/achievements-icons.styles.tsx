@@ -57,7 +57,7 @@ export const IconWrapper = styled.div`
 
 export const Title = styled.h2`
   ${typography.size.xl2};
-  ${typography.weight.bolder};
+  ${typography.weight.black};
   color: ${({ theme }) => theme.colors.green100};
   ${shadows.font.medium};
 `;

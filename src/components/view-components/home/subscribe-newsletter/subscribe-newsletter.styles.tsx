@@ -31,7 +31,7 @@ export const Title = styled.h1`
   font-family: 'Roboto Condensed', sans-serif;
   position: relative;
   ${typography.size.xl2};
-  ${typography.weight.bolder};
+  ${typography.weight.black};
   color: ${({ theme }) => theme.colors.gray100};
   z-index: 1;
 `;
@@ -45,7 +45,7 @@ export const Subtitle = styled.h2`
 
 export const Description = styled.p`
   ${typography.size.lg};
-  ${typography.weight.light};
+  ${typography.weight.lighter};
   color: ${({ theme }) => theme.colors.gray200};
   z-index: 1;
   margin-bottom: ${spacing['64px']};

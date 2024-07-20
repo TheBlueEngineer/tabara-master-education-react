@@ -72,7 +72,7 @@ export const Title = styled.h3`
   justify-content: center;
   position: relative;
   width: 100%;
-  ${typography.weight.bolder};
+  ${typography.weight.bold};
   color: ${({ theme }) => theme.colors.green900};
   ${typography.size.xl};
   padding-bottom: ${spacing['4px']};

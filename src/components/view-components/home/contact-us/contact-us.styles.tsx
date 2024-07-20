@@ -58,7 +58,7 @@ export const Span = styled.span`
 
 export const Subtitle = styled.h2`
   ${typography.size.xl3};
-  ${typography.weight.bolder};
+  ${typography.weight.bold};
   margin-bottom: ${spacing['16px']};
 `;
 

@@ -26,7 +26,7 @@ export const Title = styled.h1`
   font-family: 'Roboto Condensed', sans-serif;
   position: relative;
   ${typography.size.xl4};
-  ${typography.weight.bolder};
+  ${typography.weight.black};
   color: ${({ theme }) => theme.colors.green800};
   word-wrap: break-word;
 

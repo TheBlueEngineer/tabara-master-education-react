@@ -32,7 +32,7 @@ export const NavLink = styled(NavigationLink)`
     border-bottom: ${border.width.sm};
     border-bottom-color: ${({ theme }) => theme.colors.green900};
     border-bottom-style: solid;
-    ${typography.weight.bolder};
+    ${typography.weight.black};
   }
 
   &:hover {

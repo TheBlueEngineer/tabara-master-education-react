@@ -59,7 +59,7 @@ export const Title = styled.h1`
   position: relative;
   font-family: 'Roboto Condensed', sans-serif;
   ${typography.size.xl2};
-  ${typography.weight.bold};
+  ${typography.weight.black};
   color: ${({ theme }) => theme.colors.green800};
 
   &:after {
@@ -75,7 +75,7 @@ export const Title = styled.h1`
 
 export const Subtitle = styled.h2`
   ${typography.size.xl3};
-  ${typography.weight.bolder};
+  ${typography.weight.bold};
   text-align: left;
   margin-bottom: ${spacing['16px']};
   text-align: center;

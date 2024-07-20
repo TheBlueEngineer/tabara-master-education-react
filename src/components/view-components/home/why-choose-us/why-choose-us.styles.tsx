@@ -36,7 +36,7 @@ export const Title = styled.h1`
 
 export const Subtitle = styled.h2`
   ${typography.size.xl2}
-  ${typography.weight.bolder};
+  ${typography.weight.bold};
   color: ${({ theme }) => theme.colors.blue50};
   text-align: left;
   margin-bottom: ${spacing['32px']};
@@ -50,7 +50,7 @@ export const List = styled.div`
 
 export const Description = styled.p`
   ${typography.size.base};
-  ${typography.weight.light};
+  ${typography.weight.lighter};
   color: ${({ theme }) => theme.colors.gray200};
   margin-bottom: ${spacing['48px']};
 `;
@@ -86,6 +86,6 @@ export const RowItemTitle = styled.h3`
 
 export const RowItemDescription = styled.p`
   ${typography.size.base};
-  ${typography.weight.light};
+  ${typography.weight.black};
   color: ${({ theme }) => theme.colors.gray200};
 `;

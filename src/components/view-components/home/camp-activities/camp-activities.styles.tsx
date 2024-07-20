@@ -27,7 +27,7 @@ export const Title = styled.h1`
   display: flex;
   position: relative;
   ${typography.size.xl4};
-  ${typography.weight.bolder};
+  ${typography.weight.black};
   color: ${({ theme }) => theme.colors.green800};
 
   &:after {
