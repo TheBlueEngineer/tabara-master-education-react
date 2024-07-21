@@ -8,22 +8,23 @@ export const Wrapper = styled.section`
   justify-content: center;
 `;
 
-export const HeroImageIconCards = styled.div`
+export const Container = styled.div`
   display: grid;
+  align-items: flex-start;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   background: linear-gradient(
-    ${({ theme }) => theme.colors.green700},
-    ${({ theme }) => theme.colors.green800}
+    ${({ theme }) => theme.colors.green800},
+    ${({ theme }) => theme.colors.green900}
   );
   width: 80%;
-  row-gap: 2rem;
-  column-gap: 2rem;
-  padding: 2rem;
+  row-gap: ${spacing['32px']};
+  column-gap: ${spacing['48px']};
+  padding: ${spacing['32px']};
   transform: translateY(-50%);
   ${border.radius.sm};
   box-shadow:
     ${shadows.elevation.xl2},
-    inset 0 ${spacing['2px']} 0 ${({ theme }) => theme.colors.green600};
+    inset 0px 5px 10px 0px ${({ theme }) => theme.colors.green700};
   z-index: 1;
   border-radius: ${border.radius.md};
 `;

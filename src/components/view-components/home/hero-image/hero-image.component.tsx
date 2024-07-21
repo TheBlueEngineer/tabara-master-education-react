@@ -11,7 +11,6 @@ const HeroImage: FC = () => {
 
   return (
     <SC.HeroContainer>
-      <SC.Overlay />
       <SC.Content>
         <SC.Title>Make your great escape</SC.Title>
         <SC.Subtitle>

@@ -49,22 +49,20 @@ const destinationsList = [
 const OurDestinations: FC = () => {
   return (
     <SC.Container>
-      <SC.Title>Our Destinations</SC.Title>
-      <SC.Subtitle>
-        Explore the greatest locations our camp has to offer
-      </SC.Subtitle>
-      <SC.List>
+      <h1>Our Destinations</h1>
+      <h2>Explore the greatest locations our camp has to offer</h2>
+      <ul>
         {destinationsList.map((destination) => (
           <SC.Destination
             $src={destination.imageUrl}
             $colSpan={destination.colSpan}
             key={destination.id}
           >
-            <SC.ImageTitle>{destination.title}</SC.ImageTitle>
-            <SC.ToursCount>{destination.toursCount} + Tours</SC.ToursCount>
+            <h3>{destination.title}</h3>
+            <p>{destination.toursCount} + Tours</p>
           </SC.Destination>
         ))}
-      </SC.List>
+      </ul>
     </SC.Container>
   );
 };

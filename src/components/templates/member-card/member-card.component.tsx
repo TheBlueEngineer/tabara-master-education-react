@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import * as SC from './member-card.styles';
 import { IconType } from 'react-icons';
-import Icon from '@components/shared-components/icons/icon.component';
 
 type SocialMediaLink = {
   id: number;
@@ -36,7 +35,7 @@ const MemberCard: FC<MemberCardProps> = ({
           <SC.Links>
             {links.map((link) => (
               <SC.LinkButton key={link.id}>
-                <Icon IconComponent={link.icon} size={20} />
+                <link.icon size={'1.25rem'} />
               </SC.LinkButton>
             ))}
           </SC.Links>

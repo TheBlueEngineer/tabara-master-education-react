@@ -16,15 +16,16 @@ export const Navbar = styled.nav`
 
 export const NavLink = styled(NavigationLink)`
   display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  color: ${({ theme }) => theme.colors.green800};
-  text-decoration: none;
   height: 100%;
+  flex-direction: row;
+  align-items: flex-start;
   padding: ${spacing['16px']};
-  ${typography.weight.bold};
-  ${typography.size.md};
+
+  color: ${({ theme }) => theme.colors.green800};
+
   column-gap: ${spacing['4px']};
+
+  text-decoration: none;
   transition: opacity 300ms;
 
   &.active {
@@ -38,8 +39,22 @@ export const NavLink = styled(NavigationLink)`
   &:hover {
     opacity: ${opacity['0.8']};
   }
-`;
 
-export const Text = styled.span`
-  ${typography.size.md};
+  & > svg {
+    ${typography.size.sm};
+
+    @media (min-width: 1240px) {
+      ${typography.size.md};
+    }
+  }
+
+  & > p {
+    ${typography.size.sm};
+    ${typography.weight.bold};
+    color: inherit;
+
+    @media (min-width: 1240px) {
+      ${typography.size.md};
+    }
+  }
 `;

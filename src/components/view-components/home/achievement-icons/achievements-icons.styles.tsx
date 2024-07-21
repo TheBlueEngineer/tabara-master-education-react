@@ -7,64 +7,76 @@ import {
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  width: 100%;
   position: relative;
-  flex-direction: row;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  padding-left: ${spacing['48px']};
-  padding-right: ${spacing['48px']};
-  padding-top: ${spacing['96px']};
-  padding-bottom: ${spacing['96px']};
+
+  padding: ${spacing['96px']} ${spacing['48px']};
   background-image: url('/src/assets/images/home/home_bg.webp');
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  justify-content: center;
-  width: 100%;
-  justify-content: space-evenly;
-  row-gap: ${spacing['64px']};
-  column-gap: ${spacing['96px']};
-`;
 
-export const Overlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: hsla(0, 0%, 0%, 0.4);
-  z-index: 1;
+  row-gap: ${spacing['64px']};
+  column-gap: ${spacing['48px']};
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    z-index: 1;
+  }
 `;
 
 export const IconCard = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  z-index: 2;
-`;
-
-export const IconWrapper = styled.div`
-  display: flex;
-  justify-content: center;
   align-items: center;
-  padding: ${spacing['16px']};
-  background-color: ${({ theme }) => theme.colors.green700};
-  border-right: ${spacing['4px']};
-  border-radius: ${border.radius.xs};
-  margin-bottom: ${spacing['8px']};
-`;
+  z-index: 2;
+  row-gap: ${spacing['8px']};
 
-export const Title = styled.h2`
-  ${typography.size.xl2};
-  ${typography.weight.black};
-  color: ${({ theme }) => theme.colors.green100};
-  ${shadows.font.medium};
-`;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: ${spacing['24px']};
+    border-radius: ${border.radius.sm} 0 ${border.radius.sm};
+    background: ${({ theme }) =>
+      `linear-gradient(135deg,${theme.colors.green700}, ${theme.colors.green800})`};
+    color: ${({ theme }) => theme.colors.green50};
+  }
 
-export const Subtitle = styled.p`
-  ${typography.size.lg};
-  ${typography.weight.bold};
-  color: ${({ theme }) => theme.colors.green100};
-  ${shadows.font.medium};
+  h2 {
+    position: relative;
+    ${typography.size.xl2};
+    ${typography.weight.black};
+    color: ${({ theme }) => theme.colors.green50};
+    ${shadows.font.medium};
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 25%;
+      bottom: 0;
+      width: 50%;
+      height: 1px;
+      border: 1px solid ${({ theme }) => theme.colors.green400};
+    }
+  }
+
+  & > p {
+    ${typography.size.lg};
+    ${typography.weight.extrabold};
+    color: ${({ theme }) => theme.colors.green100};
+    ${shadows.font.medium};
+  }
 `;

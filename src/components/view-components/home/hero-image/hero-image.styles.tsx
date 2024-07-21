@@ -16,16 +16,17 @@ export const HeroContainer = styled.section`
   background-size: cover;
   justify-content: center;
   align-items: center;
-`;
 
-export const Overlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: hsla(0, 0%, 0%, 0.25);
-  z-index: 1;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 0%, 0%, 0.25);
+    z-index: 1;
+  }
 `;
 
 export const Content = styled.div`

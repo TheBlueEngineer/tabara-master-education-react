@@ -11,6 +11,7 @@ import OurDestinations from '@components/view-components/home/our-destinations/o
 import OurTeam from '@components/view-components/home/our-team/our-team.component';
 import LatestCampOffer from '@components/view-components/home/latest-camp-offer/latest-camp-offer.component';
 import ContactUs from '@components/view-components/home/contact-us/contact-us.component';
+import GalleryOfModals from '@components/view-components/home/gallery-of-modals/gallery-of-modals.component';
 
 const HomePage = () => {
   /* const { t } = useTranslation('home'); */
@@ -29,6 +30,7 @@ const HomePage = () => {
         <LatestCampOffer />
         <OurTeam />
         <ContactUs />
+        <GalleryOfModals />
       </SC.HomePageContainer>
     </SC.Wrapper>
   );

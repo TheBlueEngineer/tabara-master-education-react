@@ -1,24 +1,20 @@
 import { FaBeer } from 'react-icons/fa';
 import * as SC from './why-choose-us.styles';
-import Icon from '@components/shared-components/icons/icon.component';
 
 const listItems = [
   {
-    id: 1,
     title: 'Natural Immersion',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam.',
     icon: FaBeer,
   },
   {
-    id: 2,
     title: 'Natural Immersion',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam.',
     icon: FaBeer,
   },
   {
-    id: 3,
     title: 'Natural Immersion',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam.',
@@ -29,31 +25,27 @@ const listItems = [
 const WhyChooseUs = () => {
   return (
     <SC.Container>
-      <SC.Overlay>
-        <SC.Title>Why Choose Us</SC.Title>
-        <SC.Subtitle>Experience an Unforgetable Adventure With Us</SC.Subtitle>
-        <SC.Description>
+      <SC.Information>
+        <h1>Why Choose Us</h1>
+        <h2>Experience an Unforgetable Adventure With Us</h2>
+        <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.
-        </SC.Description>
-        <SC.List>
-          {listItems.map((item) => (
-            <SC.RowItem key={item.id}>
-              <SC.RowItemFrame>
-                <Icon IconComponent={item.icon} size={24} />
-              </SC.RowItemFrame>
-              <SC.Column>
-                <SC.RowItemTitle>{item.title}</SC.RowItemTitle>
-                <SC.RowItemDescription>
-                  {item.description}
-                </SC.RowItemDescription>
-              </SC.Column>
-            </SC.RowItem>
+        </p>
+        <ul>
+          {listItems.map((item, idx) => (
+            <SC.Item key={idx}>
+              <div>
+                <item.icon size={24} />
+              </div>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </SC.Item>
           ))}
-        </SC.List>
-      </SC.Overlay>
+        </ul>
+      </SC.Information>
     </SC.Container>
   );
 };

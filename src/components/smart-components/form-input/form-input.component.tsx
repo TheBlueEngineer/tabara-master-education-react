@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import * as SC from './form-input.styles';
-import Icon from '@components/shared-components/icons/icon.component';
 import { FaRegCircleXmark } from 'react-icons/fa6';
 import { IoMdCheckmarkCircleOutline } from 'react-icons/io';
 
@@ -73,12 +72,11 @@ const FormInput: FC<FormInputProps> = ({
           />
           {(value.length > 0 || error) && (
             <SC.ValidationIconWrapper $isValid={error ? false : true}>
-              <Icon
-                IconComponent={
-                  error ? FaRegCircleXmark : IoMdCheckmarkCircleOutline
-                }
-                size={24}
-              />
+              {error ? (
+                <FaRegCircleXmark size={'1.5rem'} />
+              ) : (
+                <IoMdCheckmarkCircleOutline size={'1.5rem'} />
+              )}
             </SC.ValidationIconWrapper>
           )}
         </SC.InputWrapper>

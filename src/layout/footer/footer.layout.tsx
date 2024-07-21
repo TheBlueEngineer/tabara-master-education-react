@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import * as SC from './footer.styles';
-import Icon from '@components/shared-components/icons/icon.component';
 import { BiLeaf } from 'react-icons/bi';
 import { FaBeer } from 'react-icons/fa';
 
@@ -91,41 +90,33 @@ const sectionsList = [
 const Footer: FC = () => {
   return (
     <SC.Footer>
-      <SC.Grid>
+      <section>
         <SC.GridSection>
-          <SC.List>
-            <SC.Logo src="/src/assets/images/home/322412271_2318204071679802_4134667702766926568_n.png" />
-            <SC.LogoTitle>Tabara Master Education</SC.LogoTitle>
-            <SC.LogoDescription>
-              We make adventure dreams come true.
-            </SC.LogoDescription>
-            <SC.ContactInfoList>
-              {contactInfoList.map((contact) => (
-                <SC.ContactInfoItem>
-                  <Icon IconComponent={contact.icon} size={20} />
-                  <SC.ContactText>{contact.value}</SC.ContactText>
-                </SC.ContactInfoItem>
-              ))}
-            </SC.ContactInfoList>
-          </SC.List>
+          <img src="/src/assets/images/home/322412271_2318204071679802_4134667702766926568_n.png" />
+          <h3>Tabara Master Education</h3>
+          <p>We make adventure dreams come true.</p>
+          <SC.ContactInfoList>
+            {contactInfoList.map((contact, idx) => (
+              <li key={idx}>
+                <contact.icon size={20} />
+                <p>{contact.value}</p>
+              </li>
+            ))}
+          </SC.ContactInfoList>
         </SC.GridSection>
         {sectionsList.map((section, sectionId) => (
           <SC.GridSection key={sectionId}>
-            <SC.SectionTitle>{section.title}</SC.SectionTitle>
-            <SC.List>
-              {section.links.map((item, linkId) => (
-                <SC.Item key={linkId}>
-                  <Icon IconComponent={BiLeaf} size={32} />
-                  <SC.Link to="/">{item.title}</SC.Link>
-                </SC.Item>
-              ))}
-            </SC.List>
+            <h2>{section.title}</h2>
+            {section.links.map((item, linkId) => (
+              <li key={linkId}>
+                <BiLeaf size={'2rem'} />
+                <SC.Link to="/">{item.title}</SC.Link>
+              </li>
+            ))}
           </SC.GridSection>
         ))}
-      </SC.Grid>
-      <SC.BottomBar>
-        Tabara Master Education @ 2024 All rights reserved
-      </SC.BottomBar>
+      </section>
+      <p>Tabara Master Education @ 2024 All rights reserved</p>
     </SC.Footer>
   );
 };

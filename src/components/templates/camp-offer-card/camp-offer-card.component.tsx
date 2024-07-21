@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import * as SC from './camp-offer-card.styles';
 import Button from '@components/shared-components/button/button.component';
-import Icon from '@components/shared-components/icons/icon.component';
 import { FaClock } from 'react-icons/fa';
 import { BiCalendar } from 'react-icons/bi';
 
@@ -9,14 +8,16 @@ type CampOfferCardProps = {
   title: string;
   description: string;
   price: string;
-  imageURL: string;
+  src: string;
+  alt?: string;
 };
 
 const CampOfferCard: FC<CampOfferCardProps> = ({
   title,
   description,
   price,
-  imageURL,
+  src,
+  alt,
 }) => {
   const handleClick = () => {
     console.log('click');
@@ -24,21 +25,19 @@ const CampOfferCard: FC<CampOfferCardProps> = ({
 
   return (
     <SC.Container>
-      <SC.Image $src={imageURL}>
-        <SC.Overlay />
-      </SC.Image>
+      <img src={src} alt={alt} />
       <SC.Price>{price}</SC.Price>
-      <SC.Title>{title}</SC.Title>
+      <h3>{title}</h3>
       <SC.Description>{description}</SC.Description>
       <SC.DateAndLocation>
-        <SC.Cell>
-          <Icon IconComponent={BiCalendar} size={16} />
-          <span>Aug 27</span>
-        </SC.Cell>
-        <SC.Cell>
-          <Icon IconComponent={FaClock} size={16} />
-          <span>4 days</span>
-        </SC.Cell>
+        <div>
+          <BiCalendar size={'1rem'} />
+          <p>Aug 27</p>
+        </div>
+        <div>
+          <FaClock size={'1rem'} />
+          <p>4 days</p>
+        </div>
       </SC.DateAndLocation>
       <Button onClick={handleClick} size="large">
         READ MORE

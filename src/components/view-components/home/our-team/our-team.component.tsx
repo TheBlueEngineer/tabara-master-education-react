@@ -63,9 +63,9 @@ const membersList: MemberCardProps[] = [
 const OurTeam: FC = () => {
   return (
     <SC.Container>
-      <SC.Title>Our Team</SC.Title>
-      <SC.Subtitle>Meet the members of Master Education</SC.Subtitle>
-      <SC.List>
+      <h1>Our Team</h1>
+      <h2>Meet the members of Master Education</h2>
+      <ul>
         {membersList.map((member) => (
           <MemberCard
             key={member.id}
@@ -76,7 +76,7 @@ const OurTeam: FC = () => {
             links={member.links}
           />
         ))}
-      </SC.List>
+      </ul>
     </SC.Container>
   );
 };

@@ -18,33 +18,49 @@ export const Container = styled.div`
   border-color: ${({ theme }) => theme.colors.gray100};
   padding-bottom: ${spacing['16px']};
   background-color: white;
-`;
 
-export const Image = styled.div<{ $src: string }>`
-  display: flex;
-  width: 100%;
-  min-height: 16rem;
-  position: relative;
-  background-image: url(${(props) => props.$src});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  justify-content: center;
-  align-items: center;
-  border-top-left-radius: ${border.radius.xs};
-  border-top-right-radius: ${border.radius.xs};
-`;
+  img {
+    display: flex;
+    width: 100%;
+    min-height: 15rem;
+    position: relative;
+    object-fit: contain;
+    border-top-left-radius: ${border.radius.xs};
+    border-top-right-radius: ${border.radius.xs};
 
-export const Overlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: hsla(0, 0%, 0%, 0.25);
-  z-index: 1;
-  border-top-left-radius: ${border.radius.xs};
-  border-top-right-radius: ${border.radius.xs};
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: hsla(0, 0%, 0%, 0.25);
+      z-index: 1;
+      border-top-left-radius: ${border.radius.xs};
+      border-top-right-radius: ${border.radius.xs};
+    }
+  }
+
+  h3 {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    ${typography.weight.bold};
+    color: ${({ theme }) => theme.colors.green900};
+    ${typography.size.xl};
+    padding-bottom: ${spacing['4px']};
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 1px;
+      bottom: 0;
+      left: 25%;
+      border: 1px solid ${({ theme }) => theme.colors.green900};
+    }
+  }
 `;
 
 export const Price = styled.p`
@@ -60,32 +76,11 @@ export const Price = styled.p`
     ${({ theme }) => theme.colors.blue500},
     ${({ theme }) => theme.colors.blue600}
   );
-  color: ${({ theme }) => theme.colors.gray100};
+  color: ${({ theme }) => theme.colors.gray50};
   ${typography.weight.bold};
   ${typography.size.lg};
   z-index: 2;
   box-shadow: ${shadows.elevation.sm};
-`;
-
-export const Title = styled.h3`
-  display: flex;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-  ${typography.weight.bold};
-  color: ${({ theme }) => theme.colors.green900};
-  ${typography.size.xl};
-  padding-bottom: ${spacing['4px']};
-
-  &:after {
-    content: '';
-    position: absolute;
-    width: 50%;
-    height: 1px;
-    bottom: 0;
-    left: 25%;
-    border: 1px solid ${({ theme }) => theme.colors.green900};
-  }
 `;
 
 export const Description = styled.p`
@@ -101,15 +96,19 @@ export const DateAndLocation = styled.div`
   width: 100%;
   justify-content: space-around;
   margin-bottom: ${spacing['16px']};
-`;
 
-export const Cell = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  vertical-align: center;
-  column-gap: ${spacing['8px']};
-  color: ${({ theme }) => theme.colors.green800};
-  ${typography.size.base};
-  ${typography.weight.bold};
+  & > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    vertical-align: center;
+    column-gap: ${spacing['8px']};
+    color: ${({ theme }) => theme.colors.green800};
+    ${typography.size.base};
+    ${typography.weight.bold};
+  }
+
+  & > p {
+    ${typography.weight.bold};
+  }
 `;

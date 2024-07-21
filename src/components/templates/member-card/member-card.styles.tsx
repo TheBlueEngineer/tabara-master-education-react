@@ -14,6 +14,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   // Size
+  width: 20rem;
   padding-top: ${spacing['160px']};
   padding-bottom: ${spacing['32px']};
   box-shadow:

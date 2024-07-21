@@ -17,7 +17,7 @@ export const Container = styled.section`
   justify-content: center;
   align-items: center;
 
-  &:after {
+  &::after {
     content: '';
     position: absolute;
     width: 100%;

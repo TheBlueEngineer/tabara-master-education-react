@@ -6,7 +6,30 @@ export const Container = styled.div`
   width: 100%;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.gray50};
-  padding: ${spacing['64px']} 0;
+  padding: ${spacing['64px']} 10%;
+
+  & > h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    position: relative;
+    ${typography.size.xl4};
+    ${typography.weight.black};
+    color: ${({ theme }) => theme.colors.green800};
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 10%;
+      height: 1px;
+      bottom: 0;
+      left: 45%;
+      border: 1px solid ${({ theme }) => theme.colors.green900};
+    }
+  }
+
+  & > h2 {
+    color: ${({ theme }) => theme.colors.blue600};
+    ${typography.size.xl2};
+  }
 `;
 
 export const Offers = styled.div`
@@ -14,33 +37,11 @@ export const Offers = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: center;
-  column-gap: ${spacing['96px']};
+  justify-content: space-around;
+  column-gap: ${spacing['16px']};
   row-gap: ${spacing['32px']};
   padding-top: ${spacing['64px']};
   padding-bottom: ${spacing['64px']};
-`;
-
-export const Title = styled.h1`
-  font-family: 'Roboto Condensed', sans-serif;
-  position: relative;
-  ${typography.size.xl4};
-  ${typography.weight.black};
-  color: ${({ theme }) => theme.colors.green800};
-  &:after {
-    content: '';
-    position: absolute;
-    width: 10%;
-    height: 1px;
-    bottom: 0;
-    left: 45%;
-    border: 1px solid ${({ theme }) => theme.colors.green700};
-  }
-`;
-
-export const Subtitle = styled.h2`
-  color: ${({ theme }) => theme.colors.blue600};
-  ${typography.size.xl2};
 `;
 
 export const Row = styled.div`

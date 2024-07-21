@@ -1,30 +1,27 @@
-import Icon from '@components/shared-components/icons/icon.component';
 import * as SC from './achievements-icons.styles';
 import { BiWalk } from 'react-icons/bi';
-const list = [
+const achievementsList = [
   {
-    id: 1,
     icon: BiWalk,
     title: '200+',
     subtitle: 'Hiking trails',
   },
-  { id: 2, icon: BiWalk, title: '200+', subtitle: 'Hiking trails' },
-  { id: 3, icon: BiWalk, title: '200+', subtitle: 'Hiking trails' },
-  { id: 4, icon: BiWalk, title: '200+', subtitle: 'Hiking trails' },
+  { icon: BiWalk, title: '200+', subtitle: 'Hiking trails' },
+  { icon: BiWalk, title: '200+', subtitle: 'Hiking trails' },
+  { icon: BiWalk, title: '200+', subtitle: 'Hiking trails' },
 ];
 
 const AchievementIcons = () => {
   return (
     <SC.Container>
-      <SC.Overlay />
-      {list &&
-        list.map((item) => (
-          <SC.IconCard key={item.id}>
-            <SC.IconWrapper>
-              <Icon IconComponent={item.icon} size={32} />
-            </SC.IconWrapper>
-            <SC.Title>{item.title}</SC.Title>
-            <SC.Subtitle>{item.subtitle}</SC.Subtitle>
+      {achievementsList &&
+        achievementsList.map((achievement, idx) => (
+          <SC.IconCard key={idx}>
+            <div>
+              <achievement.icon size={'3rem'} />
+            </div>
+            <h2>{achievement.title}</h2>
+            <p>{achievement.subtitle}</p>
           </SC.IconCard>
         ))}
     </SC.Container>

@@ -1,53 +1,53 @@
 import IconCard from '@components/templates/icon-card/icon-card.component';
 import * as SC from './hero-image-icon-cards.styles';
 import { FC } from 'react';
-import { FaBeer } from 'react-icons/fa';
+import { FaGraduationCap, FaHiking, FaTree } from 'react-icons/fa';
+import { IconType } from 'react-icons';
+import { FaCampground } from 'react-icons/fa6';
 
-const IconCardsArray = [
+type IconCardType = {
+  title: string;
+  description: string;
+  icon: IconType;
+};
+
+const iconCardsList: IconCardType[] = [
   {
-    id: 1,
-    iconComponent: FaBeer,
-    title: 'Icon Title #1',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    icon: FaGraduationCap,
+    title: 'Education',
+    description: 'Learn essential skills for personal development',
   },
   {
-    id: 2,
-    iconComponent: FaBeer,
-    title: 'Icon Title #1',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    icon: FaHiking,
+    title: 'Hikings',
+    description: 'Experience the great outdoors with our guided hikes',
   },
   {
-    id: 3,
-    iconComponent: FaBeer,
-    title: 'Icon Title #1',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    icon: FaCampground,
+    title: 'Camping',
+    description: 'Camp in the heart of nature in our guided tours',
   },
   {
-    id: 4,
-    iconComponent: FaBeer,
-    title: 'Icon Title #1',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    icon: FaTree,
+    title: 'Outdoor Activities',
+    description: 'Experience the great outdoors and have fun while at it',
   },
 ];
 
 const HeroImageIconCards: FC = () => {
   return (
     <SC.Wrapper>
-      <SC.HeroImageIconCards>
-        {IconCardsArray &&
-          IconCardsArray.map((iconCard) => (
+      <SC.Container>
+        {iconCardsList &&
+          iconCardsList.map((iconCard, idx) => (
             <IconCard
-              key={iconCard.id}
-              icon={iconCard.iconComponent}
+              key={idx}
+              Icon={iconCard.icon}
               title={iconCard.title}
               description={iconCard.description}
             />
           ))}
-      </SC.HeroImageIconCards>
+      </SC.Container>
     </SC.Wrapper>
   );
 };

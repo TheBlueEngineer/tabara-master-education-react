@@ -1,7 +1,6 @@
 import { ButtonHTMLAttributes, FC } from 'react';
 import * as SC from './button.styles';
 import { IconType } from 'react-icons';
-import Icon from '../icons/icon.component';
 
 export type ButtonProps = {
   variant?: 'default' | 'primary' | 'contained' | 'outlined' | 'disabled';
@@ -10,8 +9,8 @@ export type ButtonProps = {
   onHoverStyle?: 'glow' | 'opaque' | 'default';
   disabled?: boolean;
   fullWidth?: boolean;
-  startIcon?: null | IconType;
-  endIcon?: null | IconType;
+  StartIcon?: IconType;
+  EndIcon?: IconType;
   onClick: () => void;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -20,8 +19,8 @@ const Button: FC<ButtonProps> = ({
   size = 'medium',
   shape = 'rectangular',
   children,
-  startIcon = null,
-  endIcon = null,
+  StartIcon,
+  EndIcon,
   fullWidth = false,
   disabled = false,
   onHoverStyle = 'default',
@@ -39,9 +38,9 @@ const Button: FC<ButtonProps> = ({
       onClick={onClick}
       {...otherProps}
     >
-      {startIcon && <Icon IconComponent={startIcon} />}
+      {StartIcon && <StartIcon />}
       {children}
-      {endIcon && <Icon IconComponent={endIcon} />}
+      {EndIcon && <EndIcon />}
     </SC.StyledButton>
   );
 };

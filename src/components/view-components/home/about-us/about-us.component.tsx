@@ -1,65 +1,51 @@
-import Icon from '@components/shared-components/icons/icon.component';
 import * as SC from './about-us.styles';
 import { FaBeer } from 'react-icons/fa';
 
 const list = [
   {
-    id: 1,
-    icon: FaBeer,
     text: 'We are truly one of the best camps in the world. Like no questions asked.',
   },
   {
-    id: 2,
-    icon: FaBeer,
     text: 'We are truly one of the best camps in the world. Like no questions asked.',
   },
   {
-    id: 3,
-    icon: FaBeer,
     text: 'We are truly one of the best camps in the world. Like no questions asked.',
   },
   {
-    id: 4,
-    icon: FaBeer,
     text: 'We are truly one of the best camps in the world. Like no questions asked.',
   },
 ];
 
 const AboutUs = () => {
   return (
-    <SC.HomeAboutUsContainer>
-      <SC.ImagesContainer>
-        <SC.ImageBoxLeft>
-          <SC.Image
-            src={
-              '/src/assets/images/home/Mettlach_Uebernachten_in_Portaledges_im_Baum_mit_Blick_auf_die_Saarschleife.jpg'
-            }
-            alt="Image on the left"
-          />
-        </SC.ImageBoxLeft>
-        <SC.ImageBoxRight>
-          {' '}
-          <SC.Image
-            src={
-              '/src/assets/images/home/Mettlach_Uebernachten_in_Portaledges_im_Baum_mit_Blick_auf_die_Saarschleife.jpg'
-            }
-            alt="Image on the left"
-          />{' '}
-          <SC.Image
-            src={
-              '/src/assets/images/home/Mettlach_Uebernachten_in_Portaledges_im_Baum_mit_Blick_auf_die_Saarschleife.jpg'
-            }
-            alt="Image on the left"
-          />
-        </SC.ImageBoxRight>
-      </SC.ImagesContainer>
+    <SC.Container>
+      <SC.Images>
+        <img
+          src={
+            '/src/assets/images/home/Mettlach_Uebernachten_in_Portaledges_im_Baum_mit_Blick_auf_die_Saarschleife.jpg'
+          }
+          alt="Image on the left"
+        />
+        <img
+          src={
+            '/src/assets/images/home/Mettlach_Uebernachten_in_Portaledges_im_Baum_mit_Blick_auf_die_Saarschleife.jpg'
+          }
+          alt="Image on the left"
+        />
+        <img
+          src={
+            '/src/assets/images/home/Mettlach_Uebernachten_in_Portaledges_im_Baum_mit_Blick_auf_die_Saarschleife.jpg'
+          }
+          alt="Image on the left"
+        />
+      </SC.Images>
 
-      <SC.InformationContainer>
-        <SC.Title>About us</SC.Title>
-        <SC.Subtitle>
-          Experience <SC.Span>Nature</SC.Span> Together With Us
-        </SC.Subtitle>
-        <SC.Description>
+      <SC.Information>
+        <h1>About us</h1>
+        <h2>
+          Experience the wonderful <span>Nature</span> Together With Us
+        </h2>
+        <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -67,18 +53,18 @@ const AboutUs = () => {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
-        </SC.Description>
+        </p>
         <SC.List>
           {list &&
-            list.map((item) => (
-              <SC.ListItem key={item.id}>
-                <Icon IconComponent={item.icon} size={24} />
-                <SC.Text>{item.text}</SC.Text>
-              </SC.ListItem>
+            list.map((item, idx) => (
+              <li key={idx}>
+                <FaBeer size={'1.5rem'} />
+                <p>{item.text}</p>
+              </li>
             ))}
         </SC.List>
-      </SC.InformationContainer>
-    </SC.HomeAboutUsContainer>
+      </SC.Information>
+    </SC.Container>
   );
 };
 

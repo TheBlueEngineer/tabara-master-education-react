@@ -117,12 +117,13 @@ export const typography = {
     black: 'font-weight: 900',
   },
   lineHeight: {
-    xs: 'line-height: 0.75rem',
-    sm: 'line-height: 1rem',
-    base: 'line-height: 1.5rem',
-    md: 'line-height: 1.75rem',
-    lg: 'line-height: 2rem',
-    xl: 'line-height: 2.25rem',
+    xs2: 'line-height: 0.75',
+    xs: 'line-height: 1',
+    sm: 'line-height: 1.25',
+    base: 'line-height: 1.5',
+    md: 'line-height: 1.75',
+    lg: 'line-height: 2',
+    xl: 'line-height: 2.25',
   },
 };
 

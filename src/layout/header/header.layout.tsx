@@ -3,7 +3,6 @@ import NavigationBar from '../navbar/navbar.component';
 import * as SC from './header.styles';
 import useScrollDirection from 'src/hooks/scroll-direction.hook';
 import LanguageSelector from '@components/smart-components/language-selector/language-selector.component';
-import ThemeSelector from '@components/smart-components/theme-selector/theme-selector.component';
 
 const Header: FC = () => {
   const scrollDirection = useScrollDirection();
@@ -11,12 +10,14 @@ const Header: FC = () => {
 
   return (
     <SC.HeaderContainer $isHidden={isHidden}>
-      <SC.Row>
-        <ThemeSelector />
+      <SC.NavigationLink to="/">
+        <img src="/src/assets/images/home/322412271_2318204071679802_4134667702766926568_n.png" />
+        <h1>Tabara Master Education</h1>
+      </SC.NavigationLink>
+      <SC.Cell>
+        <NavigationBar />
         <LanguageSelector />
-      </SC.Row>
-      <SC.Logo to="/">Logo</SC.Logo>
-      <NavigationBar />
+      </SC.Cell>
     </SC.HeaderContainer>
   );
 };
