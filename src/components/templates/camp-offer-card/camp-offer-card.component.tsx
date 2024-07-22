@@ -34,11 +34,11 @@ const CampOfferCard: FC<CampOfferCardProps> = ({
       <SC.Description>{description}</SC.Description>
       <SC.DateAndLocation>
         <div>
-          <BiCalendar size={'1rem'} />
+          <BiCalendar />
           <p>Aug 27</p>
         </div>
         <div>
-          <FaClock size={'1rem'} />
+          <FaClock />
           <p>4 days</p>
         </div>
       </SC.DateAndLocation>

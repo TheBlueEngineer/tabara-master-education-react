@@ -16,7 +16,7 @@ export const Container = styled.div`
   box-shadow: ${shadows.elevation.lg};
   border-width: ${border.width.xs};
   border-color: ${({ theme }) => theme.colors.gray100};
-  padding-bottom: ${spacing['16px']};
+  padding-bottom: ${spacing['24px']};
   background-color: white;
 
   img {
@@ -95,20 +95,24 @@ export const DateAndLocation = styled.div`
   flex-direction: row;
   width: 100%;
   justify-content: space-around;
-  margin-bottom: ${spacing['16px']};
+  margin-bottom: ${spacing['24px']};
 
   & > div {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    vertical-align: center;
+    align-items: flex-start;
     column-gap: ${spacing['8px']};
     color: ${({ theme }) => theme.colors.green800};
     ${typography.size.base};
     ${typography.weight.bold};
-  }
 
-  & > p {
-    ${typography.weight.bold};
+    & > svg {
+      ${typography.size.md};
+    }
+
+    & > p {
+      ${typography.weight.bold};
+    }
   }
 `;
