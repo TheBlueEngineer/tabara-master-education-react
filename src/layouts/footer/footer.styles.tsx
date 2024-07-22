@@ -2,6 +2,8 @@ import { NavLink } from 'react-router-dom';
 import { spacing, typography } from '@consts/template.const';
 import styled from 'styled-components';
 
+import treeBackground from 'assets/images/home/istockphoto-1372132668-170667a.jpg';
+
 export const Footer = styled.footer`
   display: flex;
   width: 100%;
@@ -21,7 +23,7 @@ export const Footer = styled.footer`
       position: absolute;
       width: 100%;
       height: 100%;
-      background: url('/src/assets/images/home/istockphoto-1372132668-170667a.jpg');
+      background: url(${treeBackground});
       background-size: contain;
       opacity: 0.2;
       z-index: 1;

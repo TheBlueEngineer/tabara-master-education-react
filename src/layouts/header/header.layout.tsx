@@ -5,6 +5,8 @@ import useScrollDirection from '@hooks/scroll-direction.hook';
 import LanguageSelector from '@components/smart-components/language-selector/language-selector.component';
 import CurrencySelector from '@components/smart-components/currency-selector/currency-selector.component';
 
+import logo from 'assets/images/home/322412271_2318204071679802_4134667702766926568_n.png';
+
 const Header: FC = () => {
   const scrollDirection = useScrollDirection();
   const isHidden = scrollDirection === 'down';
@@ -12,7 +14,7 @@ const Header: FC = () => {
   return (
     <SC.HeaderContainer $isHidden={isHidden}>
       <SC.NavigationLink to="/">
-        <img src="/src/assets/images/home/322412271_2318204071679802_4134667702766926568_n.png" />
+        <img src={logo} />
         <h1>Tabara Master Education</h1>
       </SC.NavigationLink>
       <SC.Cell>

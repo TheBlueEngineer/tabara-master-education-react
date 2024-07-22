@@ -1,5 +1,6 @@
 import * as SC from './about-us.styles';
 import { FaBeer } from 'react-icons/fa';
+import beachImage from 'assets/images/home/Mettlach_Uebernachten_in_Portaledges_im_Baum_mit_Blick_auf_die_Saarschleife.jpg';
 
 const list = [
   {
@@ -20,24 +21,9 @@ const AboutUs = () => {
   return (
     <SC.Container>
       <SC.Images>
-        <img
-          src={
-            '/src/assets/images/home/Mettlach_Uebernachten_in_Portaledges_im_Baum_mit_Blick_auf_die_Saarschleife.jpg'
-          }
-          alt="Image on the left"
-        />
-        <img
-          src={
-            '/src/assets/images/home/Mettlach_Uebernachten_in_Portaledges_im_Baum_mit_Blick_auf_die_Saarschleife.jpg'
-          }
-          alt="Image on the left"
-        />
-        <img
-          src={
-            '/src/assets/images/home/Mettlach_Uebernachten_in_Portaledges_im_Baum_mit_Blick_auf_die_Saarschleife.jpg'
-          }
-          alt="Image on the left"
-        />
+        <img src={beachImage} alt="Image on the left" />
+        <img src={beachImage} alt="Image on the left" />
+        <img src={beachImage} alt="Image on the left" />
       </SC.Images>
 
       <SC.Information>

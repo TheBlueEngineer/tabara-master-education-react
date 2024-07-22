@@ -1,5 +1,6 @@
 import CampOfferCard from '@components/templates/camp-offer-card/camp-offer-card.component';
 import * as SC from './our-camps.styles';
+import branCastleImage from 'assets/images/home/campoffer1.jpg';
 
 type CampOfferCardType = {
   title: string;
@@ -14,21 +15,21 @@ const campOfferCardsList: CampOfferCardType[] = [
     description:
       'Lorem Ipsum sin dolor bla la care va sa zica asta e de descriere pentru castelul bran vai ce misto suna omg tare',
     price: 54,
-    src: './src/assets/images/home/campoffer1.jpg',
+    src: branCastleImage,
   },
   {
     title: 'Vacanta castelul Bran',
     description:
       'Lorem Ipsum sin dolor bla la care va sa zica asta e de descriere pentru castelul bran vai ce misto suna omg tare',
     price: 78,
-    src: './src/assets/images/home/campoffer1.jpg',
+    src: branCastleImage,
   },
   {
     title: 'Vacanta castelul Bran',
     description:
       'Lorem Ipsum sin dolor bla la care va sa zica asta e de descriere pentru castelul bran vai ce misto suna omg tare',
     price: 121,
-    src: './src/assets/images/home/campoffer1.jpg',
+    src: branCastleImage,
   },
 ];
 

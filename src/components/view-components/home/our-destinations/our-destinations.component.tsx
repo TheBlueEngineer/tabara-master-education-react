@@ -1,46 +1,49 @@
 import { FC } from 'react';
 import * as SC from './our-destinations.styles';
 
+import imageType1 from 'assets/images/home/b_munti3.webp';
+import imageType2 from 'assets/images/home/b_munti1.webp';
+
 const destinationsList = [
   {
     id: 1,
     title: 'Castelul Bran',
-    imageUrl: '/src/assets/images/home/hero_image.jpg',
+    imageUrl: imageType1,
     toursCount: 5,
     colSpan: 1,
   },
   {
     id: 2,
     title: 'Castelul Bran',
-    imageUrl: '/src/assets/images/home/hero_image.jpg',
+    imageUrl: imageType1,
     toursCount: 5,
     colSpan: 1,
   },
   {
     id: 3,
     title: 'Castelul Bran',
-    imageUrl: '/src/assets/images/home/b_munti3.webp',
+    imageUrl: imageType2,
     toursCount: 5,
     colSpan: 2,
   },
   {
     id: 4,
     title: 'Castelul Bran',
-    imageUrl: '/src/assets/images/home/b_munti3.webp',
+    imageUrl: imageType2,
     toursCount: 5,
     colSpan: 2,
   },
   {
     id: 5,
     title: 'Castelul Bran',
-    imageUrl: '/src/assets/images/home/hero_image.jpg',
+    imageUrl: imageType1,
     toursCount: 5,
     colSpan: 1,
   },
   {
     id: 6,
     title: 'Castelul Bran',
-    imageUrl: '/src/assets/images/home/hero_image.jpg',
+    imageUrl: imageType1,
     toursCount: 5,
     colSpan: 1,
   },

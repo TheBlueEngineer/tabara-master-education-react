@@ -20,12 +20,6 @@ export const Form = styled.div`
   display: flex;
 `;
 
-export const FormItem = styled.div``;
-
-export const FormLabel = styled.label``;
-
-export const FormInput = styled.input``;
-
 export const Content = styled.div`
   display: flex;
   flex-direction: column;

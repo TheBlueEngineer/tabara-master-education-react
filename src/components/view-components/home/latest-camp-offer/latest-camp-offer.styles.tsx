@@ -1,5 +1,6 @@
 import { spacing, typography } from '@consts/template.const';
 import styled from 'styled-components';
+import backgroundImage from 'assets/images/home/b_munti1.webp';
 
 export const Container = styled.section`
   display: flex;
@@ -10,7 +11,7 @@ export const Container = styled.section`
   padding-top: ${spacing['96px']};
   padding-bottom: ${spacing['96px']};
   position: relative;
-  background-image: url('/src/assets/images/home/home_bg.webp');
+  background-image: url(${backgroundImage});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,7 +23,8 @@ export const Container = styled.section`
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: ${({ theme }) => theme.colors.green800};
+    background: ${({ theme }) =>
+      `linear-gradient(180deg, ${theme.colors.green700},${theme.colors.green950})`};
     mix-blend-mode: multiply;
   }
 `;

@@ -1,4 +1,6 @@
 import { border, shadows, spacing, typography } from '@consts/template.const';
+import backgroundImage from 'assets/images/home/home_bg.webp';
+
 import styled from 'styled-components';
 
 export const Container = styled.section`
@@ -10,8 +12,8 @@ export const Container = styled.section`
   justify-content: space-evenly;
   flex-wrap: wrap;
 
-  padding: ${spacing['96px']} ${spacing['48px']};
-  background-image: url('/src/assets/images/home/home_bg.webp');
+  padding: ${spacing['64px']} ${spacing['48px']};
+  background-image: url(${backgroundImage});
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;

@@ -1,12 +1,13 @@
 import { spacing, typography } from '@consts/template.const';
 import styled from 'styled-components';
+import backgroundImage from 'assets/images/home/b_munti3.webp';
 
 export const Container = styled.section`
   display: flex;
   position: relative;
   width: 100%;
   height: 55rem;
-  background: url('/src/assets/images/home/b_munti3.webp');
+  background: url(${backgroundImage});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

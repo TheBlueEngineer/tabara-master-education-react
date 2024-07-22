@@ -5,11 +5,13 @@ import MemberCard, {
 } from '@components/templates/member-card/member-card.component';
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
+import profilePic from 'assets/images/home/profile.png';
+
 const membersList: MemberCardProps[] = [
   {
     id: 1,
     name: 'John Bobby Doe',
-    imageUrl: '/src/assets/images/home/profile.png',
+    imageUrl: profilePic,
     profession: 'Professional Guide',
     description:
       'This is the fascinating description of one of the members of the team, very, very, deep.',
@@ -34,7 +36,7 @@ const membersList: MemberCardProps[] = [
   {
     id: 2,
     name: 'John Bobby Doe',
-    imageUrl: '/src/assets/images/home/profile.png',
+    imageUrl: profilePic,
     profession: 'Professional Guide',
     description:
       'This is the fascinating description of one of the members of the team, very, very, deep.',
@@ -43,7 +45,7 @@ const membersList: MemberCardProps[] = [
   {
     id: 3,
     name: 'John Bobby Doe',
-    imageUrl: '/src/assets/images/home/profile.png',
+    imageUrl: profilePic,
     profession: 'Professional Guide',
     description:
       'This is the fascinating description of one of the members of the team, very, very, deep.',
@@ -52,7 +54,7 @@ const membersList: MemberCardProps[] = [
   {
     id: 4,
     name: 'John Bobby Doe',
-    imageUrl: '/src/assets/images/home/profile.png',
+    imageUrl: profilePic,
     profession: 'Professional Guide',
     description:
       'This is the fascinating description of one of the members of the team, very, very, deep.',

@@ -3,6 +3,8 @@ import * as SC from './footer.styles';
 import { BiLeaf } from 'react-icons/bi';
 import { FaBeer } from 'react-icons/fa';
 
+import logo from 'assets/images/home/322412271_2318204071679802_4134667702766926568_n.png';
+
 const contactInfoList = [
   {
     id: 1,
@@ -92,7 +94,7 @@ const Footer: FC = () => {
     <SC.Footer>
       <section>
         <SC.GridSection>
-          <img src="/src/assets/images/home/322412271_2318204071679802_4134667702766926568_n.png" />
+          <img loading="lazy" src={logo} />
           <h3>Tabara Master Education</h3>
           <p>We make adventure dreams come true.</p>
           <SC.ContactInfoList>

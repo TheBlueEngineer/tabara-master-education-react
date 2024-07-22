@@ -10,12 +10,16 @@ export const Container = styled.div`
   justify-self: center;
   align-self: center;
   padding: 0 ${spacing['32px']} ${spacing['64px']} ${spacing['32px']};
-  background: url('/src/assets/images/home/art.webp');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   border-radius: ${border.radius.sm};
-  box-shadow: ${shadows.elevation.lg};
+
+  & > img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    box-shadow: ${shadows.elevation.lg};
+    object-fit: cover;
+  }
 
   &:after {
     position: absolute;
