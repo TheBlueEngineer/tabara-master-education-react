@@ -10,6 +10,7 @@ i18n
   .init({
     returnNull: false,
     fallbackLng: 'ro',
+    lng: 'ro',
     debug: true,
     ns: ['common', 'home', 'camps', 'contact', 'sign-in', 'sign-up', 'team'],
     defaultNS: 'common',
@@ -17,7 +18,7 @@ i18n
       escapeValue: false,
     },
     backend: {
-      loadPath: `/src/locale/{{lng}}/{{ns}}.json`,
+      loadPath: `/locales/{{lng}}/{{ns}}.json`,
     },
     detection: {
       order: ['localStorage', 'cookie', 'htmlTag', 'path', 'subdomain'],
