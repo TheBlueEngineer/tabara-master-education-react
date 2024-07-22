@@ -39,7 +39,8 @@
     "**/*.tsx",
     "**/**/*.ts",
     "**/**/*.tsx",
-    "/src/fonts.d.ts"
+    "/src/fonts.d.ts",
+    "/src/images.d.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

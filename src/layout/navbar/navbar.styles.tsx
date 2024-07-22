@@ -20,7 +20,6 @@ export const NavLink = styled(NavigationLink)`
   flex-direction: row;
   align-items: flex-start;
   padding: ${spacing['16px']};
-
   color: ${({ theme }) => theme.colors.green800};
 
   column-gap: ${spacing['4px']};
@@ -41,10 +40,10 @@ export const NavLink = styled(NavigationLink)`
   }
 
   & > svg {
-    ${typography.size.sm};
+    ${typography.size.md};
 
     @media (min-width: 1240px) {
-      ${typography.size.md};
+      ${typography.size.lg};
     }
   }
 
