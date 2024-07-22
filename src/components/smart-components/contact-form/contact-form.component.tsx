@@ -1,4 +1,4 @@
-import useForm from 'src/hooks/handle-form.hook';
+import useForm from '@hooks/handle-form.hook';
 import * as SC from './contact-form.styles';
 import FormInput from '../form-input/form-input.component';
 import Button from '@components/shared-components/button/button.component';
@@ -6,7 +6,7 @@ import {
   validateEmail,
   validateName,
   validatePhone,
-} from 'src/utils/input-validation.utils';
+} from '@utils/input-validation.utils';
 
 const initFormValues = {
   firstname: '',

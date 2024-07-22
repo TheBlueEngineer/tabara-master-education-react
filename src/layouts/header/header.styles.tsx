@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { shadows, spacing, typography } from 'src/consts/template.const';
+import { shadows, spacing, typography } from '@consts/template.const';
 import styled from 'styled-components';
 
 type HeaderContainerProps = {

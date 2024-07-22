@@ -1,7 +1,7 @@
 import { FC, ChangeEvent } from 'react';
 import * as SC from './currency-selector.styles';
-import { useExchangeRates } from 'src/context/exchange-rates.context';
-import { currenciesList } from 'src/consts/currency';
+import { useExchangeRates } from '@context/exchange-rates.context';
+import { currenciesList } from '@consts/currency';
 
 const CurrencySelector: FC = () => {
   const { exchangeRates, setCurrentRONmultiplier, handleSetCurrentCurrency } =

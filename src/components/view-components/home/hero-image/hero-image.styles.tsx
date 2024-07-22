@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { shadows, spacing } from 'src/consts/template.const';
+import { shadows, spacing } from '@consts/template.const';
 import Button from '@components/shared-components/button/button.component';
+import heroImage from 'assets/images/home/home_bg.webp';
 
 export const HeroContainer = styled.section`
   display: flex;
@@ -9,7 +10,7 @@ export const HeroContainer = styled.section`
   padding-top: ${spacing['192px']};
   padding-bottom: ${spacing['192px']};
   position: relative;
-  background-image: url('/src/assets/images/home/home_bg.webp');
+  background-image: url(${heroImage});
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;

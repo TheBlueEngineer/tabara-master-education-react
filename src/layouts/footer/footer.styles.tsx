@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { spacing, typography } from 'src/consts/template.const';
+import { spacing, typography } from '@consts/template.const';
 import styled from 'styled-components';
 
 export const Footer = styled.footer`

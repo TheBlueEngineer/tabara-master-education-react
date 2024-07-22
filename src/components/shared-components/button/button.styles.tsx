@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
-import { ThemeType } from 'src/consts/themes.const';
+import { ThemeType } from '@consts/themes.const';
 import {
   border,
   opacity,
   shadows,
   spacing,
   typography,
-} from 'src/consts/template.const';
+} from '@consts/template.const';
 import { ButtonHTMLAttributes } from 'react';
 
 type StyledButtonProps = {

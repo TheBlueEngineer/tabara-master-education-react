@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import * as SC from './thumbnail.styles';
-import { useModal } from 'src/context/modal.context';
+import { useModal } from '@context/modal.context';
 import { FaMagnifyingGlass } from 'react-icons/fa6';
 
 type ThumbnailProps = {

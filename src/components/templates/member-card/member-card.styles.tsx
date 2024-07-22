@@ -1,10 +1,5 @@
 import styled from 'styled-components';
-import {
-  border,
-  spacing,
-  shadows,
-  typography,
-} from 'src/consts/template.const';
+import { border, spacing, shadows, typography } from '@consts/template.const';
 
 export const Container = styled.div`
   // Position

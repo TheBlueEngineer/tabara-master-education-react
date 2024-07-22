@@ -1,9 +1,4 @@
-import {
-  border,
-  shadows,
-  spacing,
-  typography,
-} from 'src/consts/template.const';
+import { border, shadows, spacing, typography } from '@consts/template.const';
 import styled from 'styled-components';
 
 export const Container = styled.section`

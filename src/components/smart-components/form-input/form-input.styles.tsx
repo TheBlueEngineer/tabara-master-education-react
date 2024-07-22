@@ -1,4 +1,4 @@
-import { border, spacing, typography } from 'src/consts/template.const';
+import { border, spacing, typography } from '@consts/template.const';
 import styled from 'styled-components';
 
 export const Container = styled.div`

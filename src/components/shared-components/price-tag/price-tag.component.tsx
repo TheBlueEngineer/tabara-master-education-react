@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import * as SC from './price-tag.styles';
-import { useExchangeRates } from 'src/context/exchange-rates.context';
+import { useExchangeRates } from '@context/exchange-rates.context';
 
 type PriceTagProps = {
   value: number;

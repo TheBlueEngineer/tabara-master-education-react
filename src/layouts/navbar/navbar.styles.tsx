@@ -1,10 +1,5 @@
 import { NavLink as NavigationLink } from 'react-router-dom';
-import {
-  border,
-  opacity,
-  spacing,
-  typography,
-} from 'src/consts/template.const';
+import { border, opacity, spacing, typography } from '@consts/template.const';
 import styled from 'styled-components';
 
 export const Navbar = styled.nav`

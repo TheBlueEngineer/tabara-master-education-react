@@ -1,5 +1,5 @@
 import Button from '@components/shared-components/button/button.component';
-import { useTheme } from 'src/context/theme.context';
+import { useTheme } from '@context/theme.context';
 
 const ThemeSelector = () => {
   const { toggleTheme } = useTheme();

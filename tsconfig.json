@@ -24,12 +24,20 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     /* Pathing */
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@pages/*": ["src/pages/*"],
-      "@layout/*": ["src/layout/*"],
-      "@locale/*": ["src/locale/*"]
+      "@components/*": ["components/*"],
+      "@pages/*": ["pages/*"],
+      "@layout/*": ["layout/*"],
+      "@locales/*": ["locales/*"],
+      "@consts/*": ["consts/*"],
+      "@context/*": ["context/*"],
+      "@api/*": ["api/*"],
+      "@hooks/*": ["hooks/*"],
+      "@layouts/*": ["layouts/*"],
+      "@utils/*": ["utils/*"],
+      "@types/*": ["types/*"],
+      "@test/*": ["test/*"]
     }
   },
 

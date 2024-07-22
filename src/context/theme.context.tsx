@@ -1,5 +1,5 @@
 import { FC, ReactNode, createContext, useContext, useState } from 'react';
-import { ThemeType, darkTheme, lightTheme } from 'src/consts/themes.const';
+import { ThemeType, darkTheme, lightTheme } from 'consts/themes.const';
 import { ThemeProvider } from 'styled-components';
 
 type ThemeContextProps = {

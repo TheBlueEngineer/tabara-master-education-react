@@ -6,8 +6,8 @@ import {
   useEffect,
   useState,
 } from 'react';
-import { ExchangeRatesType, fetchExchangeRates } from 'src/api/exchangeRates';
-import { currenciesList, CurrencyType } from 'src/consts/currency';
+import { ExchangeRatesType, fetchExchangeRates } from '@api/exchangeRates';
+import { currenciesList, CurrencyType } from '@consts/currency';
 
 type ExchangeRatesProviderProps = {
   baseCurrency: string;
