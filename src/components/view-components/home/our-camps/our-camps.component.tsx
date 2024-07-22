@@ -4,7 +4,7 @@ import * as SC from './our-camps.styles';
 type CampOfferCardType = {
   title: string;
   description: string;
-  price: string;
+  price: number;
   src: string;
 };
 
@@ -13,21 +13,21 @@ const campOfferCardsList: CampOfferCardType[] = [
     title: 'Vacanta castelul Bran',
     description:
       'Lorem Ipsum sin dolor bla la care va sa zica asta e de descriere pentru castelul bran vai ce misto suna omg tare',
-    price: '$54.99',
+    price: 54,
     src: './src/assets/images/home/campoffer1.jpg',
   },
   {
     title: 'Vacanta castelul Bran',
     description:
       'Lorem Ipsum sin dolor bla la care va sa zica asta e de descriere pentru castelul bran vai ce misto suna omg tare',
-    price: '$54.99',
+    price: 78,
     src: './src/assets/images/home/campoffer1.jpg',
   },
   {
     title: 'Vacanta castelul Bran',
     description:
       'Lorem Ipsum sin dolor bla la care va sa zica asta e de descriere pentru castelul bran vai ce misto suna omg tare',
-    price: '$54.99',
+    price: 121,
     src: './src/assets/images/home/campoffer1.jpg',
   },
 ];

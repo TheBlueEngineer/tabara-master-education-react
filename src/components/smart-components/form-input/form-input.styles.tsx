@@ -8,12 +8,12 @@ export const Container = styled.div`
   align-items: flex-start;
   row-gap: ${spacing['4px']};
   margin-bottom: ${spacing['8px']};
-`;
 
-export const Label = styled.label`
-  ${typography.size.md};
-  ${typography.weight.bold};
-  color: ${({ theme }) => theme.colors.white};
+  & > label {
+    ${typography.size.md};
+    ${typography.weight.bold};
+    color: ${({ theme }) => theme.colors.white};
+  }
 `;
 
 export const InputWrapper = styled.div<{ $hasError?: boolean }>`
@@ -97,7 +97,8 @@ export const Row = styled.div`
 export const ValidationIconWrapper = styled.div<{ $isValid: boolean }>`
   position: relative;
   display: flex;
-  background-color: ${({ theme }) => theme.colors.white};
+  justify-content: center;
+  align-items: center;
   padding: 0 ${spacing['8px']};
   color: ${({ theme, $isValid }) =>
     $isValid ? theme.colors.green600 : theme.colors.red400};

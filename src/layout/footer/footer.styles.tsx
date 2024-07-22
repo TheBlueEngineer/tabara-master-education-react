@@ -11,7 +11,7 @@ export const Footer = styled.footer`
     display: grid;
     width: 100%;
     position: relative;
-    padding: ${spacing['64px']} 10%;
+    padding: ${spacing['96px']} 10%;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     z-index: 0;

@@ -6,7 +6,7 @@ export const Container = styled.section`
   flex-direction: row;
   width: 100%;
   background-color: ${({ theme }) => theme.colors.gray50};
-  padding: ${spacing['96px']} 7.5%;
+  padding: ${spacing['96px']} 10%;
   column-gap: ${spacing['64px']};
 `;
 

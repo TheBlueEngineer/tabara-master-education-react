@@ -6,7 +6,7 @@ export const Container = styled.div`
   width: 100%;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.gray50};
-  padding: ${spacing['64px']} 10%;
+  padding: ${spacing['96px']} 10%;
 
   & > h1 {
     font-family: 'Roboto Condensed', sans-serif;

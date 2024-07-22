@@ -2,8 +2,8 @@
 import { typography } from 'src/consts/template.const';
 import styled from 'styled-components';
 
-export const ModalOverlay = styled.div<{ isOpen: boolean }>`
-  display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+export const ModalOverlay = styled.div<{ $isOpen: boolean }>`
+  display: ${({ $isOpen }) => ($isOpen ? 'flex' : 'none')};
   position: fixed;
   justify-content: center;
   justify-items: center;

@@ -66,11 +66,11 @@ export const Container = styled.div`
 export const Price = styled.p`
   display: flex;
   position: absolute;
-  width: 30%;
   top: 10%;
   left: 0;
   clip-path: polygon(0% 0%, 100% 0, 90% 50%, 100% 100%, 0% 100%);
   padding: ${spacing['4px']} ${spacing['16px']};
+  padding-right: ${spacing['32px']};
   background: linear-gradient(
     90deg,
     ${({ theme }) => theme.colors.blue500},

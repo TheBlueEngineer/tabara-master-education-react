@@ -3,11 +3,12 @@ import * as SC from './camp-offer-card.styles';
 import Button from '@components/shared-components/button/button.component';
 import { FaClock } from 'react-icons/fa';
 import { BiCalendar } from 'react-icons/bi';
+import PriceTag from '@components/shared-components/price-tag/price-tag.component';
 
 type CampOfferCardProps = {
   title: string;
   description: string;
-  price: string;
+  price: number;
   src: string;
   alt?: string;
 };
@@ -26,7 +27,9 @@ const CampOfferCard: FC<CampOfferCardProps> = ({
   return (
     <SC.Container>
       <img src={src} alt={alt} />
-      <SC.Price>{price}</SC.Price>
+      <SC.Price>
+        <PriceTag value={price} />
+      </SC.Price>
       <h3>{title}</h3>
       <SC.Description>{description}</SC.Description>
       <SC.DateAndLocation>

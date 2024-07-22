@@ -43,10 +43,10 @@ const FormInput: FC<FormInputProps> = ({
 
   return (
     <SC.Container>
-      <SC.Label>
+      <label>
         {label}
         {required ? <SC.Span>*</SC.Span> : null}
-      </SC.Label>
+      </label>
       {type === 'textarea' ? (
         <SC.InputWrapper>
           <SC.Textarea

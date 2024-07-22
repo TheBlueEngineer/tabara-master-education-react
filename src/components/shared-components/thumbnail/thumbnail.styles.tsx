@@ -23,11 +23,10 @@ export const Overlay = styled.div`
   justify-content: center;
   align-items: center;
 
-  background: linear-gradient(
+  background: ${({ theme }) => `linear-gradient(
     180deg,
-    hsla(0, 0%, 100%, 0),
-    hsla(0, 0%, 100%, 0.9)
-  );
+    hsla(0, 0%, 100%, 0.1),${theme.colors.green100},
+    ${theme.colors.green400})`};
   opacity: 0;
   transition: opacity 300ms;
   z-index: 2;
@@ -42,10 +41,10 @@ export const IconWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: ${spacing['32px']};
+  padding: ${spacing['24px']};
   border-radius: 100%;
-  background-color: hsla(0, 0%, 0%, 0.5);
-  color: white;
+  background-color: ${({ theme }) => theme.colors.green900};
+  color: ${({ theme }) => theme.colors.green50};
 
   & > svg {
     ${typography.size.xl};
