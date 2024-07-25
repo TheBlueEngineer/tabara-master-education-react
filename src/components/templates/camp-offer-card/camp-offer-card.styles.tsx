@@ -3,15 +3,16 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  position: relative;
-  align-items: center;
   flex-direction: column;
-  width: 25rem;
+  position: relative;
+  justify-self: center;
+  align-self: center;
+  max-width: 30rem;
+
   border-radius: ${border.radius.xs};
   box-shadow: ${shadows.elevation.lg};
   border-width: ${border.width.xs};
   border-color: ${({ theme }) => theme.colors.gray100};
-  padding-bottom: ${spacing['24px']};
   background-color: white;
 
   img {
@@ -35,16 +36,23 @@ export const Container = styled.div`
       border-top-right-radius: ${border.radius.xs};
     }
   }
+`;
 
-  h3 {
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: ${spacing['16px']} ${spacing['32px']};
+  row-gap: ${spacing['24px']};
+
+  & > h3 {
     display: flex;
     justify-content: center;
     position: relative;
     width: 100%;
-    ${typography.weight.bold};
+    ${typography.weight.semibold};
     color: ${({ theme }) => theme.colors.green900};
     ${typography.size.xl};
-    padding-bottom: ${spacing['4px']};
 
     &:after {
       content: '';
@@ -56,9 +64,27 @@ export const Container = styled.div`
       border: 1px solid ${({ theme }) => theme.colors.green900};
     }
   }
+
+  & > h4 {
+    display: flex;
+    align-self: flex-start;
+    align-items: flex-end;
+    column-gap: ${spacing['8px']};
+    line-height: 1;
+  }
+
+  & > p {
+    display: flex;
+    color: ${({ theme }) => theme.colors.gray700};
+    font-size: ${typography.size.md};
+  }
+
+  & > button {
+    text-transform: uppercase;
+  }
 `;
 
-export const Price = styled.p`
+export const Price = styled.div`
   display: flex;
   position: absolute;
   top: 10%;
@@ -78,36 +104,23 @@ export const Price = styled.p`
   box-shadow: ${shadows.elevation.sm};
 `;
 
-export const Description = styled.p`
+export const DetailsList = styled.ul`
   display: flex;
-  color: ${({ theme }) => theme.colors.gray700};
-  font-size: ${typography.size.md};
-  padding: ${spacing['16px']};
-`;
-
-export const DateAndLocation = styled.div`
-  display: flex;
-  flex-direction: row;
   width: 100%;
-  justify-content: space-around;
-  margin-bottom: ${spacing['24px']};
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: ${spacing['8px']};
 
-  & > div {
+  & > li {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: flex-start;
     column-gap: ${spacing['8px']};
-    color: ${({ theme }) => theme.colors.green800};
+    color: ${({ theme }) => theme.colors.gray800};
     ${typography.size.base};
-    ${typography.weight.bold};
+    ${typography.weight.medium};
 
     & > svg {
       ${typography.size.md};
-    }
-
-    & > p {
-      ${typography.weight.bold};
     }
   }
 `;

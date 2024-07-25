@@ -1,3 +1,24 @@
 {
-  "welcome": "Bine ai venit acasa."
+  "welcome": "Bine ai venit acasa.",
+  "ourCampsSection": {
+    "title": "Taberele noastre",
+    "description": "Pornește într-o aventură cu noi!",
+    "campOffersList": {
+      "VAC_CASTEL_BRAN_1": {
+        "title": "Vacanta la Castelul Bran",
+        "description": "Aceasta este descrierea pentru aceasta vacanta in limba romana, urmeaza sa fie modificata mai tarziu cand am o descriere mai buna.",
+        "buttonText": "REZERVATI"
+      },
+      "VAC_CASTEL_BRAN_2": {
+        "title": "Vacanta la Castelul Bran",
+        "description": "Aceasta este descrierea pentru aceasta vacanta in limba romana, urmeaza sa fie modificata mai tarziu cand am o descriere mai buna.",
+        "buttonText": "REZERVATI"
+      },
+      "VAC_CASTEL_BRAN_3": {
+        "title": "Vacanta la Castelul Bran",
+        "description": "Aceasta este descrierea pentru aceasta vacanta in limba romana, urmeaza sa fie modificata mai tarziu cand am o descriere mai buna.",
+        "buttonText": "REZERVATI"
+      }
+    }
+  }
 }

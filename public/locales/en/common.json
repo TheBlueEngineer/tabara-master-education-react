@@ -1,10 +1,11 @@
 {
   "navigationBar": {
-    "home": "HOME",
-    "camps": "CAMPS",
-    "team": "TEAM",
-    "contact": "CONTACT",
-    "sign-in": "LOGIN",
-    "sign-up": "SIGN-UP"
+    "home": "Home",
+    "camps": "Camps",
+    "team": "Team",
+    "contact": "Contact",
+    "sign-in": "Login",
+    "sign-up": "Sign-up",
+    "cta-Button": "Book Now"
   }
 }

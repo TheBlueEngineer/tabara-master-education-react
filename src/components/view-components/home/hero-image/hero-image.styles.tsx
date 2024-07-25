@@ -3,7 +3,7 @@ import { shadows, spacing } from '@consts/template.const';
 import Button from '@components/shared-components/button/button.component';
 import heroImage from 'assets/images/home/home_bg.webp';
 
-export const HeroContainer = styled.section`
+export const Container = styled.section`
   display: flex;
   width: 100%;
   min-height: 5rem;
@@ -25,7 +25,7 @@ export const HeroContainer = styled.section`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: hsla(0, 0%, 0%, 0.25);
+    background-color: hsla(0, 0%, 0%, 0.6);
     z-index: 1;
   }
 `;

@@ -29,7 +29,7 @@ export const Container = styled.section`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: hsla(0, 0%, 0%, 0.5);
+    background-color: hsla(0, 0%, 0%, 0.6);
     z-index: 1;
   }
 `;

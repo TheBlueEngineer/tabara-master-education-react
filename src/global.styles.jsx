@@ -8,9 +8,6 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 16px;
     }
 
-    #root{
-        width: 100%;
-    }
 
     html {
         -webkit-box-sizing: border-box;
@@ -26,8 +23,6 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         margin: 0;
-        display: flex;
-        font-size: 1rem;
     }
 
     html, body, div, span, applet, object, iframe,

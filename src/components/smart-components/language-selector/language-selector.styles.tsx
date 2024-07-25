@@ -1,9 +1,15 @@
+import { spacing } from '@consts/template.const';
 import styled from 'styled-components';
 
 export const Dropdown = styled.select`
-  padding: 0.5rem;
-  border: 1px solid #cccccc;
-  border-radius: 1rem;
+  padding: ${spacing['4px']} ${spacing['2px']};
+  background-color: transparent;
+
+  color: ${({ theme }) => theme.colors.white};
+
+  & > option {
+    color: ${({ theme }) => theme.colors.black};
+  }
 `;
 
 export const Option = styled.option``;

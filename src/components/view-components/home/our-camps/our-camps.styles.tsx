@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.colors.gray50};
+  background-color: ${({ theme }) => theme.colors.white};
   padding: ${spacing['96px']} 10%;
 
   & > h1 {
@@ -33,13 +33,11 @@ export const Container = styled.div`
 `;
 
 export const Offers = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
   width: 100%;
-  justify-content: space-around;
-  column-gap: ${spacing['16px']};
-  row-gap: ${spacing['32px']};
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  column-gap: ${spacing['96px']};
+  row-gap: ${spacing['64px']};
   padding-top: ${spacing['64px']};
   padding-bottom: ${spacing['64px']};
 `;

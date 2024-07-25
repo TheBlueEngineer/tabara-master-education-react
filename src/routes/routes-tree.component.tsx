@@ -1,3 +1,4 @@
+import CampPreview from '@pages/camp-preview-page/camp-preview.page';
 import { Suspense, lazy } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -17,7 +18,10 @@ const RoutesTree = () => {
         <Routes>
           <Route path="/" element={<DefaultLayout />}>
             <Route index element={<HomePage />} />
-            <Route path="camps" element={<CampsPage />} />
+            <Route path="camps">
+              <Route index element={<CampsPage />} />
+              <Route path=":campPreview" element={<CampPreview />} />
+            </Route>
             <Route path="team" element={<TeamPage />} />
             <Route path="contact" element={<ContactPage />} />
             <Route path="login" element={<SignInPage />} />

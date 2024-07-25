@@ -15,6 +15,7 @@ export const Container = styled.section`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   justify-content: center;
   align-items: center;
 
@@ -24,7 +25,7 @@ export const Container = styled.section`
     width: 100%;
     height: 100%;
     background: ${({ theme }) =>
-      `linear-gradient(180deg, ${theme.colors.green700},${theme.colors.green950})`};
+      `linear-gradient(180deg,${theme.colors.green800},${theme.colors.green950})`};
     mix-blend-mode: multiply;
   }
 `;

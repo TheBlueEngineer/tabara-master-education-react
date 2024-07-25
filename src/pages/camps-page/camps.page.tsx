@@ -1,9 +1,15 @@
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
+/* import { useTranslation } from 'react-i18next';
+ */ import * as SC from './camps.styles';
+import OurCamps from '@components/view-components/home/our-camps/our-camps.component';
 
 const CampsPage: FC = () => {
-  const { t } = useTranslation('camps');
-  return <h1>{t('welcome')}</h1>;
+  /*   const { t } = useTranslation('camps');
+   */ return (
+    <SC.Wrapper>
+      <OurCamps />
+    </SC.Wrapper>
+  );
 };
 
 export default CampsPage;

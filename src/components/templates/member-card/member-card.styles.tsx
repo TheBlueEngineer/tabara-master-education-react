@@ -4,33 +4,23 @@ import { border, spacing, shadows, typography } from '@consts/template.const';
 export const Container = styled.div`
   // Position
   display: flex;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   // Size
-  width: 20rem;
+  min-width: 15rem;
+  max-width: 20rem;
   padding-top: ${spacing['160px']};
-  padding-bottom: ${spacing['32px']};
+  padding-bottom: ${spacing['48px']};
   box-shadow:
     ${shadows.elevation.md},
     inset 4px 4px 16px 0px hsla(0, 0%, 100%, 0.3);
-  border-top-left-radius: ${border.radius.md};
-  border-top-right-radius: ${border.radius.md};
-  border-bottom-left-radius: ${border.radius.sm};
-  border-bottom-right-radius: ${border.radius.sm};
+  border-radius: ${border.radius.md};
   background: ${({ theme }) =>
     `linear-gradient(180deg,${theme.colors.green800} 50%, ${theme.colors.green800} 50%)`};
 `;
 
 export const Frame = styled.div<{ $src: string }>`
-  // Position
-  display: flex;
-  justify-content: center;
-  align-items: center;
   // Size
-  width: ${spacing['192px']};
-  height: ${spacing['192px']};
+  width: 60%;
+  padding-bottom: 60%;
   margin-top: -${spacing['128px']};
   margin-bottom: ${spacing['16px']};
   border-radius: 100%;

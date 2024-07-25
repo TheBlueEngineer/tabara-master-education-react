@@ -1,17 +1,29 @@
 import { spacing, typography } from '@consts/template.const';
 import styled from 'styled-components';
+import Divider from 'assets/images/home/wavesOpacity.svg?react';
 
 export const Container = styled.section`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: linear-gradient(
+    ${({ theme }) => theme.colors.gray50},
+    ${({ theme }) => theme.colors.blue50}
+  );
+`;
+
+export const DivideSVG = styled(Divider)`
+  display: flex;
+`;
+
+export const Content = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
   align-items: center;
 
-  background: linear-gradient(
-    ${({ theme }) => theme.colors.gray100},
-    ${({ theme }) => theme.colors.blue50}
-  );
-  padding: ${spacing['96px']} 10%;
+  padding: ${spacing['32px']} 10%;
+  padding-bottom: ${spacing['96px']};
 
   & > h1 {
     font-family: 'Roboto Condensed', sans-serif;

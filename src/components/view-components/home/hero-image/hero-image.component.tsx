@@ -10,7 +10,7 @@ const HeroImage: FC = () => {
   };
 
   return (
-    <SC.HeroContainer>
+    <SC.Container>
       <SC.Content>
         <SC.Title>Make your great escape</SC.Title>
         <SC.Subtitle>
@@ -24,7 +24,7 @@ const HeroImage: FC = () => {
           Contact Us
         </SC.CTAButton>
       </SC.Content>
-    </SC.HeroContainer>
+    </SC.Container>
   );
 };
 

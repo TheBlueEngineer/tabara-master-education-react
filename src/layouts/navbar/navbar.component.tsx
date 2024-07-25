@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import * as SC from './navbar.styles';
 import { useTranslation } from 'react-i18next';
-import { BiHome } from 'react-icons/bi';
+import { FaHome } from 'react-icons/fa';
+import { FaPhoneVolume, FaCampground } from 'react-icons/fa6';
 
 const NavigationBar: FC = () => {
   const { t } = useTranslation('common');
@@ -9,25 +10,18 @@ const NavigationBar: FC = () => {
   return (
     <SC.Navbar>
       <SC.NavLink to="/">
-        <BiHome />
-        <p>{t('navigationBar.home')}</p>
+        <FaHome />
+        {t('navigationBar.home')}
       </SC.NavLink>
       <SC.NavLink to="/camps">
-        <BiHome />
-        <p>{t('navigationBar.camps')}</p>
-      </SC.NavLink>
-      <SC.NavLink to="/team">
-        <BiHome />
-        <p>{t('navigationBar.team')}</p>
+        <FaCampground />
+        {t('navigationBar.camps')}
       </SC.NavLink>
       <SC.NavLink to="/contact">
-        <BiHome />
-        <p> {t('navigationBar.contact')}</p>
+        <FaPhoneVolume size={20} />
+        {t('navigationBar.contact')}
       </SC.NavLink>
-      <SC.NavLink to="/login">
-        <BiHome />
-        <p>{t('navigationBar.sign-in')}</p>
-      </SC.NavLink>
+      <SC.CTAButton>{t(`navigationBar.cta-button`)}</SC.CTAButton>
     </SC.Navbar>
   );
 };

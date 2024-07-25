@@ -76,19 +76,22 @@ const activitiesList: Activity[] = [
 const CampActivities = () => {
   return (
     <SC.Container>
-      <h1>Our Activities</h1>
-      <h2>Discover our adventures initiatives</h2>
-      <ul>
-        {activitiesList.map((activity, idx) => (
-          <CampActivityCard
-            key={idx}
-            Icon={activity.icon}
-            src={activity.src}
-            title={activity.title}
-            description={activity.description}
-          />
-        ))}
-      </ul>
+      <SC.DivideSVG />
+      <SC.Content>
+        <h1>Our Activities</h1>
+        <h2>Discover our adventures initiatives</h2>
+        <ul>
+          {activitiesList.map((activity, idx) => (
+            <CampActivityCard
+              key={idx}
+              Icon={activity.icon}
+              src={activity.src}
+              title={activity.title}
+              description={activity.description}
+            />
+          ))}
+        </ul>
+      </SC.Content>
     </SC.Container>
   );
 };

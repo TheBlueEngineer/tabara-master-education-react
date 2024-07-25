@@ -6,7 +6,6 @@ export const Container = styled.section`
   display: flex;
   position: relative;
   width: 100%;
-  height: 55rem;
   background: url(${backgroundImage});
   background-position: center;
   background-size: cover;
@@ -17,17 +16,21 @@ export const Information = styled.div`
   display: flex;
   flex-direction: column;
   align-items: baseline;
-  position: absolute;
-  width: 65rem;
-  height: 100%;
+  width: 100%;
 
-  padding-right: ${spacing['256px']};
+  padding-right: ${spacing['64px']};
   padding-left: 7.5%;
   padding-top: ${spacing['64px']};
   padding-bottom: ${spacing['64px']};
 
   background-color: hsla(0, 0%, 0%, 0.75);
-  clip-path: polygon(0 0, 100% 0%, 80% 100%, 0% 100%);
+
+  @media (min-width: 1040px) {
+    clip-path: polygon(0 0, 100% 0%, 80% 100%, 0% 100%);
+    width: 65rem;
+    padding-right: ${spacing['256px']};
+    padding-bottom: ${spacing['96px']};
+  }
 
   & > h1 {
     ${typography.size.xl};

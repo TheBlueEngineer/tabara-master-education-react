@@ -5,7 +5,6 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   width: 100%;
   padding: ${spacing['96px']} 10%;
 
