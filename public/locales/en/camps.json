@@ -1,19 +1,28 @@
 {
-  "welcome": "Welcome to camps page.",
-  "offers": [
-    {
-      "title": "Tabara de vara",
-      "startDate": "2024-05-31",
-      "endDate": "2024-06-04",
-      "description": "The description of the camp",
-      "bulletPoints": ["Point 1", "Point2", "Point3", "Point4"]
-    },
-    {
-      "title": "Tabara de iarna",
-      "startDate": "2024-11-31",
-      "endDate": "2024-12-04",
-      "description": "The description of the camp",
-      "bulletPoints": ["Point 1", "Point2", "Point3", "Point4"]
+  "breadcrumbs": {
+    "home": "Acasa",
+    "camps": "Tabere"
+  },
+  "campOffers": {
+    "VAC_CASTEL_BRAN_1": {
+      "title": "Vacanta la Castelul Bran",
+      "previewTitle": "Castelul Bran",
+      "description": "Aceasta este descrierea pentru aceasta vacanta in limba romana, urmeaza sa fie modificata mai tarziu cand am o descriere mai buna.",
+      "buttonText": "REZERVATI",
+      "detailsGrid": {
+        "days": {
+          "text": "",
+          "appendText": "Days"
+        },
+        "maxPeople": { "text": "Max People:", "appendText": "" },
+        "minAge": { "text": "Min Age:", "appendText": "+" },
+        "bookingInterval": { "text": "Jan 21 - Dec 21", "appendText": "" },
+        "pickupSpot": { "text": "Pickup Spot:", "appendText": "School" },
+        "transportationType": {
+          "text": "Transportation type:",
+          "appendText": "Autocar"
+        }
+      }
     }
-  ]
+  }
 }

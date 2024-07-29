@@ -1,6 +1,20 @@
-import branCastle from 'assets/images/home/campoffer1.jpg';
+import branCastle from 'assets/images/home/castelul-bran-1-1.webp';
+import { IconType } from 'react-icons';
+import {
+  FaBus,
+  FaCalendarCheck,
+  FaClock,
+  FaMapLocation,
+  FaPeopleGroup,
+} from 'react-icons/fa6';
+import { MdPerson } from 'react-icons/md';
 
-type CampOfferDataType = {
+type DetailGrid = {
+  icon: IconType;
+  value: string | number | null;
+};
+
+export type CampOfferDataType = {
   id: number;
   code: string;
   bgImageUrl: string;
@@ -12,6 +26,7 @@ type CampOfferDataType = {
   visibilityStartingDate: Date;
   visibilityEndingDate: Date;
   enrollingDeadlineDate: Date;
+  detailsGrid?: { [key: string]: DetailGrid };
 };
 
 export const campOffersData: CampOfferDataType[] = [
@@ -27,6 +42,32 @@ export const campOffersData: CampOfferDataType[] = [
     endDate: new Date(2024, 6, 24),
     enrollingDeadlineDate: new Date(2024, 6, 13, 23, 59),
     durationDays: 10,
+    detailsGrid: {
+      days: {
+        icon: FaClock,
+        value: 10,
+      },
+      maxPeople: {
+        icon: FaPeopleGroup,
+        value: 100,
+      },
+      minAge: {
+        icon: MdPerson,
+        value: 7,
+      },
+      bookingInterval: {
+        icon: FaCalendarCheck,
+        value: null,
+      },
+      pickupSpot: {
+        icon: FaMapLocation,
+        value: null,
+      },
+      transportationType: {
+        icon: FaBus,
+        value: null,
+      },
+    },
   },
   {
     id: 2,

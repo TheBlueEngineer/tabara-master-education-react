@@ -20,7 +20,7 @@ const RoutesTree = () => {
             <Route index element={<HomePage />} />
             <Route path="camps">
               <Route index element={<CampsPage />} />
-              <Route path=":campPreview" element={<CampPreview />} />
+              <Route path=":campPreviewCode" element={<CampPreview />} />
             </Route>
             <Route path="team" element={<TeamPage />} />
             <Route path="contact" element={<ContactPage />} />
