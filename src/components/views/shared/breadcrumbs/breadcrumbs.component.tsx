@@ -1,11 +1,16 @@
 import { FC } from 'react';
 import * as SC from './breacrumbs.styles';
 
-type BreadcrumbsType = {
-  list: { link: string | null; text: string }[];
+export type BreadcrumbItemType = {
+  link: string | null;
+  text: string;
 };
 
-const Breadcrumbs: FC<BreadcrumbsType> = ({ list }) => {
+type BreadcrumbsProps = {
+  list: BreadcrumbItemType[];
+};
+
+const Breadcrumbs: FC<BreadcrumbsProps> = ({ list }) => {
   return (
     <SC.Container>
       {list.map((item, idx) =>

@@ -12,7 +12,16 @@ i18n
     fallbackLng: 'ro',
     lng: 'ro',
     debug: true,
-    ns: ['common', 'home', 'camps', 'contact', 'sign-in', 'sign-up', 'team'],
+    ns: [
+      'common',
+      'home',
+      'camps',
+      'contact',
+      'sign-in',
+      'sign-up',
+      'team',
+      'camp-preview',
+    ],
     defaultNS: 'common',
     interpolation: {
       escapeValue: false,

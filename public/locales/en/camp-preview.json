@@ -1,0 +1,19 @@
+{
+  "campHeader": {
+    "locationLink": "Vezi pe harta"
+  },
+  "bookingInformation": {
+    "price": "Pret",
+    "dateOfDeparture": "Data plecarii",
+    "dateOfReturn": "Data intoarcerii",
+    "adults": {
+      "label": "Adulti",
+      "value": "Varsta 18+"
+    },
+    "children": {
+      "label": "Copii",
+      "value": "Varsta 6-17"
+    },
+    "button": "Rezervati"
+  }
+}

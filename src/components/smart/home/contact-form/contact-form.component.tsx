@@ -1,6 +1,6 @@
 import useForm from '@hooks/handle-form.hook';
 import * as SC from './contact-form.styles';
-import FormInput from '../form-input/form-input.component';
+import FormInput from '../../shared/form-input/form-input.component';
 import Button from '@components/shared-components/button/button.component';
 import {
   validateEmail,

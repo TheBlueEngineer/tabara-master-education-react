@@ -1,4 +1,4 @@
-import ImageModal from '@components/smart-components/modal/modal.component';
+import ImageModal from '@components/smart/shared/modal/modal.component';
 import { createContext, FC, ReactNode, useContext, useState } from 'react';
 
 type ModalProviderProps = {

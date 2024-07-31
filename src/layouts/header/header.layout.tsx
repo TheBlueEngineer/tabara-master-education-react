@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import NavigationBar from '../navbar/navbar.component';
 import * as SC from './header.styles';
-import LanguageSelector from '@components/smart-components/language-selector/language-selector.component';
-import CurrencySelector from '@components/smart-components/currency-selector/currency-selector.component';
+import LanguageSelector from '@components/smart/shared/language-selector/language-selector.component';
+import CurrencySelector from '@components/smart/shared/currency-selector/currency-selector.component';
 
 import logo from 'assets/images/home/322412271_2318204071679802_4134667702766926568_n.png';
 import useToggle from '@hooks/toggle.hooks';

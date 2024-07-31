@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import * as SC from './contact-us.styles';
-import ContactForm from '@components/smart-components/contact-form/contact-form.component';
+import ContactForm from '@components/smart/home/contact-form/contact-form.component';
 import { IconType } from 'react-icons';
 import { FaBeer } from 'react-icons/fa';
 

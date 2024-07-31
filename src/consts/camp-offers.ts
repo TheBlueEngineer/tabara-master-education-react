@@ -14,6 +14,10 @@ type DetailGrid = {
   value: string | number | null;
 };
 
+export type CampOfferDetailGrid = {
+  [key: string]: DetailGrid;
+};
+
 export type CampOfferDataType = {
   id: number;
   code: string;
@@ -26,7 +30,8 @@ export type CampOfferDataType = {
   visibilityStartingDate: Date;
   visibilityEndingDate: Date;
   enrollingDeadlineDate: Date;
-  detailsGrid?: { [key: string]: DetailGrid };
+  detailsGrid?: CampOfferDetailGrid;
+  googleMapsLink?: string;
 };
 
 export const campOffersData: CampOfferDataType[] = [
@@ -42,6 +47,7 @@ export const campOffersData: CampOfferDataType[] = [
     endDate: new Date(2024, 6, 24),
     enrollingDeadlineDate: new Date(2024, 6, 13, 23, 59),
     durationDays: 10,
+    googleMapsLink: 'google.com',
     detailsGrid: {
       days: {
         icon: FaClock,

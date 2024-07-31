@@ -2,7 +2,7 @@ import { FC } from 'react';
 import * as SC from './camp-offer-card.styles';
 import Button from '@components/shared-components/button/button.component';
 import { FaClock } from 'react-icons/fa';
-import PriceTag from '@components/shared-components/price-tag/price-tag.component';
+import PriceTag from '@components/smart/shared/price-tag/price-tag.component';
 import { MdPendingActions } from 'react-icons/md';
 import { FaCalendarDays, FaLocationDot } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';

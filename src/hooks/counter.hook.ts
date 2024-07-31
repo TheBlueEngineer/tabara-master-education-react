@@ -1,10 +1,17 @@
 import { ChangeEvent, useState } from 'react';
 
+export type CounterType = {
+  count: number;
+  increment: () => void;
+  decrement: () => void;
+  handleChangeCount: (event: ChangeEvent<HTMLInputElement>) => void;
+};
+
 const useCounter = (
   initialValue: number = 0,
   lowerLimit: number = 0,
   upperLimit: number = 10000000
-) => {
+): CounterType => {
   const [count, setCount] = useState(initialValue);
 
   const increment = () => {

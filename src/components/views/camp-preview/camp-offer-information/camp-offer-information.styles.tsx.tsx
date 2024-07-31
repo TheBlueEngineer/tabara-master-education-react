@@ -2,86 +2,35 @@ import { border, shadows, spacing, typography } from '@consts/template.const';
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  display: grid;
-  width: 100%;
-  grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: auto;
-  padding: ${spacing['128px']} 15% ${spacing['96px']} 15%;
-  row-gap: ${spacing['16px']};
-  column-gap: ${spacing['32px']};
-  // Breadcrumbs
-  div:first-child {
-    grid-column: 1 / span 9;
-  }
-  // ImageHeader
-  div:nth-child(2) {
-    grid-column: 1 / span 7;
-  }
-
-  //Booking Information
-  div:nth-child(3) {
-    grid-row: 2/4;
-    grid-column: 8 / span 2;
-  }
-  // Content
-  div:nth-child(4) {
-    grid-row: 3 / auto;
-    grid-column: 1 / span 7;
-  }
-`;
-
-export const ImageHeader = styled.div<{ $src: string }>`
-  width: 100%;
-  height: 35rem;
-  grid-row: 2/3;
-  grid-column: 1 / span 4;
-  background-image: ${({ $src }) => `url(${$src})`};
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: ${border.radius.xs};
-`;
-
-export const Content = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
+
+  h2 {
+    ${typography.size.lg};
+    ${typography.weight.semibold};
+    color: ${({ theme }) => theme.colors.gray950};
+  }
+
+  h3 {
+    ${typography.weight.medium};
+    ${typography.size.base};
+    color: ${({ theme }) => theme.colors.gray900};
+  }
+
+  svg,
+  li::marker {
+    color: ${({ theme }) => theme.colors.green800};
+  }
+
+  label,
+  li,
+  p {
+    color: ${({ theme }) => theme.colors.gray700};
+  }
 
   & > * {
     border-bottom: 1px solid ${({ theme }) => theme.colors.gray200};
-  }
-`;
-
-export const MainInformation = styled.div`
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: flex-start;
-  row-gap: ${spacing['8px']};
-  padding-bottom: ${spacing['32px']};
-
-  h1 {
-    ${typography.size.lg};
-    ${typography.weight.semibold};
-    column-gap: ${spacing['8px']};
-  }
-
-  h2 {
-    display: flex;
-    column-gap: ${spacing['8px']};
-    ${typography.size.md};
-    ${typography.weight.medium};
-    color: ${({ theme }) => theme.colors.gray800};
-  }
-
-  a {
-    color: ${({ theme }) => theme.colors.blue600};
-    ${typography.weight.default};
-    cursor: pointer;
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 `;
 
@@ -101,18 +50,20 @@ export const DetailsGrid = styled.ul`
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-
-    svg {
-      color: ${({ theme }) => theme.colors.green800};
-    }
-
-    p {
-      color: ${({ theme }) => theme.colors.gray800};
-    }
   }
 `;
 
-export const WhatToExpect = styled.div``;
+export const WhatToExpect = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: ${spacing['32px']} 0;
+  row-gap: ${spacing['16px']};
+
+  ul {
+    list-style: disc inside none;
+  }
+`;
 
 export const Itinerary = styled.div``;
 
@@ -123,16 +74,9 @@ export const Description = styled.div`
   padding: ${spacing['32px']} 0;
   row-gap: ${spacing['16px']};
 
-  h2 {
-    ${typography.size.lg};
-    ${typography.weight.semibold};
-    color: ${({ theme }) => theme.colors.gray900};
-  }
-
   p {
     ${typography.size.base};
     ${typography.weight.default};
-    color: ${({ theme }) => theme.colors.gray700};
   }
 `;
 
@@ -149,29 +93,17 @@ export const DescriptionGridItem = styled.li`
   flex-direction: column;
   align-items: flex-start;
   row-gap: ${spacing['8px']};
-
-  h3 {
-    ${typography.weight.medium};
-    ${typography.size.base};
-  }
-
-  ul {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    li {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      column-gap: ${spacing['8px']};
-    }
-  }
 `;
 
 export const DescriptionPrices = styled(DescriptionGridItem)<{
   $isIncluded?: boolean;
 }>`
+  && li {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    column-gap: ${spacing['8px']};
+  }
   && svg {
     color: ${({ theme, $isIncluded = false }) =>
       $isIncluded ? theme.colors.green700 : theme.colors.red800};
@@ -191,7 +123,6 @@ export const BookingInformation = styled.ul`
     display: block;
     padding: 0;
     ${typography.size.base};
-    color: ${({ theme }) => theme.colors.gray700};
   }
 
   li {

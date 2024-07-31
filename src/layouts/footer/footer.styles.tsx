@@ -8,7 +8,7 @@ export const Footer = styled.footer`
   display: flex;
   width: 100%;
   flex-direction: column;
-
+  border-top: 1px solid ${({ theme }) => theme.colors.gray300};
   & > section {
     display: grid;
     width: 100%;

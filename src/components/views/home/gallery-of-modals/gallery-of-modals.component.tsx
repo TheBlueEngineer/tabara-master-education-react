@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import * as SC from './gallery-of-modals.styles';
-import Thumbnail from '@components/shared-components/thumbnail/thumbnail.component';
+import Thumbnail from '@components/smart/shared/thumbnail/thumbnail.component';
 
 import thumbnailImage from 'assets/images/home/art.webp';
 
