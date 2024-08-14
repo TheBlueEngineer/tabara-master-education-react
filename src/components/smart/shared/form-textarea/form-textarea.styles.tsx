@@ -16,10 +16,7 @@ export const Container = styled.div`
   }
 `;
 
-export const InputWrapper = styled.div<{
-  $hasError?: boolean;
-  $readonly: boolean;
-}>`
+export const InputWrapper = styled.div<{ $hasError?: boolean }>`
   display: flex;
   position: relative;
   width: 100%;
@@ -30,12 +27,6 @@ export const InputWrapper = styled.div<{
   background-color: ${({ theme }) => theme.colors.gray50};
   box-shadow: inset 0px 2px 6px 2px hsla(0, 0%, 0%, 0.3);
 
-  input {
-    color: ${({ $readonly, theme }) =>
-      $readonly ? theme.colors.gray700 : theme.colors.black};
-    font-style: ${({ $readonly }) => ($readonly ? 'italic' : 'initial')};
-  }
-
   &:focus-within {
     border-color: ${({ theme, $hasError = false }) =>
       $hasError ? theme.colors.red400 : theme.colors.green400};
@@ -44,7 +35,6 @@ export const InputWrapper = styled.div<{
   & > :first-child {
     border-top-left-radius: inherit;
     border-bottom-left-radius: inherit;
-    pointer-events: ${({ $readonly }) => ($readonly ? 'none' : 'auto')};
   }
 
   & > :last-child {
@@ -104,9 +94,7 @@ export const Row = styled.div`
   flex-direction: row;
 `;
 
-export const ValidationIconWrapper = styled.div<{
-  $isValid: boolean;
-}>`
+export const ValidationIconWrapper = styled.div<{ $isValid: boolean }>`
   position: relative;
   display: flex;
   justify-content: center;

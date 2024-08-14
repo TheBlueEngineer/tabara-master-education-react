@@ -28,4 +28,10 @@ export const Container = styled.section`
     grid-row: 3 / auto;
     grid-column: 1 / span 7;
   }
+
+  // Itinerary
+  div:nth-child(5) {
+    grid-row: 4 / auto;
+    grid-column: 1 / span 7;
+  }
 `;

@@ -23,6 +23,7 @@ export type CampOfferDataType = {
   code: string;
   bgImageUrl: string;
   priceInRON: number;
+  paymentInAdvanceInRON: number;
   location: string;
   startDate: Date;
   endDate: Date;
@@ -39,7 +40,8 @@ export const campOffersData: CampOfferDataType[] = [
     id: 1,
     code: 'VAC_CASTEL_BRAN_1',
     bgImageUrl: branCastle,
-    priceInRON: 42.99,
+    priceInRON: 43,
+    paymentInAdvanceInRON: 10,
     location: 'Brasov, Romania',
     visibilityStartingDate: new Date(2024, 6, 10),
     visibilityEndingDate: new Date(2024, 6, 28),
@@ -80,6 +82,7 @@ export const campOffersData: CampOfferDataType[] = [
     code: 'VAC_CASTEL_BRAN_2',
     bgImageUrl: branCastle,
     priceInRON: 62.99,
+    paymentInAdvanceInRON: 10,
     location: 'Brasov, Romania',
     visibilityStartingDate: new Date(2024, 6, 10),
     visibilityEndingDate: new Date(2024, 6, 28),
@@ -93,6 +96,7 @@ export const campOffersData: CampOfferDataType[] = [
     code: 'VAC_CASTEL_BRAN_3',
     bgImageUrl: branCastle,
     priceInRON: 82.99,
+    paymentInAdvanceInRON: 10,
     location: 'Brasov, Romania',
     visibilityStartingDate: new Date(2024, 6, 10),
     visibilityEndingDate: new Date(2024, 6, 28),

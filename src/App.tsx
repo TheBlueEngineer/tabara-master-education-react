@@ -6,6 +6,7 @@ import i18n from './utils/i18n';
 import { ThemeContextProvider } from './context/theme.context';
 import { ModalProvider } from './context/modal.context';
 import { ExchangeRateProvider } from './context/exchange-rates.context';
+import { CampOfferProvider } from '@context/camp-offer.context';
 
 const App = () => {
   return (
@@ -14,8 +15,10 @@ const App = () => {
         <ThemeContextProvider>
           <ExchangeRateProvider baseCurrency="RON">
             <ModalProvider>
-              <GlobalStyle />
-              <RoutesTree />
+              <CampOfferProvider>
+                <GlobalStyle />
+                <RoutesTree />
+              </CampOfferProvider>
             </ModalProvider>
           </ExchangeRateProvider>
         </ThemeContextProvider>

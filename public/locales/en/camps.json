@@ -5,7 +5,7 @@
   },
   "campOffers": {
     "VAC_CASTEL_BRAN_1": {
-      "title": "Vacanta la Castelul Bran",
+      "title": "Vacation at Bran Castle",
       "previewTitle": "Castelul Bran",
       "shortDescription": "Aceasta este descrierea pentru aceasta vacanta in limba romana, urmeaza sa fie modificata mai tarziu cand am o descriere mai buna.",
       "buttonText": "REZERVATI",
@@ -24,6 +24,7 @@
         }
       },
       "description": {
+        "title": "Description",
         "paragraphs": [
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat. Duis auteirure dolor in reprehenderit in voluptate velit esse cillumdolore eu fugiat nulla pariatur. Excepteur sint occaecatcupidatat non proident, sunt in culpa qui officia deseruntmollit anim id est laborum.",
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat. Duis auteirure dolor in reprehenderit in voluptate velit esse cillumdolore eu fugiat nulla pariatur. Excepteur sint occaecatcupidatat non proident, sunt in culpa qui officia deseruntmollit anim id est laborum."
@@ -62,6 +63,19 @@
             "Lorem ipsum dolor sit amet"
           ]
         }
+      },
+      "whatToExpect": {
+        "title": "What To Expect",
+        "paragraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat. Duis auteirure dolor in reprehenderit in voluptate velit esse cillumdolore eu fugiat nulla pariatur. Excepteur sint occaecatcupidatat non proident, sunt in culpa qui officia deseruntmollit anim id est laborum."
+        ],
+        "list": [
+          "Lorem ipsum dolor sit amet",
+          "Lorem ipsum dolor sit amet",
+          "Lorem ipsum dolor sit amet",
+          "Lorem ipsum dolor sit amet",
+          "Lorem ipsum dolor sit amet"
+        ]
       }
     }
   }

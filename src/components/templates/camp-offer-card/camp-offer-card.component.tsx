@@ -6,6 +6,7 @@ import PriceTag from '@components/smart/shared/price-tag/price-tag.component';
 import { MdPendingActions } from 'react-icons/md';
 import { FaCalendarDays, FaLocationDot } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
+import { useCampOffer } from '@context/camp-offer.context';
 
 type CampOfferCardProps = {
   title: string;
@@ -31,7 +32,10 @@ const CampOfferCard: FC<CampOfferCardProps> = ({
   durationInDaysText,
 }) => {
   const navigate = useNavigate();
-  const handleClick = () => {
+  const { handleSetCampOffer } = useCampOffer();
+
+  const handleOnClick = () => {
+    handleSetCampOffer(code);
     navigate(`/camps/${code}`);
   };
 
@@ -62,7 +66,7 @@ const CampOfferCard: FC<CampOfferCardProps> = ({
             Enrollment ends on: 29 Aug
           </li>
         </SC.DetailsList>
-        <Button onClick={handleClick} size="large" onHoverStyle="glow">
+        <Button onClick={handleOnClick} size="large" onHoverStyle="glow">
           {buttonText}
         </Button>
       </SC.Content>

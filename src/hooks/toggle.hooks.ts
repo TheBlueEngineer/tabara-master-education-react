@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-const useToggle = () => {
-  const [isToggled, setIsToggled] = useState(false);
+const useToggle = (isOpen: boolean = false) => {
+  const [isToggled, setIsToggled] = useState(isOpen);
 
   const handleToggle = () => setIsToggled(!isToggled);
 

@@ -1,6 +1,6 @@
 import useForm from '@hooks/handle-form.hook';
-import * as SC from './contact-form.styles';
-import FormInput from '../../shared/form-input/form-input.component';
+import * as SC from './message-us-form.styles';
+import FormInput from '@components/smart/shared/form-input/form-input.component';
 import Button from '@components/shared-components/button/button.component';
 import {
   validateEmail,
@@ -16,7 +16,7 @@ const initFormValues = {
   description: '',
 };
 
-const ContactForm = () => {
+const MessageUsForm = () => {
   const { values } = useForm(initFormValues);
 
   const handleSubmit = () => {
@@ -25,7 +25,7 @@ const ContactForm = () => {
 
   return (
     <SC.Container>
-      <SC.Row>
+      <SC.Cell>
         <FormInput
           label="Last Name"
           name="lastname"
@@ -44,8 +44,8 @@ const ContactForm = () => {
           validationHandler={validateName}
           required
         />
-      </SC.Row>
-      <SC.Row>
+      </SC.Cell>{' '}
+      <SC.Cell>
         <FormInput
           label="Phone"
           name="phone"
@@ -65,7 +65,7 @@ const ContactForm = () => {
           validationHandler={validateEmail}
           required
         />
-      </SC.Row>
+      </SC.Cell>
       <FormInput
         label="Description"
         name="description"
@@ -85,4 +85,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+export default MessageUsForm;

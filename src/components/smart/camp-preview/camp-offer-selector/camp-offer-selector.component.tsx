@@ -1,9 +1,8 @@
-import useCounter from '@hooks/counter.hook';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import CampOfferDisplay from '@components/views/camp-preview/camp-offer-display/camp-offer-display.component';
-import useCampOffer from '@hooks/camp-offer.hook';
+import useCampFinder from '@hooks/camp-finder.hook';
 
 type RouteParamsProps = {
   campPreviewCode: string;
@@ -11,11 +10,11 @@ type RouteParamsProps = {
 
 const CampOfferSelector: FC = () => {
   const { campPreviewCode } = useParams<RouteParamsProps>();
-  const { campOffer } = useCampOffer(campPreviewCode);
-  const adultsCounter = useCounter(0);
-  const childrenCounter = useCounter(0);
+  const campOffer = useCampFinder(campPreviewCode!);
   const translationUrl = `campOffers.${campPreviewCode}`;
+
   const { t } = useTranslation('camps');
+
   const breadcrumbsList = [
     {
       link: '/',
@@ -36,8 +35,6 @@ const CampOfferSelector: FC = () => {
       {campOffer ? (
         <CampOfferDisplay
           campOffer={campOffer}
-          adultsCounter={adultsCounter}
-          childrenCounter={childrenCounter}
           breadcrumbsList={breadcrumbsList}
         />
       ) : (

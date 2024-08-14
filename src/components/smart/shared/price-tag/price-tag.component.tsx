@@ -9,19 +9,30 @@ type PriceTagProps = {
 const PriceTag: FC<PriceTagProps> = ({ value }) => {
   const { currentCurrency, currentRONmultiplier } = useExchangeRates();
 
-  const formatValue = (value: number): number => {
-    const formattedValue = Math.round(value) - 1;
-    console.log(formattedValue);
-    return formattedValue;
+  const getDecimals = (value: number): string => {
+    const str = value.toFixed(2);
+    console.log(str);
+    const decimalIndex = str.indexOf('.');
+    console.log(decimalIndex);
+    const decimals =
+      decimalIndex !== -1
+        ? str.slice(decimalIndex + 1, decimalIndex + 3)
+        : '00';
+
+    return decimals;
   };
+
+  const getInteger = (value: number): number => Math.floor(value);
 
   return (
     <SC.Price>
       {currentCurrency && currentCurrency.placement === 'before'
         ? currentCurrency.symbol
         : null}
-      {formatValue(value * currentRONmultiplier)}
-      <SC.CharmPricing>99</SC.CharmPricing>
+      {getInteger(value * currentRONmultiplier)}
+      <SC.CharmPricing>
+        {getDecimals(value * currentRONmultiplier)}
+      </SC.CharmPricing>
       {currentCurrency && currentCurrency.placement === 'after'
         ? ` ${currentCurrency.symbol}`
         : null}

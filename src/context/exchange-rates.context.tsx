@@ -102,7 +102,7 @@ export const ExchangeRateProvider: FC<ExchangeRatesProviderProps> = ({
 // eslint-disable-next-line react-refresh/only-export-components
 export const useExchangeRates = () => {
   const context = useContext(ExchangeRateContext);
-  if (context === undefined) {
+  if (!context) {
     throw new Error(
       'useExchangeRates must be used inside an ExchangeRateProvider component.'
     );

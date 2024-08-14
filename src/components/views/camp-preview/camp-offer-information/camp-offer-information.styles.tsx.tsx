@@ -37,7 +37,7 @@ export const Container = styled.section`
 export const DetailsGrid = styled.ul`
   display: grid;
   width: 100%;
-  padding: ${spacing['32px']} 0;
+  padding: ${spacing['16px']} 0;
   grid-template-rows: auto;
   grid-template-columns: repeat(3, 1fr);
   row-gap: ${spacing['24px']};

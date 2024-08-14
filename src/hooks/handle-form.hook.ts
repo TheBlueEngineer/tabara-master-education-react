@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type FormValues = {
-  [key: string]: string;
+  [key: string]: string | number;
 };
 
 const useForm = (initFormValues: FormValues) => {
   const [values, setValues] = useState<FormValues>(initFormValues);
   const [errors, setErrors] = useState<Partial<FormValues>>({});
 
-  const handleOnChange = (name: string, value: string) => {
+  const handleOnChange = (name: string, value: string | number) => {
     setValues({
       ...values,
       [name]: value,
@@ -21,6 +21,10 @@ const useForm = (initFormValues: FormValues) => {
       [name]: errorValue,
     });
   };
+
+  useEffect(() => {
+    console.log('State changed', values);
+  }, [values]);
 
   return { values, errors, handleOnChange, handleError };
 };
