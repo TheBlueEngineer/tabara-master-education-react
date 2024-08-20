@@ -20,11 +20,11 @@ const Header: FC = () => {
 
   useEffect(() => {
     upperbarToggler.setToggle(scrollDirection == 'up' ? true : false);
-  }, [scrollDirection]);
+  }, [scrollDirection, upperbarToggler]);
 
   useEffect(() => {
     styleToggler.setToggle(isScrollOnTop ? true : false);
-  }, [isScrollOnTop]);
+  }, [isScrollOnTop, styleToggler]);
 
   return (
     <SC.Container

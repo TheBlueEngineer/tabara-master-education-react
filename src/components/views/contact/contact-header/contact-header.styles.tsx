@@ -1,24 +1,42 @@
 import { shadows, spacing, typography } from '@consts/template.const';
 import styled from 'styled-components';
 import Divider from 'assets/images/home/wavesOpacity32.svg?react';
+import bgImage from 'assets/images/home/b_munti1.webp';
 
 export const Container = styled.section`
   display: flex;
   flex-direction: column;
   padding: ${spacing['96px']};
   padding-top: ${spacing['160px']};
-  background: ${({ theme }) =>
-    `linear-gradient(180deg, ${theme.colors.green900},${theme.colors.green950})`};
+  background-image: url(${bgImage});
+  background-position: 50%;
+  background-size: cover;
+  background-attachment: fixed;
   row-gap: ${spacing['32px']};
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    content: '';
+    background: hsla(0, 0%, 0%, 0.6);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+  }
 
   h1 {
     ${typography.size.xl3};
     color: ${({ theme }) => theme.colors.white};
+    z-index: 3;
   }
 
   h2 {
     ${typography.size.xl2};
     color: ${({ theme }) => theme.colors.gray50};
+    z-index: 3;
   }
 `;
 
@@ -28,6 +46,7 @@ export const List = styled.ul`
   justify-content: space-evenly;
   padding: 0 ${spacing['96px']};
   align-items: flex-start;
+  z-index: 3;
 
   li {
     display: flex;
