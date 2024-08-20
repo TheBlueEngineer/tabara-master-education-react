@@ -1,6 +1,7 @@
 import CampPreview from '@pages/camp-preview-page/camp-preview.page';
 import { Suspense, lazy } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ScrollToTop from './scroll-to-top.component';
 
 const HomePage = lazy(() => import('@pages/home-page/home.page'));
 const TeamPage = lazy(() => import('@pages/team-page/team.page'));
@@ -15,6 +16,7 @@ const RoutesTree = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<DefaultLayout />}>
             <Route index element={<HomePage />} />

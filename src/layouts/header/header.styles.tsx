@@ -1,26 +1,61 @@
 import { NavLink } from 'react-router-dom';
 import { shadows, spacing, typography } from '@consts/template.const';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.header`
+export const Container = styled.header<{
+  $changeStyle: boolean;
+  $isUpperbarActive: boolean;
+}>`
   display: flex;
   width: 100%;
   position: fixed;
   flex-direction: column;
   z-index: 10;
-  background-color: ${({ theme }) => theme.colors.white};
+  transition:
+    background-color 300ms,
+    top 300ms,
+    translate 300ms;
+
+  ${({ $isUpperbarActive }) =>
+    $isUpperbarActive
+      ? css`
+          translate: 0 0;
+        `
+      : css`
+          translate: 0 -42px;
+        `};
+
+  ${({ $changeStyle, theme }) =>
+    $changeStyle
+      ? css`
+          background-color: 'hsla(0, 0%, 0%, 0)';
+          box-shadow: none;
+        `
+      : css`
+          background-color: ${theme.colors.white};
+          box-shadow: ${shadows.elevation.md};
+        `};
 `;
 
-export const Cell = styled.div`
+export const UpperBar = styled.div<{
+  $changeStyle: boolean;
+}>`
   display: flex;
-  column-gap: ${spacing['8px']};
+  position: relative;
   align-items: center;
-  ${typography.size.base};
-  color: ${({ theme }) => theme.colors.green50};
+  justify-content: space-between;
+  width: 100%;
+  padding: ${spacing['8px']} ${spacing['32px']};
+  transition: background-color 300ms;
 
-  & > svg {
-    ${typography.size.base};
-  }
+  ${({ $changeStyle }) =>
+    $changeStyle
+      ? css`
+          background-color: transparent;
+        `
+      : css`
+          background-color: ${({ theme }) => theme.colors.green800};
+        `}
 `;
 
 export const Group = styled.div`
@@ -28,16 +63,17 @@ export const Group = styled.div`
   column-gap: ${spacing['24px']};
 `;
 
-export const UpperBar = styled.div`
+export const Cell = styled.div`
   display: flex;
-  position: relative;
+  column-gap: ${spacing['8px']};
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
+  ${typography.size.base};
+  ${typography.weight.medium};
+  color: ${({ theme }) => theme.colors.white};
 
-  padding: ${spacing['4px']} ${spacing['32px']};
-
-  background-color: ${({ theme }) => theme.colors.green800};
+  & > svg {
+    ${typography.size.base};
+  }
 `;
 
 export const Content = styled.div`
@@ -46,9 +82,6 @@ export const Content = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: ${spacing['8px']} ${spacing['32px']};
-  background-color: ${({ theme }) => theme.colors.white};
-
-  box-shadow: ${shadows.elevation.md};
 `;
 
 export const NavigationLink = styled(NavLink)`

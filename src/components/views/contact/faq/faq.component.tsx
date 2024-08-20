@@ -47,8 +47,8 @@ const Faq: FC = () => {
       <h1>Frequently asked questions</h1>
       <h2>Here you will find one of the most frequently asked questions</h2>
       <SC.List>
-        {collapsibleList.map((item) => (
-          <Collapsible title={item.question}>
+        {collapsibleList.map((item, idx) => (
+          <Collapsible key={idx} title={item.question}>
             <p>{item.answer}</p>
           </Collapsible>
         ))}

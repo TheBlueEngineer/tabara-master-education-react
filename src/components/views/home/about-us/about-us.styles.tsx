@@ -1,4 +1,4 @@
-import { border, spacing, typography } from '@consts/template.const';
+import { border, shadows, spacing, typography } from '@consts/template.const';
 import styled from 'styled-components';
 
 export const Container = styled.section`
@@ -6,8 +6,8 @@ export const Container = styled.section`
   padding: 0 10% ${spacing['128px']} 10%;
   display: flex;
   flex-direction: column;
-  row-gap: 1rem;
-  column-gap: 2rem;
+  row-gap: ${spacing['32px']};
+  column-gap: ${spacing['64px']};
   background-color: ${({ theme }) => theme.colors.gray50};
 
   @media (min-width: 1024px) {
@@ -17,6 +17,7 @@ export const Container = styled.section`
 
 export const Images = styled.div`
   display: grid;
+  width: 100%;
   grid-template-areas: 'imgLeft imgRightUp' 'imgLeft imgRightDown';
   row-gap: ${spacing['16px']};
   column-gap: ${spacing['16px']};
@@ -29,6 +30,7 @@ export const Images = styled.div`
     overflow: hidden;
     object-fit: cover;
     border-radius: ${border.radius.md} 0rem ${border.radius.md} 0rem;
+    box-shadow: ${shadows.elevation.md};
 
     &:first-child {
       grid-area: imgLeft;
@@ -39,6 +41,7 @@ export const Images = styled.div`
 
 export const Information = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -50,7 +53,7 @@ export const Information = styled.div`
   h1 {
     position: relative;
     font-family: 'Roboto Condensed', sans-serif;
-    ${typography.size.xl2};
+    ${typography.size.xl};
     ${typography.weight.black};
     color: ${({ theme }) => theme.colors.green800};
 
@@ -66,7 +69,7 @@ export const Information = styled.div`
   }
 
   h2 {
-    ${typography.size.xl3};
+    ${typography.size.xl2};
     ${typography.weight.bold};
     line-height: 4rem;
     text-align: left;

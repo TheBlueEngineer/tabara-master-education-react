@@ -43,21 +43,6 @@ export const InputWrapper = styled.div<{ $hasError?: boolean }>`
   }
 `;
 
-export const Input = styled.input`
-  display: flex;
-  width: 100%;
-  ${typography.size.md};
-  ${typography.weight.bold};
-  color: ${({ theme }) => theme.colors.black};
-  padding: ${spacing['8px']} ${spacing['16px']};
-  transition: border-color 300ms;
-  background-color: hsla(0, 0%, 0%, 0);
-  &::placeholder {
-    color: ${({ theme }) => theme.colors.gray300};
-    font-style: italic;
-  }
-`;
-
 export const Textarea = styled.textarea`
   display: flex;
   width: 100%;
@@ -76,42 +61,9 @@ export const Textarea = styled.textarea`
   }
 `;
 
-export const Error = styled.p`
-  ${typography.size.base};
-  ${typography.weight.bold};
-  color: ${({ theme }) => theme.colors.red400};
-  word-wrap: break-word;
-`;
-
 export const Description = styled.p`
   ${typography.size.base};
   color: ${({ theme }) => theme.colors.gray700};
-`;
-
-export const Row = styled.div`
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-`;
-
-export const ValidationIconWrapper = styled.div<{ $isValid: boolean }>`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 ${spacing['8px']};
-  color: ${({ theme, $isValid }) =>
-    $isValid ? theme.colors.green600 : theme.colors.red400};
-
-  &:after {
-    content: '';
-    position: absolute;
-    width: 1px;
-    height: 75%;
-    left: 0;
-    top: 12.5%;
-    border: 1px solid ${({ theme }) => theme.colors.gray300};
-  }
 `;
 
 export const Span = styled.span`

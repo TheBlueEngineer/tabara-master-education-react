@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, FormEvent, useEffect, useState } from 'react';
 import * as SC from './booking-form.styles';
 import FormInput from '@components/smart/shared/form-input/form-input.component';
 import {
@@ -13,6 +13,7 @@ import PriceTag from '@components/smart/shared/price-tag/price-tag.component';
 import { FaExclamationCircle } from 'react-icons/fa';
 import { CampOfferDataType, campOffersData } from '@consts/camp-offers';
 import useCounter from '@hooks/counter.hook';
+import useEmailJS from '@hooks/email.hook';
 
 const BookingForm: FC = () => {
   const search = new URLSearchParams(useLocation().search);
@@ -21,7 +22,7 @@ const BookingForm: FC = () => {
 
   const [campOffer, setCampOffer] = useState<CampOfferDataType | null>(null);
   const childrenCounter = useCounter(childrenParam ? Number(childrenParam) : 1);
-
+  const { sendEmail } = useEmailJS();
   const { t } = useTranslation('camps', { keyPrefix: 'campOffers' });
 
   useEffect(() => {
@@ -34,11 +35,14 @@ const BookingForm: FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleSubmit = () => null;
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    sendEmail(event, 'BOOKING');
+  };
 
   return (
     <SC.Container $url={campOffer?.bgImageUrl}>
-      <SC.Content>
+      <SC.Content onSubmit={handleSubmit}>
         <SC.Grid>
           <FormInput
             label="Last Name"
@@ -134,12 +138,7 @@ const BookingForm: FC = () => {
             just a breakdown of the price. The actual payment will be done in
             person or through a banking transfer.
           </p>
-          <Button
-            onClick={handleSubmit}
-            shape="leaf"
-            size="large"
-            onHoverStyle="glow"
-          >
+          <Button type="submit" shape="leaf" size="large" onHoverStyle="glow">
             SUBMIT
           </Button>
         </SC.PaymentInfo>

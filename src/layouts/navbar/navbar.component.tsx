@@ -4,11 +4,15 @@ import { useTranslation } from 'react-i18next';
 import { FaHome } from 'react-icons/fa';
 import { FaPhoneVolume, FaCampground } from 'react-icons/fa6';
 
-const NavigationBar: FC = () => {
+type NavigationBarProps = {
+  changeStyle: boolean;
+};
+
+const NavigationBar: FC<NavigationBarProps> = ({ changeStyle }) => {
   const { t } = useTranslation('common');
 
   return (
-    <SC.Navbar>
+    <SC.Navbar $changeStyle={changeStyle}>
       <SC.NavLink to="/">
         <FaHome />
         {t('navigationBar.home')}

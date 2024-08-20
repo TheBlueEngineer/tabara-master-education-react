@@ -27,7 +27,7 @@ export const Container = styled.section<{ $url: string | undefined }>`
   }
 `;
 
-export const Content = styled.section`
+export const Content = styled.form`
   display: flex;
   width: 100%;
   flex-direction: row;

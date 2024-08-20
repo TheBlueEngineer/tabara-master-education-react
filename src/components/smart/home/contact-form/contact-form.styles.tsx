@@ -1,7 +1,7 @@
 import { border, shadows, spacing } from '@consts/template.const';
 import styled from 'styled-components';
 
-export const Container = styled.section`
+export const Form = styled.form`
   display: flex;
   width: 100%;
   flex-direction: column;

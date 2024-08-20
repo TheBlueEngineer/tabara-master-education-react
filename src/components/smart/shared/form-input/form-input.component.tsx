@@ -47,11 +47,7 @@ const FormInput: FC<FormInputProps> = ({
         {required ? <SC.Span>*</SC.Span> : null}
       </label>
       <SC.InputWrapper $hasError={error ? true : false} $readonly={readOnly}>
-        <SC.Input
-          readOnly={readOnly}
-          onChange={handleOnChange}
-          {...otherProps}
-        />
+        <SC.Input onChange={handleOnChange} {...otherProps} />
         {error !== null && validationHandler && (
           <SC.ValidationIconWrapper $isValid={error ? false : true}>
             {error ? (

@@ -1,4 +1,3 @@
-import useForm from '@hooks/handle-form.hook';
 import * as SC from './message-us-form.styles';
 import FormInput from '@components/smart/shared/form-input/form-input.component';
 import Button from '@components/shared-components/button/button.component';
@@ -7,81 +6,62 @@ import {
   validateName,
   validatePhone,
 } from '@utils/input-validation.utils';
-
-const initFormValues = {
-  firstname: '',
-  lastname: '',
-  email: '',
-  phone: '',
-  description: '',
-};
+import useEmailJS from '@hooks/email.hook';
+import { FormEvent } from 'react';
+import FormTextarea from '../shared/form-textarea/form-textarea.component';
 
 const MessageUsForm = () => {
-  const { values } = useForm(initFormValues);
+  const { sendEmail } = useEmailJS();
 
-  const handleSubmit = () => {
-    console.log(values);
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    sendEmail(event, 'MESSAGE');
   };
 
   return (
-    <SC.Container>
+    <SC.Form onSubmit={handleSubmit}>
       <SC.Cell>
         <FormInput
           label="Last Name"
           name="lastname"
-          type="text"
           placeholder="Jane"
-          value={values.lastname}
           validationHandler={validateName}
           required
         />
         <FormInput
           label="First Name"
           name="firstname"
-          type="text"
           placeholder="Doe"
-          value={values.firstname}
           validationHandler={validateName}
           required
         />
-      </SC.Cell>{' '}
-      <SC.Cell>
-        <FormInput
-          label="Phone"
-          name="phone"
-          type="text"
-          placeholder="0776665555"
-          maxLength={15}
-          value={values.phone}
-          validationHandler={validatePhone}
-          required
-        />
-        <FormInput
-          label="E-mail"
-          name="email"
-          type="email"
-          placeholder="email.address@gmail.com"
-          value={values.email}
-          validationHandler={validateEmail}
-          required
-        />
       </SC.Cell>
+
       <FormInput
+        label="Phone"
+        name="phone"
+        placeholder="0776665555"
+        maxLength={15}
+        validationHandler={validatePhone}
+        required
+      />
+      <FormInput
+        label="E-mail"
+        name="email"
+        type="email"
+        placeholder="email.address@gmail.com"
+        validationHandler={validateEmail}
+        required
+      />
+      <FormTextarea
         label="Description"
         name="description"
-        type="textarea"
         placeholder="Tell us more..."
-        value={values.description}
       />
-      <Button
-        onClick={handleSubmit}
-        shape="leaf"
-        size="large"
-        onHoverStyle="glow"
-      >
+      <Button type="submit" shape="leaf" size="large" onHoverStyle="glow">
         SUBMIT
       </Button>
-    </SC.Container>
+    </SC.Form>
   );
 };
 

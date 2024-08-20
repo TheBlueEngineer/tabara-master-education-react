@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import NavigationBar from '../navbar/navbar.component';
 import * as SC from './header.styles';
 import LanguageSelector from '@components/smart/shared/language-selector/language-selector.component';
@@ -11,13 +11,27 @@ import { MdLanguage } from 'react-icons/md';
 import { BsCashCoin } from 'react-icons/bs';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { FaLocationDot } from 'react-icons/fa6';
+import useScrollInformation from '@hooks/scroll-direction.hook';
 
 const Header: FC = () => {
-  const { isToggled, handleToggle } = useToggle();
+  const styleToggler = useToggle();
+  const upperbarToggler = useToggle();
+  const { scrollDirection, isScrollOnTop } = useScrollInformation();
+
+  useEffect(() => {
+    upperbarToggler.setToggle(scrollDirection == 'up' ? true : false);
+  }, [scrollDirection]);
+
+  useEffect(() => {
+    styleToggler.setToggle(isScrollOnTop ? true : false);
+  }, [isScrollOnTop]);
 
   return (
-    <SC.Container>
-      <SC.UpperBar>
+    <SC.Container
+      $changeStyle={styleToggler.isToggled}
+      $isUpperbarActive={upperbarToggler.isToggled}
+    >
+      <SC.UpperBar $changeStyle={styleToggler.isToggled}>
         <SC.Group>
           <SC.Cell>
             <FaPhoneAlt />
@@ -44,11 +58,14 @@ const Header: FC = () => {
           <img src={logo} />
           <h1>Tabara Master Education</h1>
         </SC.NavigationLink>
-        <SC.BurgerMenu $isOpen={isToggled} onClick={handleToggle}>
+        <SC.BurgerMenu
+          $isOpen={styleToggler.isToggled}
+          onClick={styleToggler.handleToggle}
+        >
           <IoMenu />
         </SC.BurgerMenu>
-        <SC.Dropdown $isOpen={isToggled}>
-          <NavigationBar />
+        <SC.Dropdown $isOpen={styleToggler.isToggled}>
+          <NavigationBar changeStyle={styleToggler.isToggled} />
         </SC.Dropdown>
       </SC.Content>
     </SC.Container>

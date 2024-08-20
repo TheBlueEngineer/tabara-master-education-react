@@ -11,7 +11,7 @@ export type ButtonProps = {
   fullWidth?: boolean;
   StartIcon?: IconType;
   EndIcon?: IconType;
-  onClick: () => void;
+  onClick?: () => void;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button: FC<ButtonProps> = ({
@@ -24,7 +24,7 @@ const Button: FC<ButtonProps> = ({
   fullWidth = false,
   disabled = false,
   onHoverStyle = 'default',
-  onClick,
+  onClick = () => null,
   ...otherProps
 }) => {
   return (

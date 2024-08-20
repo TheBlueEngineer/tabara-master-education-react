@@ -7,15 +7,10 @@ export const Container = styled.section`
   width: 100%;
   flex-direction: row;
   align-items: flex-start;
-  padding: ${spacing['96px']} 10%;
+  padding: ${spacing['96px']} 15%;
   padding-top: ${spacing['128px']};
   column-gap: ${spacing['64px']};
   background-color: ${({ theme }) => theme.colors.gray50};
-`;
-
-export const Row = styled.div`
-  display: flex;
-  flex-direction: row;
 `;
 
 export const Information = styled.div`

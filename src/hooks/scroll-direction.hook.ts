@@ -1,58 +1,58 @@
+import { throttle } from '@utils/functions.utils';
 import { useEffect, useState } from 'react';
 
-type callbackFunction = () => void;
-
-const useScrollDirection = () => {
+const useScrollInformation = () => {
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down' | null>(
     null
   );
-  let previousScrollY: number = 0;
-  let currentScrollY: number = 0;
+  const [previousScrollY, setPreviousScrollY] = useState<number>(0);
+  const [currentScrollY, setCurrentScrollY] = useState<number>(0);
+  const [isScrollOnTop, setIsScrollOnTop] = useState<boolean>(true);
+  // Local variables for synchronization
+  let localPreviousScrollY: number = 0;
+  let localCurrentScrollY: number = 0;
 
-  const throttle = (callbackFn: callbackFunction, limit: number) => {
-    let wait = false;
-    return () => {
-      if (!wait) {
-        callbackFn.call(null);
-        wait = true;
-        setTimeout(function () {
-          wait = false;
-        }, limit);
-      }
-    };
-  };
+  const updateScroll = () => {
+    localCurrentScrollY = window.scrollY;
+    setCurrentScrollY(localCurrentScrollY);
 
-  const updateScrollDirection = () => {
-    currentScrollY = window.scrollY;
+    if (localCurrentScrollY == 0) {
+      setIsScrollOnTop(true);
+    } else setIsScrollOnTop(false);
 
-    currentScrollY > previousScrollY
-      ? setScrollDirection('down')
-      : setScrollDirection('up');
+    if (localCurrentScrollY < localPreviousScrollY) {
+      setScrollDirection('up');
+    } else if (localCurrentScrollY > localPreviousScrollY) {
+      setScrollDirection('down');
+    }
 
-    console.log(
-      'current scrolly',
-      currentScrollY,
-      ' last scrollY',
-      previousScrollY
-    );
-
-    setTimeout(() => (previousScrollY = currentScrollY), 100);
+    setTimeout(() => {
+      localPreviousScrollY = localCurrentScrollY;
+      setPreviousScrollY(localPreviousScrollY);
+    }, 100);
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', throttle(updateScrollDirection, 100), {
+    window.addEventListener('scroll', throttle(updateScroll, 10), {
       passive: true,
     });
 
     return () => {
-      window.removeEventListener(
-        'scroll',
-        throttle(updateScrollDirection, 100)
-      );
+      window.removeEventListener('scroll', throttle(updateScroll, 10));
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  return scrollDirection;
+
+  useEffect(() => {
+    console.log(
+      scrollDirection,
+      previousScrollY,
+      currentScrollY,
+      isScrollOnTop
+    );
+  }, [scrollDirection, previousScrollY, currentScrollY, isScrollOnTop]);
+
+  return { scrollDirection, currentScrollY, isScrollOnTop };
 };
 
-export default useScrollDirection;
+export default useScrollInformation;
