@@ -21,8 +21,13 @@ export const Container = styled.section<{ $url: string | undefined }>`
     height: 100%;
     left: 0;
     top: 0;
-    background-color: white;
-    opacity: 0.6;
+    background: ${({ theme }) => `linear-gradient(
+      in hsl longer hue to bottom,
+      ${theme.colors.black},
+      ${theme.colors.gray400},
+      ${theme.colors.white}
+    )`};
+    opacity: 0.5;
     z-index: 1;
   }
 `;
@@ -42,7 +47,7 @@ export const Grid = styled.div`
   flex-direction: column;
 
   padding: ${spacing['64px']};
-  background-color: ${({ theme }) => theme.colors.green950};
+  background-color: ${({ theme }) => theme.colors.green900};
   column-gap: ${spacing['16px']};
 
   border-top-left-radius: inherit;

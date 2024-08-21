@@ -12,7 +12,7 @@ export const Container = styled.section`
   background-position: 50%;
   background-size: cover;
   background-attachment: fixed;
-  row-gap: ${spacing['32px']};
+  row-gap: ${spacing['24px']};
   position: relative;
   z-index: 1;
 
@@ -47,7 +47,7 @@ export const List = styled.ul`
   padding: 0 ${spacing['96px']};
   align-items: flex-start;
   z-index: 3;
-
+  margin-top: ${spacing['32px']};
   li {
     display: flex;
     width: 100%;

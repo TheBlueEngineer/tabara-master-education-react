@@ -24,8 +24,8 @@ export const InputWrapper = styled.div<{
   position: relative;
   width: 100%;
   flex-direction: row;
-  border: solid ${border.width.xs};
-  border-color: ${({ theme }) => theme.colors.green950};
+  outline: solid ${border.width.xs};
+  outline-color: transparent;
   border-radius: ${border.radius.xs2};
   background-color: ${({ theme }) => theme.colors.gray50};
   box-shadow: inset 0px 2px 6px 2px hsla(0, 0%, 0%, 0.3);
@@ -37,7 +37,7 @@ export const InputWrapper = styled.div<{
   }
 
   &:focus-within {
-    border-color: ${({ theme, $hasError = false }) =>
+    outline-color: ${({ theme, $hasError = false }) =>
       $hasError ? theme.colors.red400 : theme.colors.green400};
   }
 

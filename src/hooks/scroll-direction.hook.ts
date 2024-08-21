@@ -33,26 +33,17 @@ const useScrollInformation = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', throttle(updateScroll, 10), {
+    window.addEventListener('scroll', throttle(updateScroll, 4), {
       passive: true,
     });
 
     return () => {
-      window.removeEventListener('scroll', throttle(updateScroll, 10));
+      window.removeEventListener('scroll', throttle(updateScroll, 4));
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    console.log(
-      scrollDirection,
-      previousScrollY,
-      currentScrollY,
-      isScrollOnTop
-    );
-  }, [scrollDirection, previousScrollY, currentScrollY, isScrollOnTop]);
-
-  return { scrollDirection, currentScrollY, isScrollOnTop };
+  return { scrollDirection, previousScrollY, currentScrollY, isScrollOnTop };
 };
 
 export default useScrollInformation;
