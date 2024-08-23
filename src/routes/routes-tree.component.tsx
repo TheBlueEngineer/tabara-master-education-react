@@ -9,7 +9,7 @@ const CampsPage = lazy(() => import('@pages/camps-page/camps.page'));
 const SignInPage = lazy(() => import('@pages/sign-in-page/sign-in.page'));
 const SignUpPage = lazy(() => import('@pages/sign-up-page/sign-up.page'));
 const ContactPage = lazy(() => import('@pages/contact-page/contact.page'));
-const BookingPage = lazy(() => import('@pages/booking-page/booking-page.page'));
+const BookingPage = lazy(() => import('@pages/booking-page/booking.page'));
 const DefaultLayout = lazy(() => import('@layouts/default.layout.tsx'));
 
 const RoutesTree = () => {

@@ -1,9 +1,13 @@
 import { throttle } from '@utils/functions.utils';
 import { useEffect, useState } from 'react';
 
-const useScrollInformation = () => {
-  const [scrollDirection, setScrollDirection] = useState<'up' | 'down' | null>(
-    null
+type scrollDirectionType = 'up' | 'down' | 'idle' | null;
+
+const useScrollInformation = (
+  defaultScrollDirection: scrollDirectionType = null
+) => {
+  const [scrollDirection, setScrollDirection] = useState<scrollDirectionType>(
+    defaultScrollDirection
   );
   const [previousScrollY, setPreviousScrollY] = useState<number>(0);
   const [currentScrollY, setCurrentScrollY] = useState<number>(0);
@@ -22,6 +26,8 @@ const useScrollInformation = () => {
 
     if (localCurrentScrollY < localPreviousScrollY) {
       setScrollDirection('up');
+    } else if (localCurrentScrollY === localPreviousScrollY) {
+      setScrollDirection('idle');
     } else if (localCurrentScrollY > localPreviousScrollY) {
       setScrollDirection('down');
     }

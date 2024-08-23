@@ -1,11 +1,16 @@
 import { useState } from 'react';
 
-const useToggle = (isOpen: boolean = false) => {
-  const [isToggled, setIsToggled] = useState(isOpen);
+export type useToggleType = {
+  isToggled: boolean;
+  handleToggle: () => void;
+  setToggle: (bool: boolean) => void;
+};
+
+const useToggle = (isOpen: boolean = false): useToggleType => {
+  const [isToggled, setIsToggled] = useState<boolean>(isOpen);
 
   const handleToggle = () => setIsToggled(!isToggled);
   const setToggle = (bool: boolean) => setIsToggled(bool);
-
   return { isToggled, handleToggle, setToggle };
 };
 

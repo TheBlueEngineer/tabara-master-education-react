@@ -41,7 +41,7 @@ const BookingForm: FC = () => {
   };
 
   return (
-    <SC.Container $url={campOffer?.bgImageUrl}>
+    <SC.Container>
       <SC.Content onSubmit={handleSubmit}>
         <SC.Grid>
           <FormInput

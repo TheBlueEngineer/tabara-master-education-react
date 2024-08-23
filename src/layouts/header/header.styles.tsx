@@ -84,19 +84,31 @@ export const Content = styled.div`
   padding: ${spacing['8px']} ${spacing['32px']};
 `;
 
-export const NavigationLink = styled(NavLink)`
+export const LogoLink = styled(NavLink)<{ $changeStyle: boolean }>`
   display: flex;
   align-items: center;
 
   & > h1 {
     ${typography.size.xl};
     ${typography.weight.black};
-    background: ${({ theme }) =>
-      `-webkit-linear-gradient(270deg, ${theme.colors.blue400},${theme.colors.blue600},${theme.colors.green700},${theme.colors.green900})`};
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     margin-left: ${spacing['8px']};
+
+    ${({ $changeStyle }) =>
+      $changeStyle
+        ? css`
+            background: ${({ theme }) =>
+              `-webkit-linear-gradient(270deg, ${theme.colors.blue200},${theme.colors.blue300},${theme.colors.green500},${theme.colors.green600})`};
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          `
+        : css`
+            background: ${({ theme }) =>
+              `-webkit-linear-gradient(270deg, ${theme.colors.blue400},${theme.colors.blue500},${theme.colors.green700},${theme.colors.green800})`};
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          `}
 
     @media (min-width: 1240px) {
       ${typography.size.xl};

@@ -1,37 +1,26 @@
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import NavigationBar from '../navbar/navbar.component';
 import * as SC from './header.styles';
 import LanguageSelector from '@components/smart/shared/language-selector/language-selector.component';
 import CurrencySelector from '@components/smart/shared/currency-selector/currency-selector.component';
 
 import logo from 'assets/images/home/322412271_2318204071679802_4134667702766926568_n.png';
-import useToggle from '@hooks/toggle.hooks';
 import { IoMenu } from 'react-icons/io5';
 import { MdLanguage } from 'react-icons/md';
 import { BsCashCoin } from 'react-icons/bs';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { FaLocationDot } from 'react-icons/fa6';
-import useScrollInformation from '@hooks/scroll-direction.hook';
+import { useNavigationInformation } from '@context/navigation-information.context';
 
 const Header: FC = () => {
-  const styleToggler = useToggle();
-  const upperbarToggler = useToggle();
-  const { scrollDirection, isScrollOnTop } = useScrollInformation();
-
-  useEffect(() => {
-    upperbarToggler.setToggle(scrollDirection == 'up' ? true : false);
-  }, [scrollDirection, upperbarToggler]);
-
-  useEffect(() => {
-    styleToggler.setToggle(isScrollOnTop ? true : false);
-  }, [isScrollOnTop, styleToggler]);
+  const { navbarStyleToggler, upperbarToggler } = useNavigationInformation();
 
   return (
     <SC.Container
-      $changeStyle={styleToggler.isToggled}
+      $changeStyle={navbarStyleToggler.isToggled}
       $isUpperbarActive={upperbarToggler.isToggled}
     >
-      <SC.UpperBar $changeStyle={styleToggler.isToggled}>
+      <SC.UpperBar $changeStyle={navbarStyleToggler.isToggled}>
         <SC.Group>
           <SC.Cell>
             <FaPhoneAlt />
@@ -54,18 +43,18 @@ const Header: FC = () => {
         </SC.Group>
       </SC.UpperBar>
       <SC.Content>
-        <SC.NavigationLink to="/">
+        <SC.LogoLink to="/" $changeStyle={navbarStyleToggler.isToggled}>
           <img src={logo} />
           <h1>Tabara Master Education</h1>
-        </SC.NavigationLink>
+        </SC.LogoLink>
         <SC.BurgerMenu
-          $isOpen={styleToggler.isToggled}
-          onClick={styleToggler.handleToggle}
+          $isOpen={navbarStyleToggler.isToggled}
+          onClick={navbarStyleToggler.handleToggle}
         >
           <IoMenu />
         </SC.BurgerMenu>
-        <SC.Dropdown $isOpen={styleToggler.isToggled}>
-          <NavigationBar changeStyle={styleToggler.isToggled} />
+        <SC.Dropdown $isOpen={navbarStyleToggler.isToggled}>
+          <NavigationBar changeStyle={navbarStyleToggler.isToggled} />
         </SC.Dropdown>
       </SC.Content>
     </SC.Container>

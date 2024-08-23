@@ -6,7 +6,7 @@ import Breadcrumbs, {
 } from '@components/views/shared/breadcrumbs/breadcrumbs.component';
 import CampOfferHeader from '@components/views/camp-preview/camp-offer-header/camp-offer-header.component';
 import { useTranslation } from 'react-i18next';
-import BookingInformation from '@components/views/camp-preview/booking-information/booking-information.component';
+import BookingInformation from '@components/views/camp-preview/booking-information/booking-information.view';
 import CampOfferInformation from '../camp-offer-information/camp-offer-information.component';
 import VerticalList from '@components/views/shared/vertical-list/vertical-list.component';
 

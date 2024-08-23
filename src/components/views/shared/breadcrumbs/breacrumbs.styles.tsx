@@ -1,6 +1,6 @@
 import { spacing, typography } from '@consts/template.const';
-import { NavigationLink } from '@layouts/header/header.styles';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
   display: flex;
@@ -8,7 +8,7 @@ export const Container = styled.div`
   column-gap: ${spacing['8px']};
 `;
 
-export const BreadcrumbLink = styled(NavigationLink)`
+export const BreadcrumbLink = styled(NavLink)`
   ${typography.size.base};
   ${typography.weight.medium};
   color: ${({ theme }) => theme.colors.black};
