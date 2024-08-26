@@ -1,4 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
+import { spacing } from '@consts/template.const';
+import styled, { createGlobalStyle, css } from 'styled-components';
+import bgImage from 'assets/images/home/b_munti1.webp';
 
 export const GlobalStyle = createGlobalStyle`
    :root {
@@ -113,4 +115,32 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 1rem;
         font-weight: 400;
     }    
+`;
+
+export const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ViewSection = styled.section<{ $bgImageUrl?: string }>`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: ${spacing['128px']} 20% ${spacing['128px']} 20%;
+  row-gap: ${spacing['32px']};
+  column-gap: ${spacing['32px']};
+  ${({ $bgImageUrl }) =>
+    $bgImageUrl
+      ? css`
+          background-image: url($bgImageUrl);
+          background-position: 50%;
+          background-repeat: no-repeat;
+          background-size: cover;
+        `
+      : null}
 `;

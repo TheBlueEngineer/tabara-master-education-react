@@ -11,7 +11,7 @@ import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import PriceTag from '@components/smart/shared/price-tag/price-tag.component';
 import { FaExclamationCircle } from 'react-icons/fa';
-import { CampOfferDataType, campOffersData } from '@consts/camp-offers';
+import { CampOfferDataType, campOffersData } from '@consts/camp-offers-data';
 import useCounter from '@hooks/counter.hook';
 import useEmailJS from '@hooks/email.hook';
 

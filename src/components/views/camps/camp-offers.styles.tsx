@@ -1,5 +1,5 @@
-import { spacing, typography } from '@consts/template.const';
 import styled from 'styled-components';
+import { spacing, typography } from '@consts/template.const';
 import bgImage from 'assets/images/home/b_munti3.webp';
 
 export const Container = styled.div`

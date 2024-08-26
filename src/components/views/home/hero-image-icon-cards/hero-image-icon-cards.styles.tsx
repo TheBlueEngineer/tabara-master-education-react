@@ -37,5 +37,6 @@ export const Container = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
     row-gap: ${spacing['32px']};
     column-gap: ${spacing['48px']};
+    transform: translateY(-25%);
   }
 `;

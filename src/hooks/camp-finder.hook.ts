@@ -1,4 +1,4 @@
-import { CampOfferDataType, campOffersData } from '@consts/camp-offers';
+import { CampOfferDataType, campOffersData } from '@consts/camp-offers-data';
 
 const useCampFinder = (code: string): CampOfferDataType | null => {
   const foundCampOffer = campOffersData.find(

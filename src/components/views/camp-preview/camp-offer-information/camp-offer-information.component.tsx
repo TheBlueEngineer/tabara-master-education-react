@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import * as SC from './camp-offer-information.styles.tsx.tsx';
-import { CampOfferDataType } from '@consts/camp-offers.ts';
+import { CampOfferDataType } from '@consts/camp-offers-data.ts';
 import { useTranslation } from 'react-i18next';
 import { IoMdCheckmark } from 'react-icons/io';
 import { HiMiniXMark } from 'react-icons/hi2';

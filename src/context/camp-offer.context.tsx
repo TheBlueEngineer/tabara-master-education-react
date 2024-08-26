@@ -1,5 +1,5 @@
 import { createContext, FC, ReactNode, useContext, useState } from 'react';
-import { CampOfferDataType, campOffersData } from '../consts/camp-offers';
+import { CampOfferDataType, campOffersData } from '../consts/camp-offers-data';
 import useCounter, { CounterType } from '@hooks/counter.hook';
 
 type CampOfferProviderProps = {

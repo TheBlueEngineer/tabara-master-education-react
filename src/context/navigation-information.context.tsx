@@ -20,9 +20,9 @@ type NavigationInformationContextProps = {
   previousScrollY: number;
   currentScrollY: number;
   isScrollOnTop: boolean;
-  isNavbarStyleEnabled: boolean;
   upperbarToggler: useToggleType;
   navbarStyleToggler: useToggleType;
+  navbarToggler: useToggleType;
 };
 
 const NavigationInformationContext =
@@ -32,21 +32,17 @@ export const NavigationInformationProvider: FC<
   NavigationInformationProviderProps
 > = ({ children }) => {
   const [scrollDirection, setScrollDirection] =
-    useState<scrollDirectionType>(null);
+    useState<scrollDirectionType>('up');
   const [previousScrollY, setPreviousScrollY] = useState<number>(0);
   const [currentScrollY, setCurrentScrollY] = useState<number>(0);
   const [isScrollOnTop, setIsScrollOnTop] = useState<boolean>(true);
-  const [isNavbarStyleEnabled, setIsNavbarStyleEnabled] =
-    useState<boolean>(true);
   const upperbarToggler = useToggle();
   const navbarStyleToggler = useToggle();
+  const navbarToggler = useToggle();
 
   // Local variables for synchronization
   let localPreviousScrollY: number = 0;
   let localCurrentScrollY: number = 0;
-
-  const handleIsNavbarStyleDisabled = (bool: boolean) =>
-    setIsNavbarStyleEnabled(bool);
 
   const updateScroll = () => {
     localCurrentScrollY = window.scrollY;
@@ -71,14 +67,17 @@ export const NavigationInformationProvider: FC<
   };
 
   useEffect(() => {
-    upperbarToggler.setToggle(scrollDirection === 'up' ? true : false);
+    if (scrollDirection === 'up') {
+      upperbarToggler.setToggle(true);
+    }
+    if (scrollDirection === 'down') {
+      upperbarToggler.setToggle(false);
+    }
   }, [scrollDirection, upperbarToggler]);
 
   useEffect(() => {
-    if (isNavbarStyleEnabled) {
-      navbarStyleToggler.setToggle(isScrollOnTop ? true : false);
-    }
-  }, [isScrollOnTop, navbarStyleToggler, isNavbarStyleEnabled]);
+    navbarStyleToggler.setToggle(isScrollOnTop ? true : false);
+  }, [isScrollOnTop, navbarStyleToggler]);
 
   useEffect(() => {
     window.addEventListener('scroll', throttle(updateScroll, 4), {
@@ -98,8 +97,7 @@ export const NavigationInformationProvider: FC<
     isScrollOnTop,
     navbarStyleToggler,
     upperbarToggler,
-    isNavbarStyleEnabled,
-    handleIsNavbarStyleDisabled,
+    navbarToggler,
   };
 
   return (

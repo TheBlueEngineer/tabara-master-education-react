@@ -1,7 +1,7 @@
 import CampOfferCard from '@components/templates/camp-offer-card/camp-offer-card.component';
 import * as SC from './camp-offers.styles';
 import { useTranslation } from 'react-i18next';
-import { campOffersData } from '@consts/camp-offers';
+import { campOffersData } from '@consts/camp-offers-data';
 
 const CampOffers = () => {
   const { i18n, t } = useTranslation('home');
@@ -11,6 +11,7 @@ const CampOffers = () => {
     <SC.Container>
       <h1>{t('ourCampsSection.title')}</h1>
       <h2>{t('ourCampsSection.description')}</h2>
+
       <SC.Offers>
         {campOffersData.map((campOffer, idx) => {
           const code = campOffer.code;

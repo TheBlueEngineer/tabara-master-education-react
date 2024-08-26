@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import * as SC from './camp-offer-display.styles';
-import { CampOfferDataType } from '@consts/camp-offers';
+import { CampOfferDataType } from '@consts/camp-offers-data';
 import Breadcrumbs, {
   BreadcrumbItemType,
 } from '@components/views/shared/breadcrumbs/breadcrumbs.component';

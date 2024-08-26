@@ -4,11 +4,13 @@ import * as SC from './booking.styles';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Breadcrumbs from '../shared/breadcrumbs/breadcrumbs.component';
+import useCampFinder from '@hooks/camp-finder.hook';
 
 const BookingView: FC = () => {
   const search = new URLSearchParams(useLocation().search);
   const idParam = search.get('id');
   const { t } = useTranslation('camps');
+  const campOffer = useCampFinder(idParam!);
 
   const breadcrumbsList = [
     {
@@ -20,7 +22,7 @@ const BookingView: FC = () => {
       text: t('breadcrumbs.camps'),
     },
     {
-      link: `/camp/${idParam}`,
+      link: `/camps/${idParam}`,
       text: t(`campOffers.${idParam}.previewTitle`),
     },
     {
@@ -28,9 +30,12 @@ const BookingView: FC = () => {
       text: t(`campOffers.${idParam}.previewTitle`),
     },
   ];
+
   return (
-    <SC.Container>
-      <Breadcrumbs list={breadcrumbsList} />
+    <SC.Container $url={campOffer?.bgImageUrl}>
+      <SC.BreadcrumbWrapper>
+        <Breadcrumbs list={breadcrumbsList} />
+      </SC.BreadcrumbWrapper>
       <BookingForm />
     </SC.Container>
   );

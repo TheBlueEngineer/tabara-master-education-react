@@ -84,7 +84,9 @@ export const Content = styled.div`
   padding: ${spacing['8px']} ${spacing['32px']};
 `;
 
-export const LogoLink = styled(NavLink)<{ $changeStyle: boolean }>`
+export const LogoLink = styled(NavLink)<{
+  $changeStyle: boolean;
+}>`
   display: flex;
   align-items: center;
 

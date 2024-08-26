@@ -1,7 +1,7 @@
 import CampOfferCard from '@components/templates/camp-offer-card/camp-offer-card.component';
 import * as SC from './our-camps.styles';
 import { useTranslation } from 'react-i18next';
-import { campOffersData } from '@consts/camp-offers';
+import { campOffersData } from '@consts/camp-offers-data';
 
 const OurCamps = () => {
   const { i18n, t } = useTranslation('home');
