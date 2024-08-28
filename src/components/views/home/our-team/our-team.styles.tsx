@@ -6,7 +6,7 @@ export const Container = styled.section`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: ${spacing['96px']} 10%;
+  padding: ${spacing['128px']} 10%;
 
   background: ${({ theme }) =>
     `linear-gradient(${theme.colors.gray50}, ${theme.colors.gray100})`};

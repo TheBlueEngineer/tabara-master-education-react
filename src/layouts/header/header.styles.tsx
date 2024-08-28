@@ -1,10 +1,12 @@
 import { NavLink } from 'react-router-dom';
 import { shadows, spacing, typography } from '@consts/template.const';
 import styled, { css } from 'styled-components';
+import { screens } from '@consts/media-queries.const';
 
 export const Container = styled.header<{
   $changeStyle: boolean;
   $isUpperbarActive: boolean;
+  $isBurgerMenuOpen: boolean;
 }>`
   display: flex;
   width: 100%;
@@ -25,20 +27,21 @@ export const Container = styled.header<{
           translate: 0 -42px;
         `};
 
-  ${({ $changeStyle, theme }) =>
-    $changeStyle
+  ${({ $changeStyle, $isBurgerMenuOpen, theme }) =>
+    !$changeStyle || $isBurgerMenuOpen
       ? css`
-          background-color: 'hsla(0, 0%, 0%, 0)';
-          box-shadow: none;
-        `
-      : css`
           background-color: ${theme.colors.white};
           box-shadow: ${shadows.elevation.md};
+        `
+      : css`
+          background-color: 'hsla(0, 0%, 0%, 0)';
+          box-shadow: none;
         `};
 `;
 
 export const UpperBar = styled.div<{
   $changeStyle: boolean;
+  $isBurgerMenuOpen: boolean;
 }>`
   display: flex;
   position: relative;
@@ -48,14 +51,28 @@ export const UpperBar = styled.div<{
   padding: ${spacing['8px']} ${spacing['32px']};
   transition: background-color 300ms;
 
-  ${({ $changeStyle }) =>
-    $changeStyle
-      ? css`
-          background-color: transparent;
-        `
-      : css`
-          background-color: ${({ theme }) => theme.colors.green800};
-        `}
+  ${({ $changeStyle, $isBurgerMenuOpen }) => {
+    if ($changeStyle || (!$changeStyle && $isBurgerMenuOpen)) {
+      return css`
+        background-color: transparent;
+      `;
+    } else if (!$changeStyle && !$isBurgerMenuOpen) {
+      return css`
+        background-color: green;
+      `;
+    }
+  }};
+  ${({ $isBurgerMenuOpen }) => {
+    if ($isBurgerMenuOpen) {
+      return css`
+        color: black;
+      `;
+    } else {
+      return css`
+        color: white;
+      `;
+    }
+  }};
 `;
 
 export const Group = styled.div`
@@ -68,8 +85,6 @@ export const Cell = styled.div`
   column-gap: ${spacing['8px']};
   align-items: center;
   ${typography.size.base};
-  ${typography.weight.medium};
-  color: ${({ theme }) => theme.colors.white};
 
   & > svg {
     ${typography.size.base};
@@ -78,10 +93,26 @@ export const Cell = styled.div`
 
 export const Content = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   width: 100%;
+  padding: 0 ${spacing['32px']};
+
+  @media ${screens.lg} {
+    padding: ${spacing['8px']} ${spacing['32px']};
+
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+`;
+
+export const ContentRow = styled.div`
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  padding: ${spacing['8px']} ${spacing['32px']};
 `;
 
 export const LogoLink = styled(NavLink)<{
@@ -93,6 +124,7 @@ export const LogoLink = styled(NavLink)<{
   & > h1 {
     ${typography.size.xl};
     ${typography.weight.black};
+    line-height: 1;
     margin-left: ${spacing['8px']};
 
     ${({ $changeStyle }) =>
@@ -112,7 +144,7 @@ export const LogoLink = styled(NavLink)<{
             -webkit-text-fill-color: transparent;
           `}
 
-    @media (min-width: 1240px) {
+    @media ${screens.xl} {
       ${typography.size.xl};
     }
   }
@@ -122,7 +154,7 @@ export const LogoLink = styled(NavLink)<{
     width: 2.5rem;
     height: 2.5rem;
 
-    @media (min-width: 1240px) {
+    @media ${screens.xl} {
       width: 3rem;
       height: 3rem;
     }
@@ -139,27 +171,36 @@ export const LogoLink = styled(NavLink)<{
 `;
 
 export const Dropdown = styled.ul<{ $isOpen: boolean }>`
-  display: flex;
+  display: none;
   flex-direction: column;
-  position: absolute;
-  transform: ${(props) =>
-    props.$isOpen ? 'translateY(0)' : 'translateY(-200%)'};
-  top: 100%;
-  right: 0;
+  justify-content: flex-start;
 
-  @media (min-width: 1240px) {
+  ${({ $isOpen, theme }) =>
+    $isOpen &&
+    css`
+      display: flex;
+      padding-top: ${spacing['8px']};
+      padding-bottom: ${spacing['32px']};
+      width: 100%;
+      border-top: 1px solid ${theme.colors.gray500};
+    `}
+
+  @media ${screens.lg} {
     flex-direction: row;
-    position: relative;
-    transform: none;
+    display: flex;
   }
 `;
 
-export const BurgerMenu = styled.button<{ $isOpen: boolean }>`
+export const BurgerMenu = styled.button<{
+  $isOpen: boolean;
+  $changeStyle: boolean;
+}>`
   display: block;
   width: 4rem;
   height: 4rem;
+  background: transparent;
 
-  @media (min-width: 1240px) {
+  @media ${screens.lg} {
     display: none;
     position: relative;
     cursor: pointer;
@@ -167,8 +208,13 @@ export const BurgerMenu = styled.button<{ $isOpen: boolean }>`
 
   & > svg {
     transition: color 300ms;
-    color: ${({ theme, $isOpen }) =>
-      $isOpen ? theme.colors.green700 : theme.colors.black};
+    color: ${({ theme }) => theme.colors.black};
+    ${({ theme, $isOpen, $changeStyle }) =>
+      !$isOpen &&
+      $changeStyle &&
+      css`
+        color: ${theme.colors.white};
+      `};
     ${typography.size.xl3};
   }
 `;

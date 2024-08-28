@@ -1,6 +1,5 @@
 import { spacing } from '@consts/template.const';
 import styled, { createGlobalStyle, css } from 'styled-components';
-import bgImage from 'assets/images/home/b_munti1.webp';
 
 export const GlobalStyle = createGlobalStyle`
    :root {

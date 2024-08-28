@@ -1,3 +1,4 @@
+import { screens } from '@consts/media-queries.const';
 import { border, shadows, spacing, typography } from '@consts/template.const';
 import styled from 'styled-components';
 
@@ -10,7 +11,7 @@ export const Container = styled.section`
   column-gap: ${spacing['64px']};
   background-color: ${({ theme }) => theme.colors.gray50};
 
-  @media (min-width: 1024px) {
+  @media ${screens.xl} {
     flex-direction: row;
   }
 `;
@@ -46,7 +47,7 @@ export const Information = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (min-width: 1024px) {
+  @media ${screens.xl} {
     align-items: flex-start;
   }
 
@@ -76,7 +77,7 @@ export const Information = styled.div`
     margin-bottom: ${spacing['16px']};
     text-align: center;
 
-    @media (min-width: 1024px) {
+    @media ${screens.xl} {
       text-align: left;
     }
   }

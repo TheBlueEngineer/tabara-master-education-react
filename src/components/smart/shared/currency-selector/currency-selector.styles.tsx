@@ -4,7 +4,8 @@ import styled from 'styled-components';
 export const Dropdown = styled.select`
   padding: ${spacing['4px']} ${spacing['16px']};
   background-color: transparent;
-  color: ${({ theme }) => theme.colors.white};
+
+  color: inherit;
 
   & > option {
     color: ${({ theme }) => theme.colors.black};

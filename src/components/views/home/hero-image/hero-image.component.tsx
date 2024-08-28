@@ -16,13 +16,7 @@ const HeroImage: FC = () => {
         <SC.Subtitle>
           Book campsites to your camp. You will not regret hiking with us !
         </SC.Subtitle>
-        <SC.CTAButton
-          variant="primary"
-          size="medium"
-          onClick={handleOnClickContact}
-        >
-          Contact Us
-        </SC.CTAButton>
+        <SC.CTAButton onClick={handleOnClickContact}>Contact Us</SC.CTAButton>
       </SC.Content>
     </SC.Container>
   );

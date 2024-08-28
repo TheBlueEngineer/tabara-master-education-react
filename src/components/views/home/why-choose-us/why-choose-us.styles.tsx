@@ -1,6 +1,7 @@
 import { spacing, typography } from '@consts/template.const';
 import styled from 'styled-components';
 import backgroundImage from 'assets/images/home/b_munti3.webp';
+import { screens } from '@consts/media-queries.const';
 
 export const Container = styled.section`
   display: flex;
@@ -25,7 +26,7 @@ export const Information = styled.div`
 
   background-color: hsla(0, 0%, 0%, 0.75);
 
-  @media (min-width: 1040px) {
+  @media ${screens.xl} {
     clip-path: polygon(0 0, 100% 0%, 80% 100%, 0% 100%);
     width: 65rem;
     padding-right: ${spacing['256px']};

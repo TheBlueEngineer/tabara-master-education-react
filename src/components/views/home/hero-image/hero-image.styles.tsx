@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { shadows, spacing } from '@consts/template.const';
-import Button from '@components/shared-components/button/button.component';
+import { border, shadows, spacing, typography } from '@consts/template.const';
 import heroImage from 'assets/images/home/home_bg.webp';
+import { screens } from '@consts/media-queries.const';
 
 export const Container = styled.section`
   display: flex;
@@ -60,4 +60,48 @@ export const Subtitle = styled.h2`
   text-shadow: ${shadows.font.heavy};
 `;
 
-export const CTAButton = styled(Button)``;
+export const CTAButton = styled.button`
+  display: flex;
+  ${typography.weight.semibold};
+  ${typography.size.lg};
+  padding: ${spacing['12px']} ${spacing['24px']};
+  margin-left: ${spacing['16px']};
+  cursor: pointer;
+  box-shadow: ${shadows.elevation.md};
+  border-radius: ${border.radius.xs} 0 ${border.radius.xs};
+  color: ${({ theme }) => theme.colors.white};
+  align-self: center;
+  position: relative;
+  transition:
+    box-shadow 300ms,
+    color 300ms,
+    border-color 300ms,
+    background-color 300ms;
+  background: ${({ theme }) =>
+    `linear-gradient(135deg,${theme.colors.green700},${theme.colors.green800});`};
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: inherit;
+    background-color: ${({ theme }) => theme.colors.white};
+    opacity: 0;
+    mix-blend-mode: add;
+    z-index: 1;
+    transition:
+      opacity 300ms,
+      box-shadow 300ms;
+  }
+
+  &:hover::after {
+    opacity: 0.2;
+  }
+
+  @media ${screens.lg} {
+    justify-self: inherit;
+  }
+`;

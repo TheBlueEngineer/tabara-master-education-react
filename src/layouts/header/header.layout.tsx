@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import NavigationBar from '../navbar/navbar.component';
 import * as SC from './header.styles';
 import LanguageSelector from '@components/smart/shared/language-selector/language-selector.component';
@@ -11,16 +11,35 @@ import { BsCashCoin } from 'react-icons/bs';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { FaLocationDot } from 'react-icons/fa6';
 import { useNavigationInformation } from '@context/navigation-information.context';
+import useToggle from '@hooks/toggle.hooks';
 
 const Header: FC = () => {
   const { navbarStyleToggler, upperbarToggler } = useNavigationInformation();
+  const burgerMenuToggler = useToggle();
+
+  const handleResize = () => {
+    if (window.innerWidth > 1027) {
+      console.log(window.innerWidth);
+      burgerMenuToggler.setToggle(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <SC.Container
       $changeStyle={navbarStyleToggler.isToggled}
       $isUpperbarActive={upperbarToggler.isToggled}
+      $isBurgerMenuOpen={burgerMenuToggler.isToggled}
     >
-      <SC.UpperBar $changeStyle={navbarStyleToggler.isToggled}>
+      <SC.UpperBar
+        $changeStyle={navbarStyleToggler.isToggled}
+        $isBurgerMenuOpen={burgerMenuToggler.isToggled}
+      >
         <SC.Group>
           <SC.Cell>
             <FaPhoneAlt />
@@ -43,17 +62,20 @@ const Header: FC = () => {
         </SC.Group>
       </SC.UpperBar>
       <SC.Content>
-        <SC.LogoLink to="/" $changeStyle={navbarStyleToggler.isToggled}>
-          <img src={logo} />
-          <h1>Tabara Master Education</h1>
-        </SC.LogoLink>
-        <SC.BurgerMenu
-          $isOpen={navbarStyleToggler.isToggled}
-          onClick={navbarStyleToggler.handleToggle}
-        >
-          <IoMenu />
-        </SC.BurgerMenu>
-        <SC.Dropdown $isOpen={navbarStyleToggler.isToggled}>
+        <SC.ContentRow>
+          <SC.LogoLink to="/" $changeStyle={navbarStyleToggler.isToggled}>
+            <img src={logo} />
+            <h1>Master Education</h1>
+          </SC.LogoLink>
+          <SC.BurgerMenu
+            $isOpen={burgerMenuToggler.isToggled}
+            $changeStyle={navbarStyleToggler.isToggled}
+            onClick={burgerMenuToggler.handleToggle}
+          >
+            <IoMenu />
+          </SC.BurgerMenu>
+        </SC.ContentRow>
+        <SC.Dropdown $isOpen={burgerMenuToggler.isToggled}>
           <NavigationBar changeStyle={navbarStyleToggler.isToggled} />
         </SC.Dropdown>
       </SC.Content>
