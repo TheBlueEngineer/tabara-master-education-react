@@ -12,6 +12,7 @@ import { FaPhoneAlt } from 'react-icons/fa';
 import { FaLocationDot } from 'react-icons/fa6';
 import { useNavigationInformation } from '@context/navigation-information.context';
 import useToggle from '@hooks/toggle.hooks';
+import Tooltip from '@components/shared-components/tooltip/tooltip.component';
 
 const Header: FC = () => {
   const { navbarStyleToggler, upperbarToggler } = useNavigationInformation();
@@ -43,7 +44,7 @@ const Header: FC = () => {
         <SC.Group>
           <SC.Cell>
             <FaPhoneAlt />
-            0777 666 555
+            <Tooltip text={'0777 666 555'}>0777 666 555</Tooltip>
           </SC.Cell>
           <SC.Cell>
             <FaLocationDot />
