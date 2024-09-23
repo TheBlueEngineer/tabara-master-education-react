@@ -4,7 +4,7 @@ import * as SC from './tooltip.styles';
 
 type TooltipProps = {
   text: string;
-  position: 'top' | 'bottom';
+  position?: 'top' | 'bottom';
   children: React.ReactNode;
 };
 
