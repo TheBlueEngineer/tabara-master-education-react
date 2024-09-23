@@ -12,7 +12,6 @@ const CampPreview: FC = () => {
       navbarStyleToggler.enableToggle();
       console.log('Unmounted Camp Preview');
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return <CampOfferSelector />;

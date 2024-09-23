@@ -46,7 +46,6 @@ const useScrollInformation = (
     return () => {
       window.removeEventListener('scroll', throttle(updateScroll, 4));
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return { scrollDirection, previousScrollY, currentScrollY, isScrollOnTop };

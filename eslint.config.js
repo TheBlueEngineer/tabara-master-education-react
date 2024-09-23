@@ -1,12 +1,40 @@
-export default {
-  parser: '@typescript-eslint/parser',
+import { FlatCompat } from '@eslint/eslintrc';
+import path from 'path';
 
-  parserOptions: {
-    project: './tsconfig.json',
+// Import plugins directly as objects, not as strings
+import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin';
+import typescriptEslintParser from '@typescript-eslint/parser';
+import reactPlugin from 'eslint-plugin-react';
+import prettierPlugin from 'eslint-plugin-prettier';
+import a11yPlugin from 'eslint-plugin-jsx-a11y';
+import reactHooksPlugin from 'eslint-plugin-react-hooks';
+
+const compat = new FlatCompat({
+  baseDirectory: path.resolve(),
+});
+
+export default {
+  files: ['**/*.{js,jsx,ts,tsx}'],
+
+  ignores: [
+    'node_modules/',
+    'dist/',
+    'build/',
+    '*.min.js',
+    'coverage/',
+    'logs/',
+    '*.config.js',
+  ],
+
+  languageOptions: {
+    parser: typescriptEslintParser,
     sourceType: 'module',
     ecmaVersion: 'latest',
-    ecmaFeatures: {
-      jsx: true,
+    globals: {
+      window: 'readonly', // Browser global
+      document: 'readonly', // Browser global
+      console: 'readonly', // Allow console usage
+      React: 'readonly', // For React JSX (in case you need React in scope)
     },
   },
 
@@ -21,28 +49,13 @@ export default {
     },
   },
 
-  env: {
-    browser: true, // Enable browser global variables: window, document etc.
-    es6: true, // This enables ES6 features, let, const, arrow functions etc.
-    node: true, // Enable Node.js global variables: process, require
+  plugins: {
+    '@typescript-eslint': typescriptEslintPlugin,
+    react: reactPlugin,
+    prettier: prettierPlugin,
+    'jsx-a11y': a11yPlugin,
+    'react-hooks': reactHooksPlugin,
   },
-
-  extends: [
-    'eslint:recommended', // Eslint built in rules.
-    'plugin:react/recommended', // React specific rules that enforce best practices for React components.
-    'plugin:@typescript-eslint/recommended', //Typescript specific rules for linting.
-    'plugin:jsx-a11y/recommended', // Adds accessibility rules for JSX, example: alt attributes on images.
-    'airbnb-typescript', // Set of rules based on Airbnb popular style guide for Typescript.
-    'plugin:prettier/recommended', // Enables prettier recommended rules and disables conflicting Eslint rules.
-  ],
-
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'react-hooks',
-    'jsx-a11y',
-    'prettier',
-  ],
 
   rules: {
     'prettier/prettier': 'error', // Ensures that any code formatting issues detected by Prettier are flagged as Eslint errors.
@@ -51,16 +64,4 @@ export default {
     'react/prop-types': 'off', // Disable rule for requiring prop-types in React components because TS provides type-safety through interfaces and types.
     'jsx-a11y/no-noninteractive-element-interactions': 'warn', // Warns when non-interactive elements like a <div> have click handlers or similar interactions.
   },
-
-  ignoredPatterns: [
-    'node_modules/',
-    'dist/',
-    'build/',
-    '*.min.js',
-    'coverage/',
-    'logs/',
-    '*.config.js',
-  ],
-
-  files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
 };

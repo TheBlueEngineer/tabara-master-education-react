@@ -63,7 +63,6 @@ export const ExchangeRateProvider: FC<ExchangeRatesProviderProps> = ({
       if (!defaultCurrency) return;
       setCurrentCurrency(defaultCurrency);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -74,6 +73,7 @@ export const ExchangeRateProvider: FC<ExchangeRatesProviderProps> = ({
         setExchangeRates(exchangeRates);
       } catch (error) {
         setError('Failed to fetch exchange rates.');
+        console.error(error);
       } finally {
         setIsLoading(false);
       }
@@ -99,7 +99,6 @@ export const ExchangeRateProvider: FC<ExchangeRatesProviderProps> = ({
   );
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const useExchangeRates = () => {
   const context = useContext(ExchangeRateContext);
   if (!context) {

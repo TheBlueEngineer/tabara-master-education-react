@@ -87,7 +87,6 @@ export const NavigationInformationProvider: FC<
     return () => {
       window.removeEventListener('scroll', throttle(updateScroll, 4));
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const values = {
@@ -107,7 +106,6 @@ export const NavigationInformationProvider: FC<
   );
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const useNavigationInformation = () => {
   const context = useContext(NavigationInformationContext);
   if (!context) {

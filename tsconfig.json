@@ -50,5 +50,8 @@
     "/src/fonts.d.ts",
     "/src/images.d.ts"
   ],
+
+  "typeRoots": ["./node_modules/@types", "./src/@types"],
+
   "references": [{ "path": "./tsconfig.node.json" }]
 }

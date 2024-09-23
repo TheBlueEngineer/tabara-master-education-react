@@ -34,7 +34,6 @@ export const ThemeContextProvider: FC<ThemeContextProviderProps> = ({
   );
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const useTheme = (): ThemeContextProps => {
   const context = useContext(ThemeContext);
   if (!context) {

@@ -32,7 +32,6 @@ const BookingForm: FC = () => {
     if (foundCampOffer) {
       setCampOffer(foundCampOffer);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
