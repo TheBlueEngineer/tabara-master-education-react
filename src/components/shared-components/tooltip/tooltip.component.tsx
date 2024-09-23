@@ -4,7 +4,7 @@ import * as SC from './tooltip.styles';
 
 type TooltipProps = {
   text: string;
-  position?: 'top' | 'bottom';
+  position?: 'top' | 'bottom' | undefined;
   children: React.ReactNode;
 };
 
@@ -16,7 +16,10 @@ const Tooltip: FC<TooltipProps> = ({ text, position = 'bottom', children }) => {
       onMouseLeave={() => isVisible.setToggle(false)}
     >
       {children}
-      <SC.Text $position={position} $isVisible={isVisible.isToggled}>
+      <SC.Text
+        $position={position ? position : 'bottom'}
+        $isVisible={isVisible.isToggled}
+      >
         {text}
       </SC.Text>
     </SC.Container>
