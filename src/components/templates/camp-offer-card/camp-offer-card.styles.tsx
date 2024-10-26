@@ -7,7 +7,6 @@ export const Container = styled.div`
   position: relative;
   justify-self: center;
   align-self: center;
-  max-width: 30rem;
 
   border-radius: ${border.radius.xs};
   box-shadow: ${shadows.elevation.lg};

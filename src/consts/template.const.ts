@@ -96,6 +96,7 @@ export const colorsLight = {
 
 export const typography = {
   size: {
+    xxs: `font-size: 0.625rem`, //10px
     xs: `font-size: 0.75rem`, //12px
     sm: 'font-size: 0.875rem', //14px
     base: 'font-size: 1rem', //16px

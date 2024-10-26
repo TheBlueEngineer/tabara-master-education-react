@@ -8,7 +8,7 @@ type SocialMediaLink = {
   linkUrl: string;
 };
 
-export type MemberCardProps = {
+export type TeamMemberCardProps = {
   id?: number;
   name: string;
   imageUrl: string;
@@ -17,7 +17,7 @@ export type MemberCardProps = {
   links: SocialMediaLink[];
 };
 
-const MemberCard: FC<MemberCardProps> = ({
+const TeamMemberCard: FC<TeamMemberCardProps> = ({
   name = 'John Doe',
   profession = 'Profession',
   description = 'This is a default description.',
@@ -45,4 +45,4 @@ const MemberCard: FC<MemberCardProps> = ({
   );
 };
 
-export default MemberCard;
+export default TeamMemberCard;

@@ -14,6 +14,7 @@ export const Container = styled.section<{ $url: string | undefined }>`
   background-image: url(${({ $url }) => ($url ? $url : bgImage)});
   background-position: 50%;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
 
   &::after {

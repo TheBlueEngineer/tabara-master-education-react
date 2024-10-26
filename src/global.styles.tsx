@@ -9,6 +9,13 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 16px;
     }
 
+    html, body{
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden;
+    }
 
     html {
         -webkit-box-sizing: border-box;
@@ -20,10 +27,6 @@ export const GlobalStyle = createGlobalStyle`
     *::after {
     -webkit-box-sizing: inherit;
         box-sizing: inherit;
-    }
-
-    body {
-        margin: 0;
     }
 
     html, body, div, span, applet, object, iframe,
@@ -45,6 +48,20 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 100%;
         vertical-align: baseline;
     }
+    
+    /* Preventing Chrome's blue background on autocomplete to occur.*/
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+    }
+    
     /* HTML5 display-role reset for older browsers */
     article, aside, details, figcaption, figure, 
     footer, header, hgroup, menu, nav, section {

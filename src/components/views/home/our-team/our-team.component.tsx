@@ -1,13 +1,13 @@
 import { FC } from 'react';
 import * as SC from './our-team.styles';
-import MemberCard, {
-  MemberCardProps,
+import TeamMemberCard, {
+  TeamMemberCardProps,
 } from '@components/templates/member-card/member-card.component';
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 import profilePic from 'assets/images/home/profile.png';
 
-const membersList: MemberCardProps[] = [
+const membersList: TeamMemberCardProps[] = [
   {
     id: 1,
     name: 'John Bobby Doe',
@@ -69,7 +69,7 @@ const OurTeam: FC = () => {
       <h2>Meet the members of Master Education</h2>
       <ul>
         {membersList.map((member) => (
-          <MemberCard
+          <TeamMemberCard
             key={member.id}
             name={member.name}
             profession={member.profession}

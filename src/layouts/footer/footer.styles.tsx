@@ -3,20 +3,34 @@ import { spacing, typography } from '@consts/template.const';
 import styled from 'styled-components';
 
 import treeBackground from 'assets/images/home/istockphoto-1372132668-170667a.jpg';
+import { screens } from '@consts/media-queries.const';
 
 export const Footer = styled.footer`
   display: flex;
   width: 100%;
   flex-direction: column;
   border-top: 1px solid ${({ theme }) => theme.colors.gray300};
+
   & > section {
     display: grid;
     width: 100%;
     position: relative;
     padding: ${spacing['96px']} 10%;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    row-gap: ${spacing['24px']};
+    column-gap: ${spacing['12px']};
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
     z-index: 0;
+
+    @media ${screens.sm} {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    @media ${screens.lg} {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+    }
 
     &::after {
       content: '';
@@ -25,6 +39,8 @@ export const Footer = styled.footer`
       height: 100%;
       background: url(${treeBackground});
       background-size: contain;
+      background-repeat: repeat-x;
+      background-position: bottom;
       opacity: 0.2;
       z-index: 1;
     }
@@ -41,9 +57,6 @@ export const Footer = styled.footer`
 
 export const GridSection = styled.ul`
   display: flex;
-  width: 100%;
-  grid-row: span 2;
-  grid-column: span 1;
   flex-direction: column;
   align-items: flex-start;
   z-index: 2;
@@ -59,17 +72,6 @@ export const GridSection = styled.ul`
     ${typography.size.xl};
     ${typography.weight.bold};
     color: ${({ theme }) => theme.colors.green950};
-    margin-bottom: ${spacing['24px']};
-
-    &::after {
-      content: '';
-      position: absolute;
-      width: 50%;
-      height: 1px;
-      bottom: 0;
-      left: 0;
-      border: 1px solid ${({ theme }) => theme.colors.green900};
-    }
   }
 
   & > h3 {
@@ -86,7 +88,7 @@ export const GridSection = styled.ul`
     color: ${({ theme }) => theme.colors.gray800};
   }
 
-  li {
+  & > li {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -96,6 +98,12 @@ export const GridSection = styled.ul`
 
   &:first-child {
     align-items: left;
+  }
+
+  @media ${screens.md} {
+    & > li {
+      align-items: left;
+    }
   }
 `;
 

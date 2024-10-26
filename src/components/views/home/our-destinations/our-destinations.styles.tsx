@@ -15,7 +15,7 @@ export const Container = styled.section`
   & > h1 {
     font-family: 'Roboto Condensed', sans-serif;
     position: relative;
-    ${typography.size.xl4};
+    ${typography.size.xl2};
     ${typography.weight.black};
     color: ${({ theme }) => theme.colors.green800};
     word-wrap: break-word;

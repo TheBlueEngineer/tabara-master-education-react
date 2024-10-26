@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { spacing, typography } from '@consts/template.const';
 import bgImage from 'assets/images/home/b_munti3.webp';
+import { screens } from '@consts/media-queries.const';
 
 export const Container = styled.div`
   display: flex;
@@ -63,12 +64,19 @@ export const Container = styled.div`
 export const Offers = styled.div`
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  column-gap: ${spacing['96px']};
-  row-gap: ${spacing['64px']};
+  grid-template-columns: 1;
+  grid-template-rows: auto;
+
   padding-top: ${spacing['64px']};
   padding-bottom: ${spacing['64px']};
   z-index: 3;
+
+  @media ${screens.sm} {
+    grid-template-columns: 2;
+    grid-template-rows: auto;
+    column-gap: ${spacing['96px']};
+    row-gap: ${spacing['64px']};
+  }
 `;
 
 export const Row = styled.div`

@@ -4,15 +4,13 @@ import { useTranslation } from 'react-i18next';
 import { FaHome } from 'react-icons/fa';
 import { FaPhoneVolume, FaCampground } from 'react-icons/fa6';
 
-type NavigationBarProps = {
-  changeStyle: boolean;
-};
+type NavigationBarProps = {};
 
-const NavigationBar: FC<NavigationBarProps> = ({ changeStyle }) => {
+const NavigationBar: FC<NavigationBarProps> = () => {
   const { t } = useTranslation('common');
 
   return (
-    <SC.Navbar $changeStyle={changeStyle}>
+    <SC.Navbar>
       <SC.NavLink to="/">
         <FaHome />
         {t('navigationBar.home')}
@@ -20,9 +18,13 @@ const NavigationBar: FC<NavigationBarProps> = ({ changeStyle }) => {
       <SC.NavLink to="/camps">
         <FaCampground />
         {t('navigationBar.camps')}
+      </SC.NavLink>{' '}
+      <SC.NavLink to="/">
+        <FaHome />
+        Echipa
       </SC.NavLink>
       <SC.NavLink to="/contact">
-        <FaPhoneVolume size={20} />
+        <FaPhoneVolume />
         {t('navigationBar.contact')}
       </SC.NavLink>
       <SC.CTAButton>{t(`navigationBar.cta-button`)}</SC.CTAButton>

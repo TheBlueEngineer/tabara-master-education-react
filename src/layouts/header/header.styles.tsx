@@ -1,42 +1,17 @@
 import { NavLink } from 'react-router-dom';
-import { shadows, spacing, typography } from '@consts/template.const';
+import { opacity, spacing, typography } from '@consts/template.const';
 import styled, { css } from 'styled-components';
 import { screens } from '@consts/media-queries.const';
 
-export const Container = styled.header<{
-  $changeStyle: boolean;
-  $isUpperbarActive: boolean;
-  $isBurgerMenuOpen: boolean;
-}>`
+export const Container = styled.header`
   display: flex;
   width: 100%;
-  position: fixed;
   flex-direction: column;
   z-index: 10;
   transition:
     background-color 300ms,
     top 300ms,
     translate 300ms;
-
-  ${({ $isUpperbarActive }) =>
-    $isUpperbarActive
-      ? css`
-          translate: 0 0;
-        `
-      : css`
-          translate: 0 -42px;
-        `};
-
-  ${({ $changeStyle, $isBurgerMenuOpen, theme }) =>
-    !$changeStyle || $isBurgerMenuOpen
-      ? css`
-          background-color: ${theme.colors.white};
-          box-shadow: ${shadows.elevation.md};
-        `
-      : css`
-          background-color: 'hsla(0, 0%, 0%, 0)';
-          box-shadow: none;
-        `};
 `;
 
 export const UpperBar = styled.div<{
@@ -48,7 +23,7 @@ export const UpperBar = styled.div<{
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: ${spacing['8px']} ${spacing['32px']};
+  padding: ${spacing['4px']} ${spacing['16px']};
   transition: background-color 300ms;
 
   ${({ $changeStyle, $isBurgerMenuOpen }) => {
@@ -73,21 +48,52 @@ export const UpperBar = styled.div<{
       `;
     }
   }};
+
+  @media ${screens.sm} {
+    padding: ${spacing['8px']} ${spacing['32px']};
+  }
 `;
 
 export const Group = styled.div`
   display: flex;
   column-gap: ${spacing['24px']};
+
+  &:first-of-type {
+  }
+`;
+
+export const IconGroup = styled.div`
+  display: flex;
+  column-gap: ${spacing['16px']};
+`;
+
+export const IconCell = styled.div`
+  display: flex;
+  ${typography.size.lg};
+  transition: opacity 200ms;
+  cursor: pointer;
+
+  &:hover {
+    opacity: ${opacity['0.8']};
+  }
 `;
 
 export const Cell = styled.div`
   display: flex;
   column-gap: ${spacing['8px']};
   align-items: center;
-  ${typography.size.base};
 
+  ${typography.size.sm};
   & > svg {
+    ${typography.size.sm};
+  }
+
+  @media ${screens.sm} {
     ${typography.size.base};
+
+    & > svg {
+      ${typography.size.base};
+    }
   }
 `;
 

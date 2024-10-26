@@ -5,12 +5,12 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(1, 1fr);
   width: 100%;
   position: relative;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  grid-template-columns: 1;
+  grid-template-rows: 4;
 
   padding: ${spacing['64px']} ${spacing['48px']};
   background-image: url(${backgroundImage});

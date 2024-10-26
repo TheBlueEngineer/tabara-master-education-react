@@ -27,8 +27,7 @@ export const InputWrapper = styled.div<{
   outline: solid ${border.width.xs};
   outline-color: transparent;
   border-radius: ${border.radius.xs2};
-  background-color: ${({ theme }) => theme.colors.gray50};
-  box-shadow: inset 0px 2px 6px 2px hsla(0, 0%, 0%, 0.3);
+  background-color: ${({ theme }) => theme.colors.white};
 
   input {
     color: ${({ $readonly, theme }) =>
@@ -51,6 +50,18 @@ export const InputWrapper = styled.div<{
     border-top-right-radius: inherit;
     border-bottom-right-radius: inherit;
   }
+
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 1px 2px 4px 2px hsla(0, 0%, 0%, 0.3);
+    pointer-events: none;
+  }
 `;
 
 export const Input = styled.input`
@@ -61,24 +72,6 @@ export const Input = styled.input`
   color: ${({ theme }) => theme.colors.black};
   padding: ${spacing['8px']} ${spacing['16px']};
   transition: border-color 300ms;
-  background-color: hsla(0, 0%, 0%, 0);
-  &::placeholder {
-    color: ${({ theme }) => theme.colors.gray300};
-    font-style: italic;
-  }
-`;
-
-export const Textarea = styled.textarea`
-  display: flex;
-  width: 100%;
-  ${typography.size.base};
-  ${typography.weight.bold};
-  color: ${({ theme }) => theme.colors.green950};
-  padding: ${spacing['8px']} ${spacing['16px']};
-  background-color: hsla(0, 0%, 0%, 0);
-  transition: border-color 300ms;
-  resize: vertical;
-  min-height: ${spacing['192px']};
 
   &::placeholder {
     color: ${({ theme }) => theme.colors.gray300};

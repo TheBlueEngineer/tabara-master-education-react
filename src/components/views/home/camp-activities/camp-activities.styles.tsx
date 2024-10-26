@@ -53,7 +53,8 @@ export const Content = styled.div`
 
   & > ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-template-columns: 1;
+    grid-row: auto;
     width: 100%;
 
     row-gap: ${spacing['128px']};

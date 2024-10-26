@@ -5,7 +5,7 @@ export const Container = styled.div`
   // Position
   display: flex;
   // Size
-  min-width: 15rem;
+  min-width: 10rem;
   max-width: 20rem;
   padding-top: ${spacing['160px']};
   padding-bottom: ${spacing['48px']};

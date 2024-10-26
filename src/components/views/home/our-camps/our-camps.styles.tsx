@@ -35,7 +35,8 @@ export const Container = styled.div`
 export const Offers = styled.div`
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: 1;
+  grid-template-rows: auto;
   column-gap: ${spacing['96px']};
   row-gap: ${spacing['64px']};
   padding-top: ${spacing['64px']};
