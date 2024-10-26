@@ -45,9 +45,7 @@ export const Navbar = styled.nav`
   display: flex;
   width: 100%;
   flex-direction: row;
-  position: fixed;
   justify-content: space-around;
-  top: 0;
   z-index: 10;
   background: white;
 

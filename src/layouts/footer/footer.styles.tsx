@@ -5,6 +5,15 @@ import styled from 'styled-components';
 import treeBackground from 'assets/images/home/istockphoto-1372132668-170667a.jpg';
 import { screens } from '@consts/media-queries.const';
 
+export const Whitespace = styled.div`
+  width: 100%;
+  height: 51px;
+
+  @media ${screens.sm} {
+    height: 0;
+  }
+`;
+
 export const Footer = styled.footer`
   display: flex;
   width: 100%;

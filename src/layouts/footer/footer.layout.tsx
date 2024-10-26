@@ -4,7 +4,6 @@ import { BiLeaf } from 'react-icons/bi';
 import { FaBeer } from 'react-icons/fa';
 
 import logo from 'assets/images/home/322412271_2318204071679802_4134667702766926568_n.png';
-import NavbarBottom from '@layouts/navbar-bottom/navbar-bottom.component';
 
 const contactInfoList = [
   {
@@ -120,7 +119,6 @@ const Footer: FC = () => {
         ))}
       </section>
       <p>Tabara Master Education @ 2024 All rights reserved</p>
-      <NavbarBottom />
     </SC.Footer>
   );
 };

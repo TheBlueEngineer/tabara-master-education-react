@@ -7,6 +7,8 @@ export const Container = styled.header`
   display: flex;
   width: 100%;
   flex-direction: column;
+  position: sticky;
+  top: 0;
   z-index: 10;
   transition:
     background-color 300ms,

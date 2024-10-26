@@ -6,15 +6,15 @@ import { screens } from '@consts/media-queries.const';
 export const Container = styled.section`
   display: flex;
   width: 100%;
-  min-height: 5rem;
   padding-top: ${spacing['192px']};
   padding-bottom: ${spacing['192px']};
   position: relative;
   background-image: url(${heroImage});
-  background-position: center;
+  background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 100%;
   justify-content: center;
   align-items: center;
 
